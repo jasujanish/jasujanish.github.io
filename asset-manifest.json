@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/jasujanish.github.io/static/css/main.099bdb8f.css",
-    "main.js": "/jasujanish.github.io/static/js/main.303d9c4d.js",
-    "static/js/453.196db435.chunk.js": "/jasujanish.github.io/static/js/453.196db435.chunk.js",
-    "static/media/basic_image.jpg": "/jasujanish.github.io/static/media/basic_image.4980cfd975159383c3f7.jpg",
-    "index.html": "/jasujanish.github.io/index.html",
-    "main.099bdb8f.css.map": "/jasujanish.github.io/static/css/main.099bdb8f.css.map",
-    "main.303d9c4d.js.map": "/jasujanish.github.io/static/js/main.303d9c4d.js.map",
-    "453.196db435.chunk.js.map": "/jasujanish.github.io/static/js/453.196db435.chunk.js.map"
+    "main.css": "/portfolio4/static/css/main.099bdb8f.css",
+    "main.js": "/portfolio4/static/js/main.bad84383.js",
+    "static/js/453.196db435.chunk.js": "/portfolio4/static/js/453.196db435.chunk.js",
+    "static/media/basic_image.jpg": "/portfolio4/static/media/basic_image.4980cfd975159383c3f7.jpg",
+    "index.html": "/portfolio4/index.html",
+    "main.099bdb8f.css.map": "/portfolio4/static/css/main.099bdb8f.css.map",
+    "main.bad84383.js.map": "/portfolio4/static/js/main.bad84383.js.map",
+    "453.196db435.chunk.js.map": "/portfolio4/static/js/453.196db435.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.099bdb8f.css",
-    "static/js/main.303d9c4d.js"
+    "static/js/main.bad84383.js"
   ]
 }
