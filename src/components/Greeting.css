@@ -1,0 +1,24 @@
+.shimmer {
+  background: linear-gradient(to right, #696969 20%, #fff 30%, #E0E0E0 70%);
+  background-size: 200% auto;
+  color: #000;
+  display: inline-block;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+.hover\:shimmer:hover {
+    background-position: 200% 0;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
