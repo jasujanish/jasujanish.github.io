@@ -8,8 +8,7 @@ const GridElement = ({ image_background, text }) => {
         w-full
         bg-cover
         bg-center
-        border-2
-        border-gray-600
+        border-0
         hover:border-white
         hover:cursor-alias
         transition
@@ -17,13 +16,11 @@ const GridElement = ({ image_background, text }) => {
         rounded-none
         overflow-hidden
         h-64
-        hover:border-4
+        hover:border-0
         hover:z-50
-        hover:text-2xl
-        text-xl font-semibold
-        text-gray-300 
-        hover:text-white
-        hover:font-bold
+        hover:scale-105
+        text-2xl
+        hover:text-3xl
         group
       "
       style={{
@@ -31,13 +28,11 @@ const GridElement = ({ image_background, text }) => {
       }}
     >
       {/* Background overlay with blur effect */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:backdrop-blur-sm transition-all duration-300">
+      <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:backdrop-blur-sm transition-all duration-300 flex items-center justify-center">
         {/* Text container that stays clear */}
-        <div className="relative h-full flex items-center justify-center">
-          <span className="">
-            {text}
-          </span>
-        </div>
+        <span className="text-gray-300 font-mono  font-light group-hover:bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+          {text}
+        </span>
       </div>
     </div>
   );
