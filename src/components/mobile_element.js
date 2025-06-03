@@ -37,6 +37,7 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
               transition-all
               duration-300
               hover:text-2xl /* Increase text size on hover */
+              mb-4
             "
           >
             {text}

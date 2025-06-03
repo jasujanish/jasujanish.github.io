@@ -13,26 +13,36 @@ import GridElement from './components/grid_element.js';
 import { useState, useEffect } from 'react';
 import MobileElement from './components/mobile_element.js';
 
+// Image sources for grid elements
 const image_paths = [[photo2, photo4, photo3, photo1], [photo7, photo5, photo8,photo6]];
+
+// Determine the breakpoint for switching to mobile view
+const switch_grid = 1024;
+
+// Text descriptions for grid elements
 const currentTexts = ["About Me", "Projects", "Resume", "Courses"];
+
+// Links for grid elements
 const currentLinks = ["https://www.linkedin.com/in/sam-rozansky/", "https://www.linkedin.com/in/sam-rozansky/", "https://www.linkedin.com/in/sam-rozansky/", "https://www.linkedin.com/in/sam-rozansky/"];
 
 export default function App() {
+  // State to randomly choose a set of images
   const [currentImages, setCurrentImages] = useState(image_paths[0]);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  // State to handle mobile responsiveness
+  const [isMobile, setIsMobile] = useState(window.innerWidth < switch_grid);
 
   useEffect(() => {
     // Randomly select a set of images on component mount
     const randomIndex = Math.floor(Math.random() * image_paths.length);
     setCurrentImages(image_paths[randomIndex]);
 
-        // handler to update isMobile on resize
-        const handleResize = () => {
-          setIsMobile(window.innerWidth < 768);
-        };
-    
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);    
+    // handler to update isMobile on resize
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < switch_grid);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);    
   }, []);
 
   return (
@@ -48,10 +58,6 @@ export default function App() {
           text-left                         
         "
       >
-        {/* 
-          Give this inner div a max-width and left padding so it never spans  
-          the full width, but still sits a bit in from the left edge. 
-        */}
         <div className="
             max-w-2xl           /* cap how wide the text block can grow */
             w-full
@@ -63,28 +69,37 @@ export default function App() {
             <Greeting />
           </h1>
 
-          <div className="text-gray-300 text-2xl leading-relaxed font-light">
+          <div className="text-gray-300 text-lg md:text-xl lg:text-2xl leading-relaxed font-light">
             <p className="hover:cursor-text">Sophomore at Carnegie Mellon University</p>
             <p className="hover:cursor-text">Passionate about machine learning, deep learning, robotics, and computer systems</p>
           </div>
         </div>
       </header>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 p-0 mt-auto">
+      <>
       {isMobile ? (
           /* If viewport < 768px, render MobileGrid instead */
-          <>
+          <div className="w-full p-0 mt-auto">
             <MobileElement image_background={photo7} list_of_texts = {currentTexts} list_of_links={currentLinks}/>
-          </>
+          </div>
         ) : (
           /* Otherwise, render the regular GridElement */
-          <>
-            <GridElement image_background={currentImages[0]} text={currentTexts[0]} />
-            <GridElement image_background={currentImages[1]} text={currentTexts[1]} />
-            <GridElement image_background={currentImages[2]} text={currentTexts[2]} />
-            <GridElement image_background={currentImages[3]} text={currentTexts[3]} />
-          </>
+          
+          <div  className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 p-0 mt-auto">
+            <a href={currentLinks[0]} target="_blank" rel="noopener noreferrer">
+              <GridElement image_background={currentImages[0]} text={currentTexts[0]} />
+            </a>
+            <a href={currentLinks[1]} target="_blank" rel="noopener noreferrer">
+              <GridElement image_background={currentImages[1]} text={currentTexts[1]} />
+            </a>
+            <a href={currentLinks[2]} target="_blank" rel="noopener noreferrer">
+              <GridElement image_background={currentImages[2]} text={currentTexts[2]} />
+            </a>
+            <a href={currentLinks[3]} target="_blank" rel="noopener noreferrer">
+              <GridElement image_background={currentImages[3]} text={currentTexts[3]} />
+            </a>
+          </div>
         )}
-      </div>
+      </>
     </div>
   );
 }
