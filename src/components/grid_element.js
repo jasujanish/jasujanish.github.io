@@ -14,7 +14,7 @@ const GridElement = ({ image_background, text }) => {
             bg-center
             border-0
             hover:border-white
-            hover:cursor-alias
+            hover:cursor-pointer
             transition
             cursor-pointer
             rounded-none
