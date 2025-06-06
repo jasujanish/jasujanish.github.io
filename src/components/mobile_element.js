@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
   return (
@@ -20,9 +21,9 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
       <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center">
         {/* List of texts */}
         {list_of_texts.map((text, index) => (
-          <a
+          <Link
+            to={list_of_links[index]}
             key={index}
-            href={list_of_links[index]}
             className="
               text-white
               font-mono
@@ -36,12 +37,12 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
               hover:text-transparent
               transition-all
               duration-300
-              hover:text-2xl /* Increase text size on hover */
+              hover:text-2xl
               mb-4
             "
           >
             {text}
-          </a>
+          </Link>
         ))}
       </div>
     </div>
