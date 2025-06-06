@@ -1,5 +1,8 @@
 import './App.css';
 import Greeting from "./components/greetings.js";
+import CoursePage from "./components/courses_page.js";
+import ProjectsPage from './components/projects_page.js';
+import BlogPage from './components/blog_page.js';
 import photo1 from './images/basic_image.jpg';
 import photo2 from './images/photo2.jpeg';
 import photo3 from './images/photo3.jpeg';
@@ -31,14 +34,14 @@ const switch_grid = 1024;
 const currentTexts = ["About Me", "Projects", "Resume", "Courses"];
 
 // Links for grid elements
-const currentLinkedIn = "https://www.linkedin.com/in/sam-rozansky";
+const currentLinkedIn = "https://www.linkedin.com/in/nishchay-j/";
 const currentRoutes = ['/about', '/projects', '/resume', '/courses'];
 
 // Temporary page for development (will be replaced later)
 function UnderConstructionPage() {
   return (
     <div className="min-h-screen min-w-screen flex items-center justify-center bg-black text-white p-8">
-      <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-center">      
+      <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">      
         <Link
         to="/"
         className="text-white hover:bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 hover:bg-clip-text hover:text-transparent hover:font-bold transition-all duration-300 hover:cursor-pointer"
@@ -189,10 +192,10 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
 
         {/* Subpages */}
-        <Route path="/about" element={<UnderConstructionPage />} />
-        <Route path="/projects" element={<UnderConstructionPage />} />
+        <Route path="/about" element={<BlogPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/resume" element={<UnderConstructionPage />} />
-        <Route path="/courses" element={<UnderConstructionPage />} />
+        <Route path="/courses" element={<CoursePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
