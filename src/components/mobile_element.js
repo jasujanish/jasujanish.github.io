@@ -67,8 +67,7 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
             className="
               text-white
               font-mono
-              text-[2vw]
-              hover:text-[2.5vw]
+              text-lg
               text-center
               hover:bg-gradient-to-r
               from-purple-500
@@ -78,6 +77,7 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
               hover:text-transparent
               transition-all
               duration-300
+              hover:text-2xl
               mb-4
             "
           >
@@ -89,8 +89,7 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
             className="
               text-white
               font-mono
-              text-[2vw]
-              hover:text-[2.5vw]
+              text-lg
               text-center
               hover:bg-gradient-to-r
               from-purple-500
@@ -100,6 +99,7 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
               hover:text-transparent
               transition-all
               duration-300
+              hover:text-2xl
               mb-4
             "
           >
