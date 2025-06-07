@@ -23,8 +23,8 @@ const GridElement = ({ image_background, text }) => {
             hover:border-0
             hover:z-50
             hover:scale-105
-            text-2xl
-            hover:text-3xl
+            text-[1.5vw]
+            hover:text-[2vw]
             group
         "
         style={{
