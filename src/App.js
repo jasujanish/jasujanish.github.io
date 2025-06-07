@@ -160,7 +160,7 @@ function MobilePage() {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white cursor-cell font-mono overflow-hidden">
       <header
-        className="
+          className="
           relative
           flex items-center justify-center   
           w-full h-2/5
@@ -168,18 +168,18 @@ function MobilePage() {
           text-center    
           flex-grow                     
         "
-      >
+        >
         <div className="
-            w-3/4            
+            w-full           
             p-[5%]
-        ">
+        "> 
           {/* Rotating Greeting, Hover Gradient */}
-          <h1 className="font-sans text-balance">
+          <h1 className="font-semibold font-sans mb-12">
             <MobileGreeting />
           </h1>
 
           {/* Description */}
-          <div className="text-balance text-gray-300 leading-relaxed font-light text-[2vw]">
+          <div className="text-balance text-gray-300 text-lg md:text-xl lg:text-2xl leading-relaxed font-light">
             <p className="hover:cursor-text">Sophomore at Carnegie Mellon University</p>
             <p className="hover:cursor-text">Passionate about machine learning, deep learning, robotics, and computer systems</p>
           </div>
