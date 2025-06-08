@@ -39,7 +39,7 @@ export default function MobileBlogPage() {
         term: "TBD"
     },
   ];
-  
+
   const [modalIndex, setModalIndex] = useState(null); // null = no modal
 
   const openModal = (idx) => setModalIndex(idx);
@@ -49,7 +49,7 @@ export default function MobileBlogPage() {
   const CourseButton = ({ course, idx }) => (
     <button
       onClick={() => openModal(idx)}
-      className="hover:scale-110 w-full flex justify-between items-center text-left rounded-full p-8 mb-16 border-white border-2 font-light text-white transition-transform duration-200 transform hover:scale-115 transition-transform duration-300"
+      className="w-full flex justify-between items-center text-left rounded-full p-8 mb-10 border-white border-2 font-light text-white transition-transform duration-200 transform hover:scale-115 transition-transform duration-300"
     >
       <span className="ml-2 text-balance text-stone-100 text-[6vw] font-thin"> {course.name}</span>
       <span className="mr-2 text-stone-200 text-[6vw] ml-8 font-thin">{course.term}</span>
@@ -58,7 +58,7 @@ export default function MobileBlogPage() {
 
   return (
     <>
-      <div className="flex flex-col h-screen w-screen bg-black text-white p-[5%] overflow-y-scroll no-scrollbar">
+      <div className="flex flex-col h-screen w-screen bg-black text-white p-[5%] overflow-y-scroll">
         {/* Header / instructions */}
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-[6vw] text-gray-300 font-thin leading-tight">
@@ -66,7 +66,7 @@ export default function MobileBlogPage() {
           </h1>
           <button
             onClick={returnHome}
-            className="text-gray-400 hover:text-gray-300 transition-colors duration-200 p-2"
+            className="text-gray-400 hover:text-white transition-colors duration-200 p-2"
             aria-label="Return to Home"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-8 h-8">
