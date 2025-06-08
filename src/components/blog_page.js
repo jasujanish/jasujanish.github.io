@@ -5,17 +5,13 @@ export default function BlogPage() {
   const content = [
     {
         name: "Fun Facts",
-        description: "I'm ~2000 ELO in bullet chess on chess.com\nI'm a really great Connect 4 player\nI greatly enjoy playing with Legos\nI've gone kayaking in Hawaii\n(More fun facts coming soon!)",
+        description: "I'm ~2000 ELO in bullet chess on chess.com\nI'm a really great Connect 4 player\nI greatly enjoy playing with Legos\nI've been on a submarine trip\nI've gone kayaking in Hawaii\nI can sleep sitting upright\n(More fun facts coming soon!)",
         term: "2025"
     },
     {
         name: "Background",
-        description: "I'm Nishchay Jasuja. I grew up in the bay area, but I'm currently living in Pittsburgh while I attend Carnegie Mellon University (CMU). At CMU, I'm a sophomore student studying Statistics and Machine Learning with an additional major in Computer Science. I'm currently interested in exploring the fields of machine learning, deep learning, robotics, and computer systems. (I'll be writing more info soon!)",
-        term: "2025"
-    },
-    {
-        name: "Hobbies and Interests",
-        description: "Coming Soon!",
+        description: `I'm Nishchay Jasuja. I grew up in the bay area, but I'm currently living in Pittsburgh while I attend Carnegie Mellon University (CMU). At CMU, I'm a sophomore student studying Statistics and Machine Learning with an additional major in Computer Science. I'm currently interested in exploring the fields of machine learning, deep learning, robotics, and computer systems. Outside of academics, I enjoy playing chess, creating quick sketches with my iPad, reading, playing basketball & soccer, and following the NBA & La Liga.
+      `,
         term: "2025"
     },
     {
