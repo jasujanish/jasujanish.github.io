@@ -10,7 +10,7 @@ export default function BlogPage() {
     },
     {
         name: "Background",
-        description: "My name is Nishchay Jasuja. I grew up in the bay area, though I'm currently living in Pittsburgh while I attend Carnegie Mellon University (CMU). At CMU, I'm a sophomore student studying Statistics and Machine Learning with an additional major in Computer Science. I'm currently interested in exploring the fields of machine learning, deep learning, robotics, and computer systems. (I'll be writing more info soon!)",
+        description: "I'm Nishchay Jasuja. I grew up in the bay area, but I'm currently living in Pittsburgh while I attend Carnegie Mellon University (CMU). At CMU, I'm a sophomore student studying Statistics and Machine Learning with an additional major in Computer Science. I'm currently interested in exploring the fields of machine learning, deep learning, robotics, and computer systems. (I'll be writing more info soon!)",
         term: "2025"
     },
     {
