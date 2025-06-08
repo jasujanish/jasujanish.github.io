@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 export default function BlogPage() {
@@ -32,6 +32,9 @@ export default function BlogPage() {
 
   const [selectedIndex, setSelectedIndex] = useState(1);
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Handler: click on a course name
   const toggleSelection = (idx) => {
@@ -43,14 +46,14 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="flex h-screen w-screen p-[5%] pl-[10%] pr-[10%] pt-[5%] bg-stone-900 text-white overflow-y-scroll"> 
+    <div className="flex h-screen w-screen p-[5%] pl-[10%] pr-[10%] pt-[5%] bg-black text-white overflow-y-scroll"> 
       <div className="w-3/10 h-full">
         <ul className="h-full p-4">
           {selectedIndex !== null && (
                 <li>
                     <button
                         onClick={returnHome}
-                        className="text-left text-[1.1vw] rounded-full border-2 hover:border-white p-4 mb-4 font-light text-white hover:scale-110 transition-transform duration-300"
+                        className="hover:bg-stone-900 text-left text-[1.1vw] rounded-full border-2 hover:border-white p-4 mb-4 font-light text-white hover:scale-110 transition-transform duration-300"
                     >
                         Return to Home
                     </button>
@@ -63,8 +66,8 @@ export default function BlogPage() {
                 className={`w-full flex justify-between items-center text-left rounded-full p-4 mb-4 font-light text-white hover:scale-115 transition-transform duration-300
                   ${
                     selectedIndex === idx
-                      ? "bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 scale-110 transition-all duration-100 hover:cursor-no-drop border-2 border-white"
-                      : "hover:border-2 hover:border-white hover:scale-110 transition-all duration-100 hover:cursor-pointer"
+                      ? "bg-stone-800 scale-110 transition-all duration-100 hover:cursor-no-drop border-2 border-white"
+                      : "hover:bg-stone-900 hover:border-2 hover:border-white hover:scale-110 transition-all duration-100 hover:cursor-pointer"
                   }`}
               >
                 <span className="text-balance text-stone-100 text-[0.9vw]"> {course.name}</span>

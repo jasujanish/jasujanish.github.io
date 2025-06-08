@@ -16,25 +16,30 @@ export default function MobileBlogPage() {
     {
         name: "Coming Soon!",
         description: "Description Coming Soon!",
+        term: "TBD"
     },
     {
         name: "Coming Soon!",
         description: "Description Coming Soon!",
+        term: "TBD"
     },
     {
         name: "Coming Soon!",
         description: "Description Coming Soon!",
+        term: "TBD"
     },
     {
         name: "Coming Soon!",
         description: "Description Coming Soon!",
+        term: "TBD"
     },
     {
         name: "Coming Soon!",
         description: "Description Coming Soon!",
+        term: "TBD"
     },
   ];
-
+  
   const [modalIndex, setModalIndex] = useState(null); // null = no modal
 
   const openModal = (idx) => setModalIndex(idx);
@@ -44,9 +49,10 @@ export default function MobileBlogPage() {
   const CourseButton = ({ course, idx }) => (
     <button
       onClick={() => openModal(idx)}
-      className="w-full text-left font-light text-[5vw] mb-6 transition-transform duration-200 transform hover:scale-105 hover:bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 hover:bg-clip-text hover:text-transparent"
+      className="hover:scale-110 w-full flex justify-between items-center text-left rounded-full p-8 mb-16 border-white border-2 font-light text-white transition-transform duration-200 transform hover:scale-115 transition-transform duration-300"
     >
-      {course.name}
+      <span className="ml-2 text-balance text-stone-100 text-[6vw] font-thin"> {course.name}</span>
+      <span className="mr-2 text-stone-200 text-[6vw] ml-8 font-thin">{course.term}</span>
     </button>
   );
 

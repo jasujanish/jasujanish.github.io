@@ -13,16 +13,61 @@ export default function MobileCoursesPage() {
   // Content
   // ---------------------------------------------------------------------------
   const content = [
-    { name: "10-701: Introduction to Machine Learning (PhD)", description: "Fall 2025\nUpcoming Course - Description Coming Soon." },
-    { name: "11-785: Introduction to Deep Learning (PhD)", description: "Fall 2025\nUpcoming Course - Description Coming Soon." },
-    { name: "11-711: Advanced Natural Language Processing (PhD)", description: "Fall 2025\nUpcoming Course - Description Coming Soon." },
-    { name: "15-213: Introduction to Computer Systems", description: "Spring 2025\nDescription Coming Soon!" },
-    { name: "15-150: Principles of Functional Programming", description: "Spring 2025\nDescription Coming Soon!" },
-    { name: "15-122: Principles of Imperative Computation", description: "Fall 2024\nDescription Coming Soon!" },
-    { name: "21-241: Matrices and Linear Transformations", description: "Spring 2025\nDescription Coming Soon!" },
-    { name: "21-259: Calculus in Three Dimensions", description: "Spring 2025\nDescription Coming Soon!" },
-    { name: "21-127: Concepts of Mathematics", description: "Fall 2024\nDescription Coming Soon!" },
-    { name: "73-102: Principles of Microeconomics", description: "Fall 2024\nDescription Coming Soon!" },
+    {
+      name: "Intro to Deep Learning (PhD)", 
+      description: "Fall 2025\nUpcoming Course - Description Coming Soon.",
+      term: "F25"
+    },
+    {
+      name: "Intro to Machine Learning (PhD)",
+      description: "Fall 2025\nUpcoming Course - Description Coming Soon.",
+      term: "F25"
+    },
+    {
+      name: "Advanced Natural Language Processing (PhD)",
+      description: "Fall 2025\nUpcoming Course - Description Coming Soon.",
+      term: "F25"
+    },
+    {
+      name: "Intro to Computer Systems",
+      description: "Spring 2025\nDescription Coming Soon!",
+      term: "S25"
+    },
+    {
+      name: "Principles of Functional Programming",
+      description: "Spring 2025\nDescription Coming Soon!",
+      term: "S25"
+    },
+    {
+      name: "Principles of Imperative Computation",
+      description: "Fall 2024\nDescription Coming Soon!",
+      term: "F24"
+    },
+    {
+      name: "Probability Theory",
+      description: "Fall 2025\nDescription Coming Soon!",
+      term: "S25"
+    },
+    {
+      name: "Matrices and Linear Transformations",
+      description: "Spring 2025\nDescription Coming Soon!",
+      term: "S25"
+    },
+    {
+      name: "Calculus in Three Dimensions",
+      description: "Spring 2025\nDescription Coming Soon!",
+      term: "S25"
+    },
+    {
+      name: "Concepts of Mathematics",
+      description: "Fall 2024\nDescription Coming Soon!",
+      term: "F24"
+    },
+    {
+      name: "Principles of Microeconomics",
+      description: "Fall 2024\nDescription Coming Soon!",
+      term: "F24"
+    },
   ];
 
   const [modalIndex, setModalIndex] = useState(null); // null = no modal
@@ -34,9 +79,10 @@ export default function MobileCoursesPage() {
   const CourseButton = ({ course, idx }) => (
     <button
       onClick={() => openModal(idx)}
-      className="w-full text-left font-light text-[5vw] mb-6 transition-transform duration-200 transform hover:scale-105 hover:bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 hover:bg-clip-text hover:text-transparent"
+      className="hover:scale-110 w-full flex justify-between items-center text-left rounded-full p-8 mb-16 border-white border-2 font-light text-white transition-transform duration-200 transform hover:scale-115 transition-transform duration-300"
     >
-      {course.name}
+      <span className="ml-2 text-balance text-stone-100 text-[6vw] font-thin"> {course.name}</span>
+      <span className="mr-2 text-stone-200 text-[6vw] ml-8 font-thin">{course.term}</span>
     </button>
   );
 
