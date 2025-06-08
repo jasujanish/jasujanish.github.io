@@ -5,57 +5,52 @@ export default function CoursesPage() {
   const content = [
     {
       name: "Intro to Deep Learning (PhD)", 
-      description: "Fall 2025\nUpcoming Course - Description Coming Soon.",
+      description: "Course Number: 11785\nTaken: Fall 2025\nUpcoming Course - Description Coming Soon.",
       term: "F25"
     },
     {
       name: "Intro to Machine Learning (PhD)",
-      description: "Fall 2025\nUpcoming Course - Description Coming Soon.",
+      description: "Course Number: 10701\nTaken: Fall 2025\nUpcoming Course - Description Coming Soon.",
       term: "F25"
     },
     {
       name: "Advanced Natural Language Processing (PhD)",
-      description: "Fall 2025\nUpcoming Course - Description Coming Soon.",
+      description: "Course Number: 11711\nTaken: Fall 2025\nUpcoming Course - Description Coming Soon.",
       term: "F25"
     },
     {
       name: "Intro to Computer Systems",
-      description: "Spring 2025\nDescription Coming Soon!",
+      description: "Course Number: 15213\nTaken: Spring 2025\n15213 has been my favorite course at CMU so far.\nAcademically, the course imbued me with a deep understanding of core computer systems concepts, such as the assembly language, cache fundamentals & the memory hierarchy, compiler optimizations, linkers, system-level signals, multi-threading, multi-processing, virtual memory fundamentals, network programming, system I/O, concurrent programming, etc.\nPersonally, the course's focus on projects challenged me to develop creative solutions, reason about design choices, and debug with intent \u2014 deepening my passion for building projects.",
       term: "S25"
     },
     {
       name: "Principles of Functional Programming",
-      description: "Spring 2025\nDescription Coming Soon!",
+      description: "Course Number: 15150\nTaken: Spring 2025\n15150 is one of the most interesting courses I've taken so far.\nFunctional programming is a disciplined and type-oriented programming paradigm that emphasizes immutability, modularity, and mathematical reasoning. This course introduced me to numerous functional programming concepts, but the most significant lesson I learned was the importance of visualizing more abstract concepts, such as infinite sequences or trees, when writing algorithms. As such, this course greatly improved my ability to reason about and elegantly solve problems.",
       term: "S25"
     },
     {
-      name: "Principles of Imperative Computation",
-      description: "Fall 2024\nDescription Coming Soon!",
-      term: "F24"
-    },
-    {
       name: "Probability Theory",
-      description: "Fall 2025\nDescription Coming Soon!",
+      description: "Course Number: 21325\nTaken: Summer 2025\n21325 was a surprisingly fun course.\nI initially took the course to fulfill a pre-requisite for future machine learning courses while conducting research at CMU over the summer. However, I ended up greatly enjoying the course's mathematically rigorous approach to probability theory. Additionally, the course has greatly strengthened my proof-writing skills and mathematical intuition, making it one of the most valuable courses I've taken at CMU.",
       term: "S25"
     },
     {
       name: "Matrices and Linear Transformations",
-      description: "Spring 2025\nDescription Coming Soon!",
+      description: "Course Number: 21241\nTaken: Spring 2025\n21241 was my first exposure to linear algebra.\nThe course's focus on both computational problems and theoretical concepts helped me develop a strong foundation in linear algebra, which has been invaluable as I've aimed to learn more about machine learning.",
       term: "S25"
     },
     {
       name: "Calculus in Three Dimensions",
-      description: "Spring 2025\nDescription Coming Soon!",
+      description: "Course Number: 21259\nTaken: Spring 2025\n21259 was a highly enjoable course.\nThe course primarily focused on multivariable calculus, but the course delved into more advanced topics in vector calculus in the final third of the semester. Overall, I found the course's emphasis on visualizing concepts in three dimmensions and computational problems greatly enjoyable.",
       term: "S25"
     },
     {
-      name: "Concepts of Mathematics",
-      description: "Fall 2024\nDescription Coming Soon!",
+      name: "Principles of Imperative Computation",
+      description: "Course Number: 15122\nTaken: Fall 2024\n15122 is a standard introductory data structures and algorithms course; the course covers fundametal topics in computer science, familiarizes students with the C programming language, and helps students adjust to the rigor of CMU's cs curriculum.",
       term: "F24"
     },
     {
-      name: "Principles of Microeconomics",
-      description: "Fall 2024\nDescription Coming Soon!",
+      name: "Concepts of Mathematics",
+      description: "Course Number: 21127\nTaken: Fall 2024\n21127 was my first exposure to proof-based mathematics.\nThe course provided me with a strong and firm foundation in discrete mathematics and proof writing. This foundation has been invaluable in later classes, such as 21325 (Probability) and 15150 (Functional Programming).",
       term: "F24"
     },
   ];
@@ -76,7 +71,7 @@ export default function CoursesPage() {
   };
 
   return (
-    <div className="flex h-screen w-screen p-[5%] pl-[10%] pr-[10%] pt-[5%] bg-black text-white overflow-y-scroll"> 
+    <div className="flex h-screen w-screen p-[5%] pl-[10%] pr-[10%] pt-[5%] bg-black text-white overflow-y-scroll font-mono"> 
       <div className="w-3/10 h-full">
         <ul className="h-full p-4">
           {selectedIndex !== null && (
@@ -124,11 +119,11 @@ export default function CoursesPage() {
           </div>
         ) : (
           // Display the selected course description inside a scrollable, bordered box
-          <div className="h-full rounded-lg p-4 overflow-y-scroll no-scrollbar">
+          <div className="h-full w-full rounded-lg p-4 overflow-y-scroll no-scrollbar">
             <h2 className="text-[2vw] text-white font-semibold mb-4">
               {content[selectedIndex].name}
             </h2>
-            <p className="text-[1.5vw] text-gray-300 whitespace-pre-wrap text-balanced">
+            <p className="text-[1vw] text-gray-300 whitespace-pre-wrap font-normal text-balance">
               {content[selectedIndex].description}
             </p>
           </div>

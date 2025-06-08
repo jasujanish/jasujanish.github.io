@@ -4,29 +4,29 @@ import { useNavigate } from 'react-router-dom';
 export default function BlogPage() {
   const content = [
     {
-        name: "Coming Soon!",
-        description: "Description Coming Soon!",
-        term: "TBD"
+        name: "Fun Facts",
+        description: "Coming Soon!",
+        term: "2025"
     },
     {
-        name: "Coming Soon!",
-        description: "Description Coming Soon!",
-        term: "TBD"
+        name: "Background",
+        description: "My name is Nishchay Jasuja. I'll be writing more info soon!",
+        term: "2025"
     },
     {
-        name: "Coming Soon!",
-        description: "Description Coming Soon!",
-        term: "TBD"
+        name: "Languages and Technologies",
+        description: "Coming Soon!",
+        term: "2025"
     },
     {
-        name: "Coming Soon!",
-        description: "Description Coming Soon!",
-        term: "TBD"
+        name: "Hobbies and Interests",
+        description: "Coming Soon!",
+        term: "2025"
     },
     {
-        name: "Coming Soon!",
-        description: "Description Coming Soon!",
-        term: "TBD"
+        name: "Interesting Papers",
+        description: "Coming Soon!",
+        term: "2025"
     },
   ];
 
@@ -46,7 +46,7 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="flex h-screen w-screen p-[5%] pl-[10%] pr-[10%] pt-[5%] bg-black text-white overflow-y-scroll"> 
+    <div className="flex h-screen w-screen p-[5%] pl-[10%] pr-[10%] pt-[5%] bg-black text-white overflow-y-scroll font-mono"> 
       <div className="w-3/10 h-full">
         <ul className="h-full p-4">
           {selectedIndex !== null && (
@@ -94,11 +94,11 @@ export default function BlogPage() {
           </div>
         ) : (
           // Display the selected course description inside a scrollable, bordered box
-          <div className="h-full rounded-lg p-4 overflow-y-scroll no-scrollbar">
+          <div className="h-full w-full rounded-lg p-4 overflow-y-scroll no-scrollbar">
             <h2 className="text-[2vw] text-white font-semibold mb-4">
               {content[selectedIndex].name}
             </h2>
-            <p className="text-[1.5vw] text-gray-300 whitespace-pre-wrap text-balanced">
+            <p className="text-[1vw] text-gray-300 whitespace-pre-wrap font-normal text-balance">
               {content[selectedIndex].description}
             </p>
           </div>
