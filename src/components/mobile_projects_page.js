@@ -55,7 +55,6 @@ export default function MobileProjectsPage() {
       term: "October 2024"
     },
   ];
-
   const [modalIndex, setModalIndex] = useState(null); // null = no modal
 
   const openModal = (idx) => setModalIndex(idx);
@@ -63,10 +62,9 @@ export default function MobileProjectsPage() {
   const returnHome = () => navigate("/");
 
   const CourseButton = ({ course, idx }) => (
-    
     <button
       onClick={() => openModal(idx)}
-      className="w-full flex justify-between items-center text-left p-4 mb-4 text-white transition-transform duration-200 transform hover:scale-115 transition-transform duration-300"
+      className="w-full flex justify-between items-center text-left p-4 mb-4 text-white"
     >
       <span className="ml-2 text-balance text-stone-100 text-xl font-normal"> {course.name}</span>
       <span className="mr-2 text-stone-200 text-xl ml-12 font-normal">{course.term}</span>
@@ -75,41 +73,43 @@ export default function MobileProjectsPage() {
 
   return (
     <>
-      <div className="flex flex-col h-screen w-screen bg-black text-white p-[5%] overflow-y-scroll">
-        {/* Header / instructions */}
-        <div className="flex justify-between items-center mb-12 p-4">
-          <h1 className="text-4xl text-gray-200 font-semibold leading-tight">
-            Tap to Learn More
-          </h1>
-          <button
-            onClick={returnHome}
-            className="text-gray-300 hover:text-white transition-colors duration-200 p-2"
-            aria-label="Return to Home"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" className="w-8 h-8">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+      <div className="min-h-screen w-full bg-black text-white">
+        <div className="px-[5%] py-8">
+          {/* Header / instructions */}
+          <div className="flex justify-between items-center mb-12 p-4">
+            <h1 className="text-4xl text-gray-200 font-semibold leading-tight">
+              Tap to Learn More
+            </h1>
+            <button
+              onClick={returnHome}
+              className="text-gray-300 transition-colors duration-200 p-2"
+              aria-label="Return to Home"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" className="w-8 h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
 
-        {/* Course list */}
-        <ul>
-          {content.map((course, idx) => (
-            <li key={idx}>
-              <CourseButton course={course} idx={idx} />
-            </li>
-          ))}
-        </ul>
+          {/* Course list */}
+          <ul className="pb-8">
+            {content.map((course, idx) => (
+              <li key={idx}>
+                <CourseButton course={course} idx={idx} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       {/* Modal */}
       {modalIndex !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md no-scrollbar">
-          <div className="relative flex flex-col bg-stone-800 rounded-2xl shadow-2xl min-w-[75vw] max-w-[80vw] max-h-[80vh] overflow-y-scroll no-scrollbar">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
+          <div className="relative flex flex-col bg-stone-800 rounded-2xl shadow-2xl w-full max-w-lg max-h-[80vh]">
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-gray-400 hover:text-gray-300 transition-colors duration-200 p-4"
+              className="absolute top-2 right-2 text-gray-400 hover:text-gray-300 transition-colors duration-200 p-4 z-10"
               aria-label="Close course details"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
@@ -118,7 +118,7 @@ export default function MobileProjectsPage() {
             </button>
 
             {/* Course Content */}
-            <div className="p-10 overflow-y-auto no-scrollbar">
+            <div className="p-10 overflow-y-auto">
               <h2 className="text-2xl font-semibold mb-4 text-white">{content[modalIndex].name}</h2>
               <p className="text-gray-300 whitespace-pre-wrap text-xl text-balance">{content[modalIndex].description}</p>
             </div>

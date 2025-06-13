@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 export default function BlogPage() {
+  
   const content = [
     {
         name: "Fun Facts",
@@ -16,7 +17,7 @@ export default function BlogPage() {
     },
     {
         name: "Interesting Articles",
-        description: 'Designing better interfaces as AI continues to progress: https://deepmind.google/research/publications/106025/\n',
+        description: 'Designing better interfaces as AI continues to progress: https://deepmind.google/research/publications/106025/\n(More coming soon!)',
         term: "2025"
     },
   ];
