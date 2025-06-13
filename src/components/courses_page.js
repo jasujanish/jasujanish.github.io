@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 export default function CoursesPage() {
+  
   const content = [
     {
       name: "Intro to Deep Learning (PhD)", 

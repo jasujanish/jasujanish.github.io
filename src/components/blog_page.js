@@ -5,7 +5,7 @@ export default function BlogPage() {
   const content = [
     {
         name: "Fun Facts",
-        description: "I'm ~2000 ELO in bullet chess on chess.com\nI'm ~1600 ELO in blitz & rapid chess on chess.com\nI can type at ~115 words per minute\nI'm a really great Connect 4 player\nI've been on submarine and boat trips\nI've gone kayaking in Hawaii\n(More fun facts coming soon!)",
+        description: "I'm ~2000 ELO in bullet chess on chess.com (99th percentile globally)\nI'm ~1600 ELO in blitz chess on chess.com (97th percentile globally)\nI'm ~1600 ELO in rapid chess on chess.com (97th percentile globally)\nI can type at ~115 words per minute\nI'm a really great Connect 4 player\nI've been on submarines, boats, and kayaks\n(More fun facts coming soon!)",
         term: "2025"
     },
     {
@@ -15,8 +15,8 @@ export default function BlogPage() {
         term: "2025"
     },
     {
-        name: "Interesting Papers",
-        description: "Coming Soon!",
+        name: "Interesting Articles",
+        description: 'Designing better interfaces as AI continues to progress: https://deepmind.google/research/publications/106025/\n',
         term: "2025"
     },
   ];

@@ -12,6 +12,7 @@ export default function MobileProjectsPage() {
   // ---------------------------------------------------------------------------
   // Content
   // ---------------------------------------------------------------------------
+  
   const content = [
     {
       name: "LaTex Classifier", 
@@ -104,7 +105,7 @@ export default function MobileProjectsPage() {
       {/* Modal */}
       {modalIndex !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md no-scrollbar">
-          <div className="relative flex flex-col bg-stone-800 rounded-2xl shadow-2xl min-w-[75vw] max-w-[80vw] max-h-[95vh] overflow-y-scroll no-scrollbar">
+          <div className="relative flex flex-col bg-stone-800 rounded-2xl shadow-2xl min-w-[75vw] max-w-[80vw] max-h-[80vh] overflow-y-scroll no-scrollbar">
             {/* Close Button */}
             <button
               onClick={closeModal}

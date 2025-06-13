@@ -25,17 +25,8 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
             className="
               text-white
               font-mono
-              text-lg
+              text-xl
               text-center
-              hover:bg-gradient-to-r
-              from-purple-500
-              via-pink-500
-              to-amber-500
-              hover:bg-clip-text
-              hover:text-transparent
-              transition-all
-              duration-300
-              hover:text-2xl
               mb-4
             "
           >
@@ -47,17 +38,8 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
             className="
               text-white
               font-mono
-              text-lg
+              text-xl
               text-center
-              hover:bg-gradient-to-r
-              from-purple-500
-              via-pink-500
-              to-amber-500
-              hover:bg-clip-text
-              hover:text-transparent
-              transition-all
-              duration-300
-              hover:text-2xl
               mb-4
             "
           >
@@ -67,17 +49,8 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
             className="
               text-white
               font-mono
-              text-lg
+              text-xl
               text-center
-              hover:bg-gradient-to-r
-              from-purple-500
-              via-pink-500
-              to-amber-500
-              hover:bg-clip-text
-              hover:text-transparent
-              transition-all
-              duration-300
-              hover:text-2xl
               mb-4
             "
           >
@@ -89,17 +62,8 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
             className="
               text-white
               font-mono
-              text-lg
+              text-xl
               text-center
-              hover:bg-gradient-to-r
-              from-purple-500
-              via-pink-500
-              to-amber-500
-              hover:bg-clip-text
-              hover:text-transparent
-              transition-all
-              duration-300
-              hover:text-2xl
               mb-4
             "
           >

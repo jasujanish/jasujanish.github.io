@@ -12,6 +12,7 @@ export default function MobileCoursesPage() {
   // ---------------------------------------------------------------------------
   // Content
   // ---------------------------------------------------------------------------
+  
   const content = [
     {
       name: "Intro to Deep Learning (PhD)", 
@@ -24,13 +25,13 @@ export default function MobileCoursesPage() {
       term: "F25"
     },
     {
-      name: "Advanced Natural Language Processing (PhD)",
+      name: "Natural Language Processing (PhD)",
       description: "Course Number: 11711\nTaken: Fall 2025\nUpcoming Course - Description Coming Soon.",
       term: "F25"
     },
     {
       name: "Intro to Computer Systems",
-      description: "Course Number: 15213\nTaken: Spring 2025\n15213 has been my favorite course at CMU so far.\nAcademically, the course imbued me with a deep understanding of core computer systems concepts, such as the assembly language, cache fundamentals & the memory hierarchy, compiler optimizations, linkers, system-level signals, multi-threading, multi-processing, virtual memory fundamentals, network programming, system I/O, concurrent programming, etc.\nPersonally, the course's focus on projects challenged me to develop creative solutions, reason about design choices, and debug with intent \u2014 deepening my passion for building projects.",
+      description: "Course Number: 15213\nTaken: Spring 2025\n15213 has been my favorite course at CMU so far.\nAcademically, the course imbued me with a deep understanding of core computer systems concepts, such as the assembly language, cache fundamentals & the memory hierarchy, compiler optimizations, linkers, system-level signals, multi-threading, multi-processing, virtual memory fundamentals, network programming, system I/O, concurrent programming, etc. Personally, the course's focus on projects challenged me to develop creative solutions, reason about design choices, and debug with intent \u2014 deepening my passion for building projects.",
       term: "S25"
     },
     {
@@ -64,7 +65,7 @@ export default function MobileCoursesPage() {
       term: "F24"
     },
   ];
-  
+
   const [modalIndex, setModalIndex] = useState(null); // null = no modal
 
   const openModal = (idx) => setModalIndex(idx);
@@ -114,7 +115,7 @@ export default function MobileCoursesPage() {
       {/* Modal */}
       {modalIndex !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md no-scrollbar">
-          <div className="relative flex flex-col bg-stone-800 rounded-2xl shadow-2xl min-w-[75vw] max-w-[80vw] max-h-[95vh] overflow-y-scroll no-scrollbar">
+          <div className="relative flex flex-col bg-stone-800 rounded-2xl shadow-2xl min-w-[75vw] max-w-[80vw] max-h-[80vh] overflow-y-scroll no-scrollbar">
             {/* Close Button */}
             <button
               onClick={closeModal}
