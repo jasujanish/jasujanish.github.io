@@ -25,8 +25,8 @@ import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
  */
 
 // Image sources for grid elements
-// const currentImages = [photo11, photo6, photo7, photo8];
 const currentImages = [photo8, photo7, photo6, photo5];
+// const currentImages = [vibes, vibes, vibes, vibes];
 
 // Text descriptions for grid elements
 const currentTexts = ["About Me", "Projects", "Resume", "Courses"];
@@ -80,7 +80,7 @@ function NotFoundPage() {
 function HomePage() {
   // State to randomly choose a set of images
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white cursor-cell font-mono overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-black text-white font-mono overflow-hidden">
       <header
         className="
           relative
@@ -108,7 +108,7 @@ function HomePage() {
         </div>
       </header>
       <>
-      <div  className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 p-0 mt-auto">
+      <div className="cursor-pointer w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 p-0 mt-auto">
             <Link
               to={currentRoutes[0]}
               key={currentRoutes[0]}
@@ -158,7 +158,7 @@ function HomePage() {
  */
 function MobilePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white cursor-cell font-mono overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-black text-white font-mono overflow-hidden">
       <header
           className="
           relative
@@ -180,8 +180,8 @@ function MobilePage() {
 
           {/* Description */}
           <div className="text-balance text-gray-300 text-lg md:text-xl lg:text-2xl leading-relaxed font-light">
-            <p className="hover:cursor-text">Sophomore at Carnegie Mellon University</p>
-            <p className="hover:cursor-text">Passionate about machine learning, deep learning, robotics, and computer systems</p>
+            <p>Sophomore at Carnegie Mellon University</p>
+            <p>Passionate about machine learning, deep learning, robotics, and computer systems</p>
           </div>
         </div>
       </header>

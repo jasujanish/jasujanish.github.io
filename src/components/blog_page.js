@@ -5,12 +5,12 @@ export default function BlogPage() {
   const content = [
     {
         name: "Fun Facts",
-        description: "I'm ~2000 ELO in bullet chess on chess.com\nI'm a really great Connect 4 player\nI greatly enjoy playing with Legos\nI've been on a submarine trip\nI've gone kayaking in Hawaii\nI can sleep sitting upright\n(More fun facts coming soon!)",
+        description: "I'm ~2000 ELO in bullet chess on chess.com\nI'm ~1600 ELO in blitz & rapid chess on chess.com\nI can type at ~115 words per minute\nI'm a really great Connect 4 player\nI've been on submarine and boat trips\nI've gone kayaking in Hawaii\n(More fun facts coming soon!)",
         term: "2025"
     },
     {
         name: "Background",
-        description: `I'm Nishchay Jasuja. I grew up in the bay area, but I'm currently living in Pittsburgh while I attend Carnegie Mellon University (CMU). At CMU, I'm a sophomore student studying Statistics and Machine Learning with an additional major in Computer Science. I'm currently interested in exploring the fields of machine learning, deep learning, robotics, and computer systems. Outside of academics, I enjoy playing chess, creating quick sketches with my iPad, reading, playing basketball & soccer, and following the NBA & La Liga.
+        description: `I'm Nishchay Jasuja. I'm originally from the bay area, though I'm now based in Pittsburgh as I attend Carnegie Mellon University (CMU). At CMU, I'm studying Statistics and Machine Learning with an additional major in Computer Science. I'm currently interested in exploring the fields of machine learning, deep learning, robotics, and computer systems. Outside of academic pursuits, I enjoy playing chess, creating quick sketches with my iPad, reading nonfiction novels, and following the NBA & La Liga.
       `,
         term: "2025"
     },
@@ -46,14 +46,12 @@ export default function BlogPage() {
                 <div className="w-full h-full flex justify-between items-center p-2 align-items-center">
                   <button
                       onClick={returnHome}
-                      className="hover:bg-stone-900 text-left text-[1.1vw] rounded-full border-2 hover:border-white p-4 mb-4 font-light text-white hover:scale-110 transition-transform duration-300"
-                  >
+                      className = "relative text-left text-[1.1vw] rounded-full border-2 hover:border-white p-4 mb-4 font-light text-white hover:scale-110 transition-transform duration-300 after:absolute after:bottom-2 after:left-4 after:right-4 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)] hover:cursor-pointer"                  >
                       Return to Home
                   </button>
                   <button
                     onClick={toggleCollapsed}
-                    title={collapsed ? "Expand list" : "Collapse list"}
-                    className="text-[1.1vw] p-4 hover:scale-150 hover:text-white transition-transform duration-300 ml-8 p-4 mb-4"
+                    className="text-[1.9vw] p-4 hover:scale-150 hover:text-white transition-transform duration-300 ml-8 p-4 mb-4 hover:cursor-pointer"
                   >
                     ▶
                   </button>
@@ -67,7 +65,7 @@ export default function BlogPage() {
                   ${
                     selectedIndex === idx
                       ? "hover:cursor-no-drop relative after:absolute after:bottom-2 after:left-0 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 after:w-full font-semibold"
-                      : "relative after:absolute after:bottom-2 after:left-0 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 hover:after:w-full transition-all duration-100 hover:cursor-pointer "
+                      : "relative after:absolute after:bottom-2 after:left-0 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 hover:after:w-full transition-all duration-200 hover:cursor-pointer "
                   }`}
               >
                 <span className="text-balance text-stone-100 text-[0.9vw]"> {course.name}</span>
@@ -81,19 +79,17 @@ export default function BlogPage() {
       {collapsed ?  
         <div className="flex-col justify-between h-full pl-[15%] pt-[2%] pr-[15%] sticky top-[0%] align-center"> 
             <div className="w-full flex justify-between items-center align-items-center max-w-1/3">
-              <button
-                  onClick={returnHome}
-                  className="hover:bg-stone-900 text-left text-[1.1vw] rounded-full border-2 hover:border-white p-4 mb-4 font-light text-white hover:scale-110 transition-transform duration-300"
-              >
-                  Return to Home
-              </button>
-              <button
-                onClick={toggleCollapsed}
-                title={collapsed ? "Expand list" : "Collapse list"}
-                className="text-[1.5vw] p-4 hover:scale-150 transition-transform duration-300 ml-8 p-4 mb-4"
-              >
-                ◀
-              </button>
+                <button
+                    onClick={returnHome}
+                    className = "relative text-left text-[1.1vw] rounded-full border-2 hover:border-white p-4 mb-4 font-light text-white hover:scale-110 transition-transform duration-300 after:absolute after:bottom-2 after:left-4 after:right-4 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)] hover:cursor-pointer"                  >
+                    Return to Home
+                </button>
+                <button
+                  onClick={toggleCollapsed}
+                  className="text-[1.9vw] p-4 hover:scale-150 hover:text-white transition-transform duration-300 ml-8 p-4 mb-4 hover:cursor-pointer"
+                >
+                  ◀
+                </button>
             </div>
             <div className="h-full w-full rounded-lg p-4 overflow-y-scroll no-scrollbar pt-[5%]">
               <h2 className="text-[2.8vw] text-white font-semibold mb-4">
