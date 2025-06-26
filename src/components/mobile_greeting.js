@@ -8,9 +8,11 @@ const phrases = [
     'Hola,'
 ];
 
+// Mobile-alternative to the greeting component on the home page
+// Displays a greeting with a fade-in and fade-out effect for each phrase
 const Greeting = () => {
-  const [idx, setIdx] = useState(0);
-  const [fade, setFade] = useState('opacity-100');
+  const [idx, setIdx] = useState(0); // Manages current greeting
+  const [fade, setFade] = useState('opacity-100'); // Manages the fade effect
 
   useEffect(() => {
     const handle = window.setInterval(() => {

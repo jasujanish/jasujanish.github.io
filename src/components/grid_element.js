@@ -1,5 +1,8 @@
 import React from "react";
 
+// A single grid element, used on the home page
+// Image background & text are passed as props
+// Upon hover, the text is underlined, the background is blurred, and the element scales up slightly
 const GridElement = ({ image_background, text }) => (
   <div
     className="
@@ -10,9 +13,7 @@ const GridElement = ({ image_background, text }) => (
     "
     style={{ backgroundImage: `url(${image_background})` }}
   >
-    {/* Dark overlay */}
     <div className="absolute inset-0 bg-black/40 group-hover:backdrop-blur-sm flex items-center justify-center transition-all duration-300">
-      {/* Text with underline that appears on group hover */}
       <span
         className="
           relative font-mono font-light text-gray-300

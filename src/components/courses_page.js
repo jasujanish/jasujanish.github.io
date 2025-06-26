@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 export default function CoursesPage() {
-  
+  // Content for the courses page
   const content = [
     {
       name: "Intro to Deep Learning (PhD)", 
@@ -56,25 +56,26 @@ export default function CoursesPage() {
     },
   ];
 
-  const [selectedIndex, setSelectedIndex] = useState(1);
-  const navigate = useNavigate();
-  const [collapsed, setCollapsed] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(1); // manages selected item
+  const navigate = useNavigate(); // manages navigation between pages
+  const [collapsed, setCollapsed] = useState(false); // manages the sidebar
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // scroll to top
   }, []);
 
-  // Handler: click on a course name
   const toggleSelection = (idx) => {
-    setSelectedIndex(idx);
+    setSelectedIndex(idx); // set selected index to selected item
   };
-  const toggleCollapsed = () => setCollapsed((prev) => !prev);
-  const returnHome = () => {
-    navigate("/");
+  const toggleCollapsed = () => setCollapsed((prev) => !prev); // toggle the sidebar
+  const returnHome = () => { 
+    navigate("/"); // return to home page
   };
 
   return (
+    // Main container
     <div className="flex h-screen w-screen p-[5%] pl-[10%] pr-[10%] pt-[5%] bg-black text-white overflow-y-scroll font-mono"> 
-      {!collapsed &&
+      {/* Page if the sidebar is collapsed */}
+      {!collapsed && 
       <div className="w-3/10 h-full">
         <ul className="h-full">
             <li>
@@ -111,6 +112,7 @@ export default function CoursesPage() {
         </ul>
       </div>
       }
+      {/* Page if the sidebar is not collapsed */}
       {collapsed ?  
         <div className="flex-col justify-between h-full pl-[15%] pt-[2%] pr-[15%] sticky top-[0%] align-center"> 
             <div className="w-full flex justify-between items-center align-items-center max-w-1/3">
@@ -136,12 +138,10 @@ export default function CoursesPage() {
             </div>
           
         </div>
-
         : 
         <div className="flex-1 h-full pl-[10%] pt-[7%] sticky top-[0%] pr-[7%] align-center"> 
           {selectedIndex === null ? ( 
-            // Initial “welcome” / placeholder text
-            <div className="h-full flex items-center justify-center"> {/* Modified this div */}
+            <div className="h-full flex items-center justify-center">
               <p className="text-white text-balance text-[5vw] text-center font-thin">
                 <p >Select & Deselect Items to Learn More</p>
                 <br />
@@ -149,7 +149,6 @@ export default function CoursesPage() {
               </p>
             </div>
           ) : (
-            // Display the selected course description inside a scrollable, bordered box
             <div className="h-full w-full rounded-lg p-4 overflow-y-scroll no-scrollbar">
               <h2 className="text-[2vw] text-white font-semibold mb-4">
                 {content[selectedIndex].name}

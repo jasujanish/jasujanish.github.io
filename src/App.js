@@ -14,22 +14,13 @@ import photo7 from './images/photo7.jpg';
 import photo8 from './images/photo3.jpg';
 import GridElement from './components/grid_element.js';
 import MobileElement from './components/mobile_element.js';
-// import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
-
-/** TO DO LIST
- * 1. Build courses, projects, and about me pages
- * 2. Fix tailwind CSS so it works from mobile to giant screens
- *  2a. (use screen resolution changer to ensure it works for large screens)
- * 3. Fix tailwind CSS so margins and everything else defined by constants are defined by percentages instead
- */
 
 // Image sources for grid elements
 const currentImages = [photo8, photo7, photo6, photo5];
-// const currentImages = [vibes, vibes, vibes, vibes];
 
 // Text descriptions for grid elements
-const currentTexts = ["About Me", "Projects", "Resume", "Courses"];
+const currentTexts = ["About Me", "Projects", "LinkedIn", "Courses"];
 
 // Links for grid elements
 const currentLinkedIn = "https://www.linkedin.com/in/nishchay-j/";
@@ -78,7 +69,6 @@ function NotFoundPage() {
  * @returns HomePage component
  */
 function HomePage() {
-  // State to randomly choose a set of images
   return (
     <div className="min-h-screen flex flex-col bg-black text-white font-mono overflow-hidden">
       <header
@@ -95,12 +85,9 @@ function HomePage() {
             w-3/4            
             p-[5%]
         ">
-          {/* Rotating Greeting, Hover Gradient */}
           <h1 className="font-sans text-balance">
             <Greeting />
           </h1>
-
-          {/* Description */}
           <div className="text-balance text-gray-300 leading-relaxed font-light text-[1.5vw]">
             <p className="hover:cursor-text">Sophomore at Carnegie Mellon University</p>
             <p className="hover:cursor-text">Passionate about machine learning, deep learning, robotics, and computer systems</p>
@@ -173,12 +160,9 @@ function MobilePage() {
             w-full           
             p-[5%]
         "> 
-          {/* Rotating Greeting, Hover Gradient */}
           <h1 className="font-semibold font-sans mb-12">
             <MobileGreeting />
           </h1>
-
-          {/* Description */}
           <div className="text-balance text-gray-300 text-lg md:text-xl lg:text-2xl leading-relaxed font-light">
             <p>Sophomore at Carnegie Mellon University</p>
             <p>Passionate about machine learning, deep learning, robotics, and computer systems</p>

@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const currentLinkedIn = "https://www.linkedin.com/in/nishchay-j/";
+
+// Mobile alternative to the grid element on the home page
+// Displays a background image with the links overlaid on top
 const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
   return (
     <div
@@ -17,7 +20,6 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
         backgroundImage: `url(${image_background})`
       }}
     >
-      {/* Background overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center">
         <Link
             to={list_of_links[0]}

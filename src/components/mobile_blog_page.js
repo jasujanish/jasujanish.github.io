@@ -2,17 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 /**
- * Mobile‑first version of the courses screen.
- * Use this component on a dedicated route (e.g. "/courses-mobile")
- * or render it conditionally when window.innerWidth < 768.
+ * Mobile version of the blog screen
  */
 export default function MobileBlogPage() {
-  const navigate = useNavigate();
-
-  // ---------------------------------------------------------------------------
-  // Content
-  // ---------------------------------------------------------------------------
-  
+  // Blog Content
   const content = [
     {
         name: "Fun Facts",
@@ -31,12 +24,17 @@ export default function MobileBlogPage() {
         term: "2025"
     },
   ];
-  const [modalIndex, setModalIndex] = useState(null); // null = no modal
 
-  const openModal = (idx) => setModalIndex(idx);
+  // Manage the pop-up item
+  const [modalIndex, setModalIndex] = useState(null); // null = no modal
+  const openModal = (idx) => setModalIndex(idx); 
   const closeModal = () => setModalIndex(null);
+  
+  // Manage navigation
+  const navigate = useNavigate();
   const returnHome = () => navigate("/");
 
+  // Button to select any item
   const CourseButton = ({ course, idx }) => (
     <button
       onClick={() => openModal(idx)}
@@ -51,7 +49,7 @@ export default function MobileBlogPage() {
     <>
       <div className="min-h-screen w-full bg-black text-white">
         <div className="px-[5%] py-8">
-          {/* Header / instructions */}
+          {/* Header */}
           <div className="flex justify-between items-center mb-12 p-4">
             <h1 className="text-4xl text-gray-200 font-semibold leading-tight">
               Tap to Learn More
@@ -78,7 +76,7 @@ export default function MobileBlogPage() {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Pop-up Item */}
       {modalIndex !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
           <div className="relative flex flex-col bg-stone-800 rounded-2xl shadow-2xl w-full max-w-lg max-h-[80vh]">

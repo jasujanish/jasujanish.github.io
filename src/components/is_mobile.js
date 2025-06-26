@@ -1,6 +1,7 @@
 // hooks/useIsMobile.js
 import { useState, useEffect } from "react";
 
+// Custom hook to determine if the viewport is mobile-sized (1024px or less by default)
 export default function useIsMobile(breakpoint = 1024) {
     const [isMobile, setIsMobile] = useState(
         typeof window !== "undefined" ? window.innerWidth < breakpoint : false  
