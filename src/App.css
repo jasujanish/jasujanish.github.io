@@ -12,6 +12,66 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@keyframes fadeBg {
+  0% {
+    background-color: #F2F3F4;
+  }
+  50% {
+    background-color: #f7f5ef; /* Cream */
+  }
+  100% {
+    background-color: #F2F3F4;
+  }
+}
+
+.bg-fade-cream {
+  animation: fadeBg 8s ease-in-out infinite;
+}
+
+@keyframes hueShift {
+  0%, 100%  { filter: hue-rotate(0deg); }
+  50%       { filter: hue-rotate(15deg); }
+}
+.bg-hue-shift {
+  background-color: #F2F3F4;
+  animation: hueShift 8s ease-in-out infinite;
+}
+@keyframes gradientBreathe {
+  0%   { background: linear-gradient(0deg,   #F2F3F4, #F2F3F4); }
+  5%   { background: linear-gradient(18deg,  #F2F3F4, #f1f3f2); }
+  10%  { background: linear-gradient(36deg,  #F2F3F4, #f0f3f0); }
+  15%  { background: linear-gradient(54deg,  #F2F3F4, #f0f3ef); }
+  20%  { background: linear-gradient(72deg,  #F2F3F4, #f0f3ee); }
+  25%  { background: linear-gradient(90deg,  #F2F3F4, #f0f3ed); }
+  30%  { background: linear-gradient(108deg, #F2F3F4, #f0f3ec); }
+  35%  { background: linear-gradient(126deg, #F2F3F4, #f0f3eb); }
+  40%  { background: linear-gradient(144deg, #F2F3F4, #eff3ea); }
+  45%  { background: linear-gradient(162deg, #F2F3F4, #eff3ea); }
+  50%  { background: linear-gradient(180deg, #F2F3F4, #eff3ea); }
+  55%  { background: linear-gradient(198deg, #F2F3F4, #eff3ea); }
+  60%  { background: linear-gradient(216deg, #F2F3F4, #eff3ea); }
+  65%  { background: linear-gradient(234deg, #F2F3F4, #f0f3eb); }
+  70%  { background: linear-gradient(252deg, #F2F3F4, #f0f3ec); }
+  75%  { background: linear-gradient(270deg, #F2F3F4, #f0f3ed); }
+  80%  { background: linear-gradient(288deg, #F2F3F4, #f0f3ee); }
+  85%  { background: linear-gradient(306deg, #F2F3F4, #f0f3ef); }
+  90%  { background: linear-gradient(324deg, #F2F3F4, #f0f3f0); }
+  95%  { background: linear-gradient(342deg, #F2F3F4, #f1f3f2); }
+  100% { background: linear-gradient(360deg, #F2F3F4, #F2F3F4); }
+}
+
+.bg-gradient-breathe {
+  animation: gradientBreathe 16s ease-in-out infinite;
+}
+@keyframes fadeBgTri {
+  0%   { background-color: #F2F3F4; }
+  33%  { background-color: #f8f3e8; }
+  66%  { background-color: #e8f3f8; }
+  100% { background-color: #F2F3F4; }
+}
+.bg-fade-tri {
+  animation: fadeBgTri 12s ease-in-out infinite;
+}
 
 .App-header {
   background-color: #282c34;

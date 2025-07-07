@@ -233,17 +233,17 @@ function HomePage2() {
 
 function HomePage2() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F2F3F4] font-inter text-gray-900 tracking-tight">
+    <div className="min-h-screen flex flex-col bg-fade-cream font-inter text-gray-900 tracking-tight">
 
-      <header className="flex-none sticky top-0 bg-[#F2F3F4] backdrop-blur px-[7.5%] py-3">
+      <header className="flex-none sticky top-0 backdrop-blur px-[10%] py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="tracking-normal text-[1.2vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
+          <Link to="/" className="hover:cursor-no-drop tracking-normal text-[1.2vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full">
             Nishchay Jasuja
           </Link>
           <div className="flex flex-wrap gap-x-[5vw]">
             <Link
               to="/about"
-              className="text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               BLOG
             </Link>
@@ -251,19 +251,19 @@ function HomePage2() {
               href={currentLinkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               LINKEDIN
             </a>
             <Link
               to="/courses"
-              className="text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               COURSES
             </Link>
             <Link
               to="/projects"
-              className="text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               PROJECTS
             </Link>

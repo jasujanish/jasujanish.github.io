@@ -66,7 +66,7 @@ export default function ProjectsPage() {
   const currentLinkedIn = "https://www.linkedin.com/in/nishchay-j/";
   return (
     <div className="min-h-screen w-screen flex flex-col bg-[#F2F3F4]">
-      <header className="flex-none sticky top-0 bg-[#F2F3F4] backdrop-blur px-[7.5%] py-3 z-10">
+      <header className="flex-none sticky top-0 bg-[#F2F3F4] backdrop-blur px-[10%] py-3 z-10">
         <div className="flex items-center justify-between">
           <Link to="/" className="hover:cursor-pointer tracking-normal text-[1.2vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
             Nishchay Jasuja
