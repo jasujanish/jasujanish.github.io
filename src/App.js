@@ -176,10 +176,117 @@ function MobilePage() {
   );
 }
 
-/**
- * Sets up routing, returns home page to start
- * @Returns Home page with subpage routing
- */
+/*
+function HomePage2() {
+  return (
+    <div className="min-h-screen flex bg-[#F2F3F4] text-gray-900 font-inter tracking-tight">
+      <nav className="fixed top-0 left-0 right-0 px-[5%] pt-[1%] pb-[2%]">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="tracking-normal text-[1.2vw] font-light relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
+            Nishchay Jasuja
+          </Link>
+          <div className="flex flex-wrap gap-x-[5vw]">
+            <Link
+              to="/about"
+              className="text-[1.1vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              BLOG
+            </Link>
+            <a
+              href={currentLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[1.1vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              LINKEDIN
+            </a>
+            <Link
+              to="/courses"
+              className="text-[1.1vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              COURSES
+            </Link>
+            <Link
+              to="/projects"
+              className="text-[1.1vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              PROJECTS
+            </Link>
+          </div>
+
+        </div>
+      </nav>
+
+      <main className="flex-1 min-h-screen flex flex-col items-center justify-center text-center px-[33%]">
+        <h1>
+          <Greeting/>
+        </h1>
+        <div className="text-[1.5vw] font-light text-gray-600 leading-relaxed ">
+            <p className="hover:cursor-text">Sophomore at Carnegie Mellon University</p>
+            <p className="hover:cursor-text">Passionate about machine learning, deep learning, robotics, and computer systems</p>
+        </div>
+      </main>
+    </div>
+  );
+}
+*/
+
+function HomePage2() {
+  return (
+    <div className="min-h-screen flex flex-col bg-[#F2F3F4] font-inter text-gray-900 tracking-tight">
+
+      <header className="flex-none sticky top-0 bg-[#F2F3F4] backdrop-blur px-[7.5%] py-3">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="tracking-normal text-[1.2vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
+            Nishchay Jasuja
+          </Link>
+          <div className="flex flex-wrap gap-x-[5vw]">
+            <Link
+              to="/about"
+              className="text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              BLOG
+            </Link>
+            <a
+              href={currentLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              LINKEDIN
+            </a>
+            <Link
+              to="/courses"
+              className="text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              COURSES
+            </Link>
+            <Link
+              to="/projects"
+              className="text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              PROJECTS
+            </Link>
+          </div>
+
+        </div>
+      </header>
+
+      {/* ── Main Content ─────────────────────────────────────────────────────────────── */}
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-[5%] pb-[3%]">
+        {/* Added top padding on main to avoid being hidden behind fixed navbar */}
+        <h1 className='mt-0'>
+          <Greeting/>
+        </h1>
+        <div className="text-[2.2vw] font-light text-gray-600 w-[30ch]">
+            <p className="hover:cursor-text">Sophomore at Carnegie Mellon University Passionate about machine learning, deep learning, robotics, and computer systems</p>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+
 export default function App() {
   const isMobile = useIsMobile(1024);
 
@@ -187,7 +294,7 @@ export default function App() {
     <Router>
       <Routes>
         {/* Home page (grid + header) */}
-        <Route path="/" element={isMobile ? (<MobilePage />) : <HomePage />} />
+        <Route path="/" element={isMobile ? (<MobilePage />) : <HomePage2 />} />
 
         {/* Subpages */}
         <Route path="/about" element= {isMobile ? (<MobileBlogPage />) : <BlogPage />} />

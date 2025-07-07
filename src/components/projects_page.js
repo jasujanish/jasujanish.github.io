@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function ProjectsPage() {
+
   // Content for the projects page
   const content = [
     {
@@ -61,95 +63,107 @@ export default function ProjectsPage() {
     navigate("/"); // return to home page
   };
 
+  const currentLinkedIn = "https://www.linkedin.com/in/nishchay-j/";
   return (
-    // Main container
-    <div className="flex h-screen w-screen p-[5%] pl-[10%] pr-[10%] pt-[5%] bg-black text-white overflow-y-scroll font-mono"> 
-      {/* Page if the sidebar is collapsed */}
-      {!collapsed && 
-      <div className="w-3/10 h-full">
-        <ul className="h-full">
-            <li>
-                <div className="w-full h-full flex justify-between items-center p-2 align-items-center">
-                  <button
-                      onClick={returnHome}
-                      className = "relative text-left text-[1.1vw] rounded-full border-2 hover:border-white p-4 mb-4 font-light text-white hover:scale-110 transition-transform duration-300 after:absolute after:bottom-2 after:left-4 after:right-4 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)] hover:cursor-pointer"                  >
-                      Return to Home
-                  </button>
-                  <button
-                    onClick={toggleCollapsed}
-                    className="text-[1.9vw] p-4 hover:scale-150 hover:text-white transition-transform duration-300 ml-8 p-4 mb-4 hover:cursor-pointer"
-                  >
-                    ▶
-                  </button>
-                </div>
-            </li>
-          {content.map((course, idx) => (
-            <li key={idx}>
-              <button
-                onClick={() => toggleSelection(idx)}
-                className={`w-full flex justify-between items-center text-left rounded-full p-4 mb-4 font-light text-white hover:scale-x-115 transition-transform duration-300
-                  ${
-                    selectedIndex === idx
-                      ? "hover:cursor-no-drop relative after:absolute after:bottom-2 after:left-0 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 after:w-full font-semibold"
-                      : "relative after:absolute after:bottom-2 after:left-0 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 hover:after:w-full transition-all duration-200 hover:cursor-pointer "
-                  }`}
-              >
-                <span className="text-balance text-stone-100 text-[0.9vw]"> {course.name}</span>
-                <span className="text-stone-200 text-[0.9vw] ml-8">{course.term}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-      }
-      {/* Page if the sidebar is not collapsed */}
-      {collapsed ?  
-        <div className="flex-col justify-between h-full pl-[15%] pt-[2%] pr-[15%] sticky top-[0%] align-center"> 
-            <div className="w-full flex justify-between items-center align-items-center max-w-1/3">
+    <div className="min-h-screen w-screen flex flex-col bg-[#F2F3F4]">
+      <header className="flex-none sticky top-0 bg-[#F2F3F4] backdrop-blur px-[7.5%] py-3 z-10">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="hover:cursor-pointer tracking-normal text-[1.2vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
+            Nishchay Jasuja
+          </Link>
+          <div className="flex flex-wrap gap-x-[5vw]">
+            <Link
+              to="/about"
+              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              BLOG
+            </Link>
+            <a
+              href={currentLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              LINKEDIN
+            </a>
+            <Link
+              to="/courses"
+              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              COURSES
+            </Link>
+            <Link
+              to="/projects"
+              className="hover:cursor-no-drop text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full"
+            >
+              PROJECTS
+            </Link>
+          </div>
+
+        </div>
+      </header>
+      <div className="flex py-[5%] px-[10%] bg-[#F2F3F4] overflow-y-scroll font-mono z-2"> 
+        {/* Page if the sidebar is collapsed */}
+        {!collapsed && 
+        <div className="h-full">
+          <ul className="h-full">
+            {content.map((course, idx) => (
+              <li key={idx}>
                 <button
-                    onClick={returnHome}
-                    className = "relative text-left text-[1.1vw] rounded-full border-2 hover:border-white p-4 mb-4 font-light text-white hover:scale-110 transition-transform duration-300 after:absolute after:bottom-2 after:left-4 after:right-4 after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)] hover:cursor-pointer"                  >
-                    Return to Home
-                </button>
-                <button
-                  onClick={toggleCollapsed}
-                  className="text-[1.9vw] p-4 hover:scale-150 hover:text-white transition-transform duration-300 ml-8 p-4 mb-4 hover:cursor-pointer"
+                  onClick={() => toggleSelection(idx)}
+                  className={`w-full flex justify-between items-center text-left mb-10 font-light
+                    ${
+                      selectedIndex === idx
+                        ? "hover:cursor-no-drop relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full font-semibold"
+                        : "relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full transition-all duration-200 hover:cursor-pointer "
+                    }`}
                 >
-                  ◀
+                  <span className="text-balance text-gray-700 text-[0.9vw]"> {course.name}</span>
+                  <span className="text-gray-600 text-[0.9vw] ml-[5vw]">{course.term}</span>
                 </button>
-            </div>
-            <div className="h-full w-full rounded-lg p-4 overflow-y-scroll no-scrollbar pt-[5%]">
-              <h2 className="text-[2.8vw] text-white font-semibold mb-4">
-                {content[selectedIndex].name}
-              </h2>
-              <p className="text-[1.2vw] text-gray-300 whitespace-pre-wrap font-normal text-balance">
-                {content[selectedIndex].description}
-              </p>
-            </div>
-          
+              </li>
+            ))}
+          </ul>
         </div>
-        : 
-        <div className="flex-1 h-full pl-[10%] pt-[7%] sticky top-[0%] pr-[7%] align-center"> 
-          {selectedIndex === null ? ( 
-            <div className="h-full flex items-center justify-center">
-              <p className="text-white text-balance text-[5vw] text-center font-thin">
-                <p >Select & Deselect Items to Learn More</p>
-                <br />
-                <button className = "underline hover:bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 hover:bg-clip-text hover:text-transparent hover:scale-x-110 transition-all duration-300 hover:cursor-pointer" onClick={returnHome}>Return to Home</button>
-              </p>
-            </div>
-          ) : (
-            <div className="h-full w-full rounded-lg p-4 overflow-y-scroll no-scrollbar">
-              <h2 className="text-[2vw] text-white font-semibold mb-4">
+        }
+        {/* Page if the sidebar is not collapsed */}
+        {collapsed ?  
+          <div className="flex-col justify-between h-full px-[10%]"> 
+            <div className="flex justify-between w-full mb-10">
+              <p className="text-[2.4vw] text-gray-800 font-normal">
                 {content[selectedIndex].name}
-              </h2>
-              <p className="text-[1vw] text-gray-300 whitespace-pre-wrap font-normal text-balance">
-                {content[selectedIndex].description}
               </p>
+              <button
+                onClick={toggleCollapsed}
+                className="text-[2.4vw] hover:scale-150 hover:text-gray-800 transition-transform duration-300 hover:cursor-pointer"
+              >
+                ◀
+              </button>
             </div>
-          )}
-        </div>
-      }
-    </div> 
+            
+            <p className="text-[1.2vw] text-gray-600 font-normal">
+              {content[selectedIndex].description}
+            </p>       
+          </div>
+          : 
+          <div className="flex-1 h-full pl-[15%]"> 
+              <div className="h-full w-full rounded-lg overflow-y-scroll no-scrollbar">
+                <h2 className="text-[1.5vw] text-gray-800 font-normal">
+                  {content[selectedIndex].name}                   
+                    <button
+                      onClick={toggleCollapsed}
+                      className="text-[1.5vw] hover:scale-150 hover:text-gray-800 transition-transform duration-300 ml-10 mb-5 hover:cursor-pointer"
+                    >
+                      ▶
+                    </button>
+                </h2>
+                <p className="text-[1vw] text-gray-600 whitespace-pre-wrap font-normal text-balance">
+                  {content[selectedIndex].description}
+                </p>
+              </div>
+          </div>
+        }
+      </div> 
+    </div>
   );
 }
