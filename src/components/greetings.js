@@ -27,8 +27,8 @@ const Greeting = () => {
   }, []);
 
   return <div className="font-light">
-            <h1 className={`text-[6vw] mb-[-2vw] text-stone-700 font-mono transition-opacity duration-500 ${fade}`}> {phrases[idx]} </h1>
-            <h1 className="text-[10vw] text-black mb-[0.5vw]"> <span className="hover:cursor-text">I'm  Nish </span> </h1>
+            <h1 className={`text-[3.9vw] mb-[-2vw] text-stone-600 font-mono transition-opacity duration-500 ${fade}`}> {phrases[idx]} </h1>
+            <h1 className="text-[9.6vw] text-black"> <span className="hover:cursor-text">I'm  Nish </span> </h1>
         </div>
 };
 

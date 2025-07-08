@@ -70,16 +70,16 @@ export default function CoursesPage() {
   const toggleCollapsed = () => setCollapsed((prev) => !prev); // toggle the sidebar
   const currentLinkedIn = "https://www.linkedin.com/in/nishchay-j/";
   return (
-    <div className="min-h-screen w-screen flex flex-col bg-[#F2F3F4]">
+    <div className="min-h-screen w-screen flex flex-col bg-[#F2F3F4] font-inter">
       <header className="flex-none sticky top-0 bg-[#F2F3F4] backdrop-blur px-[10%] py-3 z-10">
         <div className="flex items-center justify-between">
-          <Link to="/" className="hover:cursor-pointer tracking-normal text-[1.2vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
+          <Link to="/" className="hover:cursor-pointer tracking-normal text-[1.24vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
             Nishchay Jasuja
           </Link>
           <div className="flex flex-wrap gap-x-[5vw]">
             <Link
               to="/about"
-              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               BLOG
             </Link>
@@ -87,19 +87,19 @@ export default function CoursesPage() {
               href={currentLinkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               LINKEDIN
             </a>
             <Link
               to="/courses"
-              className="hover:cursor-no-drop text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full"
+              className="hover:cursor-no-drop text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full"
             >
               COURSES
             </Link>
             <Link
               to="/projects"
-              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               PROJECTS
             </Link>
@@ -107,7 +107,7 @@ export default function CoursesPage() {
 
         </div>
       </header>
-      <div className="flex py-[5%] px-[10%] bg-[#F2F3F4] overflow-y-scroll font-mono z-2"> 
+      <div className="flex py-[5%] px-[10%] bg-[#F2F3F4] overflow-y-scroll z-2"> 
         {/* Page if the sidebar is collapsed */}
         {!collapsed && 
         <div className="h-full">
@@ -119,12 +119,12 @@ export default function CoursesPage() {
                   className={`w-full flex justify-between items-center text-left mb-10 font-light
                     ${
                       selectedIndex === idx
-                        ? "hover:cursor-no-drop relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full font-semibold"
-                        : "relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full transition-all duration-200 hover:cursor-pointer "
+                        ? "hover:cursor-no-drop relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full text-black"
+                        : "relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full transition-all duration-200 hover:cursor-pointer text-gray-600"
                     }`}
                 >
-                  <span className="text-balance text-gray-700 text-[0.9vw]"> {course.name}</span>
-                  <span className="text-gray-600 text-[0.9vw] ml-[5vw]">{course.term}</span>
+                  <span className="text-balance text-[0.9vw]"> {course.name}</span>
+                  <span className="text-[0.9vw] ml-[5vw]">{course.term}</span>
                 </button>
               </li>
             ))}
@@ -133,7 +133,7 @@ export default function CoursesPage() {
         }
         {/* Page if the sidebar is not collapsed */}
         {collapsed ?  
-          <div className="flex-col justify-between h-full px-[10%]"> 
+          <div className="flex-col justify-between h-full w-full"> 
             <div className="flex justify-between w-full mb-10">
               <p className="text-[2.4vw] text-gray-800 font-normal">
                 {content[selectedIndex].name}
@@ -146,7 +146,7 @@ export default function CoursesPage() {
               </button>
             </div>
             
-            <p className="text-[1.2vw] text-gray-600 font-normal">
+            <p className="text-[1.24vw] text-gray-600 font-normal whitespace-pre-wrap text-balance">
               {content[selectedIndex].description}
             </p>       
           </div>

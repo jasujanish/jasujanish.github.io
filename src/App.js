@@ -8,16 +8,9 @@ import MobileProjectsPage from './components/mobile_projects_page.js';
 import BlogPage from './components/blog_page.js';
 import MobileBlogPage from './components/mobile_blog_page.js';
 import useIsMobile from './components/is_mobile.js';
-import photo5 from './images/photo8.jpg';
-import photo6 from './images/photo5.jpg';
-import photo7 from './images/photo7.jpg';
-import photo8 from './images/photo3.jpg';
 import GridElement from './components/grid_element.js';
 import MobileElement from './components/mobile_element.js';
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
-
-// Image sources for grid elements
-const currentImages = [photo8, photo7, photo6, photo5];
 
 // Text descriptions for grid elements
 const currentTexts = ["About Me", "Projects", "LinkedIn", "Courses"];
@@ -60,121 +53,6 @@ function NotFoundPage() {
   );
 }
 
-/**
- * Home Page component
- * 1. Rotating greeting
- * 2. Name with hover gradient
- * 3. Description text
- * 4. Grid of subpages (or list for mobile)
- * @returns HomePage component
- */
-function HomePage() {
-  return (
-    <div className="min-h-screen flex flex-col bg-black text-white font-mono overflow-hidden">
-      <header
-        className="
-          relative
-          flex items-center justify-center   
-          w-full h-2/5
-          bg-cover bg-center
-          text-center    
-          flex-grow                     
-        "
-      >
-        <div className="
-            w-3/4            
-            p-[5%]
-        ">
-          <h1 className="font-sans text-balance">
-            <Greeting />
-          </h1>
-          <div className="text-balance text-gray-300 leading-relaxed font-light text-[1.5vw]">
-            <p className="hover:cursor-text">Sophomore at Carnegie Mellon University</p>
-            <p className="hover:cursor-text">Passionate about machine learning, deep learning, robotics, and computer systems</p>
-          </div>
-        </div>
-      </header>
-      <>
-      <div className="cursor-pointer w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 p-0 mt-auto">
-            <Link
-              to={currentRoutes[0]}
-              key={currentRoutes[0]}
-              className="block"
-            >
-              <GridElement
-                image_background={currentImages[0]}
-                text={currentTexts[0]}
-              />
-            </Link>
-            <Link
-              to={currentRoutes[1]}
-              key={currentRoutes[1]}
-              className="block"
-            >
-              <GridElement
-                image_background={currentImages[1]}
-                text={currentTexts[1]}
-              />
-            </Link>
-            <a href={currentLinkedIn} target="_blank" rel="noopener noreferrer">
-              <GridElement image_background={currentImages[2]} text={currentTexts[2]} />
-            </a>
-            <Link
-              to={currentRoutes[3]}
-              key={currentRoutes[3]}
-              className="block"
-            >
-              <GridElement
-                image_background={currentImages[3]}
-                text={currentTexts[3]}
-              />
-            </Link>
-        </div>
-      </>
-    </div>
-  );
-}
-
-/**
- * Home Page component
- * 1. Rotating greeting
- * 2. Name with hover gradient
- * 3. Description text
- * 4. Grid of subpages (or list for mobile)
- * @returns HomePage component
- */
-function MobilePage() {
-  return (
-    <div className="min-h-screen flex flex-col bg-black text-white font-mono overflow-hidden">
-      <header
-          className="
-          relative
-          flex items-center justify-center   
-          w-full h-2/5
-          bg-cover bg-center
-          text-center    
-          flex-grow                     
-        "
-        >
-        <div className="
-            w-full           
-            p-[5%]
-        "> 
-          <h1 className="font-semibold font-sans mb-12">
-            <MobileGreeting />
-          </h1>
-          <div className="text-balance text-gray-300 text-lg md:text-xl lg:text-2xl leading-relaxed font-light">
-            <p>Sophomore at Carnegie Mellon University</p>
-            <p>Passionate about machine learning, deep learning, robotics, and computer systems</p>
-          </div>
-        </div>
-      </header>
-      <div className="w-full p-0 mt-auto">
-            <MobileElement image_background={photo7} list_of_texts = {currentTexts} list_of_links={currentRoutes}/>
-      </div>
-    </div>
-  );
-}
 
 /*
 function HomePage2() {
@@ -234,16 +112,15 @@ function HomePage2() {
 function HomePage2() {
   return (
     <div className="min-h-screen flex flex-col bg-fade-cream font-inter text-gray-900 tracking-tight">
-
       <header className="flex-none sticky top-0 backdrop-blur px-[10%] py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="hover:cursor-no-drop tracking-normal text-[1.2vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full">
+          <Link to="/" className="hover:cursor-no-drop tracking-normal text-[1.24vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full">
             Nishchay Jasuja
           </Link>
           <div className="flex flex-wrap gap-x-[5vw]">
             <Link
               to="/about"
-              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               BLOG
             </Link>
@@ -251,19 +128,19 @@ function HomePage2() {
               href={currentLinkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               LINKEDIN
             </a>
             <Link
               to="/courses"
-              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               COURSES
             </Link>
             <Link
               to="/projects"
-              className="hover:cursor-pointer text-[1.2vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               PROJECTS
             </Link>
@@ -278,8 +155,8 @@ function HomePage2() {
         <h1 className='mt-0'>
           <Greeting/>
         </h1>
-        <div className="text-[2.2vw] font-light text-gray-600 w-[30ch]">
-            <p className="hover:cursor-text">Sophomore at Carnegie Mellon University Passionate about machine learning, deep learning, robotics, and computer systems</p>
+        <div className="text-[2.5vw] font-light text-stone-600 w-[30ch]">
+            <p className="hover:cursor-text tracking-normal">Sophomore at Carnegie Mellon University Passionate about machine learning, deep learning, robotics, and computer systems</p>
         </div>
       </main>
     </div>
@@ -287,6 +164,71 @@ function HomePage2() {
 }
 
 
+/**
+ * Home Page component
+ * 1. Rotating greeting
+ * 2. Name with hover gradient
+ * 3. Description text
+ * 4. Grid of subpages (or list for mobile)
+ * @returns HomePage component
+ */
+function MobilePage1() {
+  return (
+    <div className="h-screen w-full py-[10%] px-[15%] flex flex-col bg-fade-cream font-inter justify-center text-center align-center">
+      <h1 className="mb-5">
+          <MobileGreeting />
+      </h1>
+      {/* <div className = "w-full flex-col"> */}
+        <div className="text-balance text-stone-600 text-lg md:text-xl lg:text-2xl leading-relaxed font-light mb-5">
+          <p>Sophomore at Carnegie Mellon University</p>
+          <p>Passionate about machine & deep learning, robotics, and computer systems</p>
+        </div>
+<div className="grid grid-cols-2 gap-4 w-full max-w-[30ch] justify-between mx-auto">
+  {currentRoutes.map((route, idx) => (
+    <Link
+      to={route}
+      key={idx}
+      className="
+        text-balance text-stone-600 text-lg md:text-xl lg:text-2xl leading-relaxed font-light
+        border border-gray-300 rounded-xl px-4 py-2 flex items-center justify-center
+        mb-0
+      "
+    >
+      {currentTexts[idx]}
+    </Link>
+  ))}
+</div>
+    </div>
+  );
+}
+
+// Variant 6: Tech-focused monospace links
+function MobilePage3() {
+  return (
+    <div className="h-screen w-full flex flex-col bg-fade-cream font-inter justify-center items-center text-center">
+      <p className="mb-10">
+        <MobileGreeting />
+      </p>
+      <div className="text-2xl md:text-3xl lg:text-4xl text-stone-600 font-inter font-light mb-5 max-w-[75%] text-balance w-[30ch]">
+        <p>Sophomore at Carnegie Mellon Passionate about machine learning, computer systems, and robotics</p>
+      </div>
+      <div className="flex flex-col w-full min-w-[50%] max-w-[75%] w-[30ch]">
+        {currentRoutes.map((route, idx) => (
+          <Link
+            to={route}
+            key={idx}
+            className="text-2xl md:text-3xl lg:text-4xl text-stone-600 font-inter font-light px-4 py-2 border border-gray-300 rounded-lg mb-2"
+          >
+            {currentTexts[idx]}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+//
+//
 export default function App() {
   const isMobile = useIsMobile(1024);
 
@@ -294,7 +236,7 @@ export default function App() {
     <Router>
       <Routes>
         {/* Home page (grid + header) */}
-        <Route path="/" element={isMobile ? (<MobilePage />) : <HomePage2 />} />
+        <Route path="/" element={isMobile ? (<MobilePage3 />) : <HomePage2 />} />
 
         {/* Subpages */}
         <Route path="/about" element= {isMobile ? (<MobileBlogPage />) : <BlogPage />} />

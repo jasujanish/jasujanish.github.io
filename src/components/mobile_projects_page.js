@@ -64,23 +64,23 @@ export default function MobileProjectsPage() {
       onClick={() => openModal(idx)}
       className="w-full flex justify-between items-center text-left p-4 mb-4 text-white"
     >
-      <span className="ml-2 text-balance text-stone-100 text-xl font-normal"> {course.name}</span>
-      <span className="mr-2 text-stone-200 text-xl ml-12 font-normal">{course.term}</span>
+      <span className="ml-2 text-balance text-stone-700 text-xl font-normal"> {course.name}</span>
+      <span className="mr-2 text-stone-700 text-xl ml-12 font-normal">{course.term}</span>
     </button>
   );
 
   return (
     <>
-      <div className="min-h-screen w-full bg-black text-white">
+      <div className="min-h-screen w-full bg-[#F2F3F4] text-white">
         <div className="px-[5%] py-8">
           {/* Header */}
-          <div className="flex justify-between items-center mb-12 p-4">
-            <h1 className="text-4xl text-gray-200 font-semibold leading-tight">
+          <div className="flex justify-between items-center mb-8 p-4">
+            <h1 className="text-4xl text-stone-700 font-semibold leading-tight">
               Tap to Learn More
             </h1>
             <button
               onClick={returnHome}
-              className="text-gray-300 transition-colors duration-200 p-2"
+              className="text-stone-800 transition-colors duration-200 p-2"
               aria-label="Return to Home"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" className="w-8 h-8">
@@ -102,12 +102,12 @@ export default function MobileProjectsPage() {
 
       {/* Pop-up Item */}
       {modalIndex !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
-          <div className="relative flex flex-col bg-stone-800 rounded-2xl shadow-2xl w-full max-w-lg max-h-[80vh]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md">
+          <div className="relative flex flex-col bg-stone-100 rounded-2xl shadow-2xl w-full max-w-lg max-h-[80vh]">
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-gray-400 hover:text-gray-300 transition-colors duration-200 p-4 z-10"
+              className="absolute top-2 right-2 text-stone-800 transition-colors duration-200 p-4 z-10"
               aria-label="Close course details"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
@@ -117,8 +117,8 @@ export default function MobileProjectsPage() {
 
             {/* Course Content */}
             <div className="p-10 overflow-y-auto">
-              <h2 className="text-2xl font-semibold mb-4 text-white">{content[modalIndex].name}</h2>
-              <p className="text-gray-300 whitespace-pre-wrap text-xl text-balance">{content[modalIndex].description}</p>
+              <h2 className="text-2xl font-semibold mb-4 text-stone-800">{content[modalIndex].name}</h2>
+              <p className="text-stone-800 whitespace-pre-wrap text-xl text-balance">{content[modalIndex].description}</p>
             </div>
           </div>
         </div>

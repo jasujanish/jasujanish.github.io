@@ -16,17 +16,13 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
         overflow-hidden
         group
       "
-      style={{
-        backgroundImage: `url(${image_background})`
-      }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center">
+      <div className="absolute inset-0 bg-opacity-60 flex flex-col justify-center items-center">
         <Link
             to={list_of_links[0]}
             key={0}
             className="
-              text-white
-              font-mono
+              text-stone-600
               text-xl
               text-center
               mb-4
@@ -38,8 +34,7 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
             to={list_of_links[1]}
             key={1}
             className="
-              text-white
-              font-mono
+              text-stone-600
               text-xl
               text-center
               mb-4
@@ -49,8 +44,7 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
           </Link>
           <a href={currentLinkedIn} target="_blank" rel="noopener noreferrer"
             className="
-              text-white
-              font-mono
+              text-stone-600
               text-xl
               text-center
               mb-4
@@ -62,7 +56,7 @@ const MobileElement = ({ image_background, list_of_texts, list_of_links }) => {
             to={list_of_links[3]}
             key={3}
             className="
-              text-white
+              text-stone-600
               font-mono
               text-xl
               text-center
