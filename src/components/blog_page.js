@@ -75,25 +75,115 @@ function BlogList() {
   );
 }
 
-const CurrBlogPage = ({slug}) => {
-  const post = content.find(p => p.slug === slug);
-
-  if(post !== undefined){
-    return (    <p>hi</p>    );
-  }
-  else{
-    return (
-      <div className='flex flex-col justify-center items-center w-1/2 mx-auto'>
-        <SearchBar />
-        <BlogList />
-      </div>
-    );
-  }
-}
-
 export default function BlogPage() {
   const currentLinkedIn = "https://www.linkedin.com/in/nishchay-j/";
   const slug = useParams().slug;
+  const post = content.find(p => p.slug === slug);
+  const navigate = useNavigate();
+  if(post !== undefined){
+    return (
+    <div className="min-h-screen w-screen flex flex-col bg-[#fffefc] font-inter">
+      <header className="flex-none sticky top-0 backdrop-blur px-[10%] py-3 z-50">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="hover:cursor-pointer tracking-normal text-[1.24vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
+            Nishchay Jasuja
+          </Link>
+          <div className="flex flex-wrap gap-x-[5vw]">
+            <Link
+              to="/about/main"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              BLOG
+            </Link>
+            <a
+              href={currentLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              LINKEDIN
+            </a>
+            <Link
+              to="/courses"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              COURSES
+            </Link>
+            <Link
+              to="/projects"
+              className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              PROJECTS
+            </Link>
+          </div>
+
+        </div>
+      </header>
+
+      <div className="flex flex-col justify-between items-center w-1/2 mx-auto p-[3%]">
+        <h1 className="font-mono text-gray-800 font-bold text-2xl mb-2">{post.name}</h1>
+        <p className="font-mono text-gray-600 font-light text-sm mb-2">{post.date} · {post.time}</p>
+        <div 
+          className="m-10"><img src={post.image} alt={post.name} className="w-full h-auto rounded-lg" />
+          <p className = "text-gray-500 text-center font-light font-sans m-1 text-sm"> {post.image_caption}</p>
+        </div>
+        <div className="font-sans text-gray-700 font-light text-md">{post.description}</div>
+        <div className ="font-sans text-gray-800 font-light text-md mt-10">
+          <span
+          className="text-blue-600 hover:text-blue-800 underline hover:cursor-pointer self-start"
+          onClick={() => navigate('/about/main')}> Back to Blog
+          </span> 
+        </div>
+      </div>
+      </div>
+    );
+  }
+  else{
+    return (
+      <div className="min-h-screen w-screen flex flex-col bg-[#fffefc] font-inter">
+        <header className="flex-none sticky top-0 backdrop-blur px-[10%] py-3 z-50">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="hover:cursor-pointer tracking-normal text-[1.24vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
+              Nishchay Jasuja
+            </Link>
+            <div className="flex flex-wrap gap-x-[5vw]">
+              <Link
+                to="/about/main"
+                className="hover:cursor-no-drop text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full"
+              >
+                BLOG
+              </Link>
+              <a
+                href={currentLinkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                LINKEDIN
+              </a>
+              <Link
+                to="/courses"
+                className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                COURSES
+              </Link>
+              <Link
+                to="/projects"
+                className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                PROJECTS
+              </Link>
+            </div>
+          </div>
+        </header>
+        <div className='flex flex-col justify-center items-center w-1/2 mx-auto'>
+          <SearchBar />
+          <BlogList />
+        </div>
+      </div>
+    );
+  }
+  /*
   return (
     <div className="min-h-screen w-screen flex flex-col bg-[#fffefc] font-inter">
       <header className="flex-none sticky top-0 backdrop-blur px-[10%] py-3 z-50">
@@ -135,6 +225,7 @@ export default function BlogPage() {
     <CurrBlogPage slug={slug} />
     </div>
   );
+  */
 }
 
 /*
