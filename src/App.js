@@ -12,7 +12,7 @@ import GridElement from './components/grid_element.js';
 import MobileElement from './components/mobile_element.js';
 import FadeIn from './components/fade_in.js';
 import { Link } from "react-router-dom";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 // Text descriptions for grid elements
 const currentTexts = ["About Me", "Projects", "LinkedIn", "Courses"];
@@ -180,7 +180,7 @@ function MobilePage3() {
 //
 export default function App() {
   const isMobile = useIsMobile(1024);
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: '/',
       element: (isMobile ? (<MobilePage3 />) : <HomePage2 />)
