@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 export default function ProjectsPage() {
 
   // Content for the projects page
@@ -65,15 +64,15 @@ export default function ProjectsPage() {
 
   const currentLinkedIn = "https://www.linkedin.com/in/nishchay-j/";
   return (
-    <div className="min-h-screen w-screen flex flex-col bg-[#F2F3F4] font-inter">
-      <header className="flex-none sticky top-0 bg-[#F2F3F4] backdrop-blur px-[10%] py-3 z-10">
+    <div className="min-h-screen w-screen flex flex-col bg-[#fffefc] font-inter">
+      <header className="flex-none sticky top-0 backdrop-blur px-[10%] py-3 z-10">
         <div className="flex items-center justify-between">
           <Link to="/" className="hover:cursor-pointer tracking-normal text-[1.24vw] font-normal relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
             Nishchay Jasuja
           </Link>
           <div className="flex flex-wrap gap-x-[5vw]">
             <Link
-              to="/about"
+              to="/about/main"
               className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               BLOG
@@ -102,7 +101,7 @@ export default function ProjectsPage() {
 
         </div>
       </header>
-      <div className="flex py-[5%] px-[10%] bg-[#F2F3F4] overflow-y-scroll z-2"> 
+      <div className="flex py-[5%] px-[10%] overflow-y-scroll z-2"> 
         {/* Page if the sidebar is collapsed */}
         {!collapsed && 
         <div className="h-full">

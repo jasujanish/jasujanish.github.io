@@ -10,7 +10,9 @@ import MobileBlogPage from './components/mobile_blog_page.js';
 import useIsMobile from './components/is_mobile.js';
 import GridElement from './components/grid_element.js';
 import MobileElement from './components/mobile_element.js';
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import FadeIn from './components/fade_in.js';
+import { Link } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Text descriptions for grid elements
 const currentTexts = ["About Me", "Projects", "LinkedIn", "Courses"];
@@ -39,11 +41,11 @@ function UnderConstructionPage() {
 // Not found page (in case of invalid route)
 function NotFoundPage() {
   return (
-    <div className="min-h-screen min-w-screen flex items-center justify-center bg-black text-white p-8">
+    <div className="min-h-screen min-w-screen flex items-center justify-center bg-fade text-stone-800 p-8">
       <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">      
         <Link
         to="/"
-        className="text-white hover:bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 hover:bg-clip-text hover:text-transparent hover:font-bold transition-all duration-300 hover:cursor-pointer"
+        className="text-stone-800 hover:text-blue-800 hover:cursor-pointer transition-all duration-300"
       >
         Page Not Found <br></br>
         Return Home
@@ -52,62 +54,6 @@ function NotFoundPage() {
     </div>
   );
 }
-
-
-/*
-function HomePage2() {
-  return (
-    <div className="min-h-screen flex bg-[#F2F3F4] text-gray-900 font-inter tracking-tight">
-      <nav className="fixed top-0 left-0 right-0 px-[5%] pt-[1%] pb-[2%]">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="tracking-normal text-[1.2vw] font-light relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full">
-            Nishchay Jasuja
-          </Link>
-          <div className="flex flex-wrap gap-x-[5vw]">
-            <Link
-              to="/about"
-              className="text-[1.1vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              BLOG
-            </Link>
-            <a
-              href={currentLinkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[1.1vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              LINKEDIN
-            </a>
-            <Link
-              to="/courses"
-              className="text-[1.1vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              COURSES
-            </Link>
-            <Link
-              to="/projects"
-              className="text-[1.1vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              PROJECTS
-            </Link>
-          </div>
-
-        </div>
-      </nav>
-
-      <main className="flex-1 min-h-screen flex flex-col items-center justify-center text-center px-[33%]">
-        <h1>
-          <Greeting/>
-        </h1>
-        <div className="text-[1.5vw] font-light text-gray-600 leading-relaxed ">
-            <p className="hover:cursor-text">Sophomore at Carnegie Mellon University</p>
-            <p className="hover:cursor-text">Passionate about machine learning, deep learning, robotics, and computer systems</p>
-        </div>
-      </main>
-    </div>
-  );
-}
-*/
 
 function HomePage2() {
   return (
@@ -119,7 +65,7 @@ function HomePage2() {
           </Link>
           <div className="flex flex-wrap gap-x-[5vw]">
             <Link
-              to="/about"
+              to="/about/main"
               className="hover:cursor-pointer text-[1.24vw] font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full"
             >
               BLOG
@@ -152,12 +98,15 @@ function HomePage2() {
       {/* ── Main Content ─────────────────────────────────────────────────────────────── */}
       <main className="flex-1 flex flex-col items-center justify-center text-center px-[5%] pb-[3%]">
         {/* Added top padding on main to avoid being hidden behind fixed navbar */}
-        <h1 className='mt-0'>
-          <Greeting/>
-        </h1>
-        <div className="text-[2.5vw] font-light text-stone-600 w-[30ch]">
-            <p className="hover:cursor-text tracking-normal">Sophomore at Carnegie Mellon University Passionate about machine learning, deep learning, robotics, and computer systems</p>
-        </div>
+        <FadeIn>
+        <Greeting className='mt-0'/>
+        </FadeIn>
+        <FadeIn delay={0.5}>
+        {<div className="text-[2.5vw] font-light text-stone-600 w-[30ch]">
+            <p className="hover:cursor-text tracking-normal">Sophomore at Carnegie Mellon University Interested in artifical intelligence, machine learning, computer systems, and robotics</p>
+        </div>}
+
+        </FadeIn>
       </main>
     </div>
   );
@@ -231,20 +180,28 @@ function MobilePage3() {
 //
 export default function App() {
   const isMobile = useIsMobile(1024);
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: (isMobile ? (<MobilePage3 />) : <HomePage2 />)
+    },
+    {
+      path: '/about/:slug',
+      element: isMobile ? <MobileCoursesPage /> : <BlogPage />
+    },
+    {
+      path: '/courses',
+      element: (isMobile ? (<MobileCoursesPage />) : <CoursePage/>)
+    },
+    {
+      path: '/projects',
+      element: (isMobile ? (<MobileProjectsPage />) : <ProjectsPage />)
+    },
+    {
+      path: '*',
+      element: <NotFoundPage />
+    },
 
-  return (
-    <Router>
-      <Routes>
-        {/* Home page (grid + header) */}
-        <Route path="/" element={isMobile ? (<MobilePage3 />) : <HomePage2 />} />
-
-        {/* Subpages */}
-        <Route path="/about" element= {isMobile ? (<MobileBlogPage />) : <BlogPage />} />
-        <Route path="/projects" element= {isMobile ? (<MobileProjectsPage />) : <ProjectsPage />} />
-        <Route path="/resume" element={<UnderConstructionPage />} />
-        <Route path="/courses" element= {isMobile ? (<MobileCoursesPage />) : <CoursePage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Router>
-  );
+  ]);
+  return (<RouterProvider router={router} />);
 }
