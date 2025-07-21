@@ -8,13 +8,13 @@ export default function NavBarDesktop({index}) {
     { to: "/projects/main", label: "PROJECTS", index: 3 },
   ];
     return (
-    <header className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto flex items-center justify-between sticky top-0 bg-opacity-50 backdrop-blur-md py-2 md:py-3 z-50 border-b-2 border-stone-100 border-opacity-80 sm:px-[5%] md:px-[2%]">
+    <header className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto flex items-center justify-between sticky top-0 bg-opacity-50 backdrop-blur-md py-2 md:py-3 z-50 border-b-2 border-stone-100 border-opacity-80 px-[5%] md:px-[2%]">
         <Link
         to="/"
         className={
             index === 0
-            ? 'tracking-normal text-xl font-normal cursor-no-drop relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-stone-800 after:transition-all after:duration-300'
-            : 'tracking-normal text-xl font-normal cursor-pointer relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full'
+            ? 'tracking-normal text-base md:text-xl font-normal cursor-no-drop relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-stone-800 after:transition-all after:duration-300'
+            : 'tracking-normal text-base md:text-xl font-normal cursor-pointer relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full'
         }
         >
         Nishchay Jasuja
@@ -25,8 +25,8 @@ export default function NavBarDesktop({index}) {
             key={link.to}
             to={link.to}
             className= {index === link.index
-                ? 'hover:cursor-no-drop text-lg font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full'
-                : 'hover:cursor-pointer text-lg font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full'
+                ? 'hover:cursor-no-drop text-sm md:text-lg font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full'
+                : 'hover:cursor-pointer text-sm md:text-lg font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full'
             }
             >
             {link.label}

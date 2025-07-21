@@ -11,7 +11,6 @@ import { RiPaintFill } from "react-icons/ri";
 import NavBarDesktop from './sub_components/nav_bar_desktop.js';
 import FluidBackground from './sub_components/fluid_background.js';
 import TailwindFluidBg from './sub_components/fluid_background_compatible.js';
-import background from './images/background.mp4';
 
 // Not found page (in case of invalid route)
 function NotFoundPage() {
