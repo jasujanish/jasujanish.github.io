@@ -10,6 +10,8 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { RiPaintFill } from "react-icons/ri";
 import NavBarDesktop from './sub_components/nav_bar_desktop.js';
 import FluidBackground from './sub_components/fluid_background.js';
+import TailwindFluidBg from './sub_components/fluid_background_compatible.js';
+import background from './images/background.mp4';
 
 // Not found page (in case of invalid route)
 function NotFoundPage() {
@@ -28,67 +30,16 @@ function NotFoundPage() {
   );
 }
 
-// Old Home Page with vw, kept for reference
-/*
-function HomePage() {
-  const [colorScheme, setColorScheme] = useState(1.5);
-  const currentLinkedIn = "https://linkedin.com/in/nishchay-jasuja"; // Replace with actual URL
-  const currentGitHub = "https://github.com/jasujanish"; // Replace with actual URL
-
-  return (
-    <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative">
-      <FluidBackground colorScheme={colorScheme} speed={1} />
-      <div className="fixed inset-0 bg-opacity-60 backdrop-blur-sm z-10"></div>
-      <NavBarDesktop index={0} />
-      <main className="w-1/2 mx-auto flex-1 flex flex-col items-center justify-center text-center pb-[3%] relative z-10">
-        <FadeIn>
-          <h1 className="text-[3.75vw] mb-[-2vw] text-stone-700"> Hi, </h1>
-          <h1 className="text-[8.5vw] text-black font-light"> <span className="hover:cursor-text">I'm  Nish </span> </h1>
-          <div className="text-[2.5vw] font-light h-full text-stone-700 w-[30ch] bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl py-[3%] px-[2%] shadow-lg">
-              <p className="hover:cursor-text tracking-normal">
-                Carnegie Mellon University Sophomore Interested in machine learning, deep learning, computer systems, & robotics
-              </p>
-            </div>
-            <div className="flex space-x-6 items-center justify-center mt-6">
-              <a
-                href={currentLinkedIn}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full hover:bg-opacity-40 transition duration-300 hover:cursor-pointer"
-              > 
-                <FaLinkedin className="w-8 h-8 text-stone-700" />
-              </a>
-              <a
-                href={currentGitHub}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full hover:bg-opacity-40 transition duration-300 hover:cursor-pointer"
-              >
-                <FaGithub className="w-8 h-8 text-stone-700" />
-              </a>
-              <button
-              onClick={() => setColorScheme((prev) => (prev + 1) % 3)}
-                className="p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full hover:bg-opacity-40 transition duration-300 hover:cursor-pointer"
-              >
-                <RiPaintFill className="w-8 h-8 text-stone-700" />
-              </button>
-            </div>
-          </FadeIn>
-        </main>
-    </div>
-  );
-}
-*/
-
 // New Home Page with less vw, more responsive design
 function HomePage() {
-  const [colorScheme, setColorScheme] = useState(1.5);
+  const [colorScheme, setColorScheme] = useState(0);
   const currentLinkedIn = "https://linkedin.com/in/nishchay-jasuja"; 
   const currentGitHub = "https://github.com/jasujanish"; 
 
   return (
-    <div className="min-h-screen flex flex-col font-inter text-gray-900 bg-white tracking-tight relative items-center justify-center">
-      <div className="fixed inset-0 bg-opacity-60backdrop-blur-sm z-10"></div>
+    <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative items-center justify-center">
+      <TailwindFluidBg/>
+      <div className="fixed inset-0 bg-opacity-70 backdrop-blur-sm z-10"></div>
       <NavBarDesktop index={0} />
       <main className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto flex-1 flex flex-col items-center justify-center pb-4 md:pb-[3%] relative z-10 px-4 md:px-0">
         <FadeIn>
@@ -97,7 +48,7 @@ function HomePage() {
           <h1 className="text-8xl md:text-9xl xl:text-[8.5vw] text-black font-light mb-4 md:mb-6 lg:mb-10 xl:mb-12"> 
             <span className="hover:cursor-text">I'm  Nish </span> 
           </h1>
-          <div className="text-center text-lg xl:text-[2.5vw] font-light text-stone-700 w-[30ch] bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
+          <div className="text-center text-lg xl:text-[2.5vw] font-light text-stone-700 w-[30ch] bg-white bg-opacity-40 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
               <p className="hover:cursor-text tracking-normal leading-relaxed">
                 Carnegie Mellon University Sophomore interested in machine learning, deep learning, computer systems, & robotics
               </p>
@@ -107,7 +58,7 @@ function HomePage() {
                 href={currentLinkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 md:p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full hover:bg-opacity-40 transition duration-300 hover:cursor-pointer"
+                className="p-2 md:p-3 bg-white bg-opacity-40 backdrop-blur-sm rounded-full hover:bg-opacity-80 transition duration-300 hover:cursor-pointer"
               > 
                 <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 text-stone-700" />
               </a>
@@ -115,16 +66,10 @@ function HomePage() {
                 href={currentGitHub}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 md:p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full hover:bg-opacity-40 transition duration-300 hover:cursor-pointer"
+                className="p-2 md:p-3 bg-white bg-opacity-40 backdrop-blur-sm rounded-full hover:bg-opacity-80 transition duration-300 hover:cursor-pointer"
               >
                 <FaGithub className="w-6 h-6 md:w-8 md:h-8 text-stone-700" />
               </a>
-              <button
-              onClick={() => setColorScheme((prev) => (prev + 1) % 3)}
-                className="p-2 md:p-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full hover:bg-opacity-40 transition duration-300 hover:cursor-pointer"
-              >
-                <RiPaintFill className="w-6 h-6 md:w-8 md:h-8 text-stone-700" />
-              </button>
             </div>
             </div>
           </FadeIn>
