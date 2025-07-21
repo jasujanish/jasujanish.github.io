@@ -87,9 +87,8 @@ function HomePage() {
   const currentGitHub = "https://github.com/jasujanish"; 
 
   return (
-    <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative items-center justify-center">
-      <FluidBackground colorScheme={colorScheme} speed={1.5} />
-      <div className="fixed inset-0 bg-opacity-60 backdrop-blur-sm z-10"></div>
+    <div className="min-h-screen flex flex-col font-inter text-gray-900 bg-white tracking-tight relative items-center justify-center">
+      <div className="fixed inset-0 bg-opacity-60backdrop-blur-sm z-10"></div>
       <NavBarDesktop index={0} />
       <main className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto flex-1 flex flex-col items-center justify-center pb-4 md:pb-[3%] relative z-10 px-4 md:px-0">
         <FadeIn>
