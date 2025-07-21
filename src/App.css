@@ -12,21 +12,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-@keyframes fadeBg {
-  0% {
-    background-color: #fffefc;
-  }
-  50% {
-    background-color: #fff5e3; /* Cream */
-  }
-  100% {
-    background-color: #fffefc;
-  }
-}
-
-.bg-fade-cream {
-  animation: fadeBg 12s ease-in-out infinite;
-}
 
 .App-header {
   background-color: #282c34;

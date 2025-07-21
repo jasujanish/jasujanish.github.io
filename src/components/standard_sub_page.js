@@ -1,54 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from "react-router";
+import {useNavigate} from "react-router";
 import FadeIn from './fade_in'
 import { useParams } from 'react-router';
 import NavBarDesktop from '../sub_components/nav_bar_desktop';
-
-// Search bar removed, but kept for reference
-/*
-function SearchBar({ content, page_name }) {
-  const [term, setTerm] = useState('');
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const filtered = content.filter(p =>
-    p.name.toLowerCase().includes(term.toLowerCase())
-  );
-
-  const go = slug => {
-    navigate(`/${page_name}/${slug}`);
-    setOpen(false);
-  };
-
-  return (
-    <div className="relative w-full mx-auto my-6 md:my-10 hover:drop-shadow-md z-20">
-      <input
-        value={term}
-        onChange={e => { setTerm(e.target.value); setOpen(true); }}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setTimeout(() => setOpen(false), 120)}
-        placeholder="Search posts…"
-        className="w-full px-3 py-2 md:px-5 md:py-3 text-sm md:text-base border rounded-full shadow focus:ring-2 focus:ring-blue-200"
-      />
-      {open && (
-        <ul className="absolute z-10 w-full bg-white border rounded-lg mt-2 max-h-56 overflow-y-auto shadow">
-          {filtered.length
-            ? filtered.map(p => (
-                <li
-                  key={p.slug}
-                  onMouseDown={() => go(p.slug)}
-                  className="px-3 py-2 md:px-4 md:py-2 text-sm md:text-base hover:bg-gray-100 cursor-pointer"
-                >
-                  {p.name}
-                </li>
-              ))
-            : <li className="px-3 py-2 md:px-4 md:py-2 text-sm md:text-base italic text-gray-500">No results</li>}
-        </ul>
-      )}
-    </div>
-  );
-}
-*/
 
 // Tag filter, successfully vibe-coded
 function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {

@@ -5,35 +5,11 @@ import BlogPage from './components/blog_page.js';
 import FadeIn from './components/fade_in.js';
 import { Link } from "react-router-dom";
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import React, { useState, useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { RiPaintFill } from "react-icons/ri";
 import NavBarDesktop from './sub_components/nav_bar_desktop.js';
 import FluidBackground from './sub_components/fluid_background.js';
-
-// Text descriptions for grid elements
-const currentTexts = ["About Me", "Projects", "LinkedIn", "Courses"];
-
-// Links for grid elements
-const currentRoutes = ['/about', '/projects', '/resume', '/courses'];
-
-// Temporary page for development (will be replaced later)
-function UnderConstructionPage() {
-  return (
-    <div className="min-h-screen min-w-screen flex items-center justify-center bg-black text-white p-8">
-      <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">      
-        <Link
-        to="/"
-        className="text-white hover:bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 hover:bg-clip-text hover:text-transparent hover:font-bold transition-all duration-300 hover:cursor-pointer"
-      >
-        Under Construction <br></br>
-        Return Home
-      </Link>
-      </p>
-    </div>
-  );
-}
 
 // Not found page (in case of invalid route)
 function NotFoundPage() {

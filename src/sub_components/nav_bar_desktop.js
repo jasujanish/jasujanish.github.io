@@ -25,7 +25,7 @@ export default function NavBarDesktop({index}) {
             key={link.to}
             to={link.to}
             className= {index === link.index
-                ? 'hover:cursor-no-drop text-lg font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full'
+                ? 'hover:cursor-no-drop text-lg font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 after:w-full'
                 : 'hover:cursor-pointer text-lg font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full'
             }
             >
