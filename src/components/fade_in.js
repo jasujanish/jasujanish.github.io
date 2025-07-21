@@ -5,7 +5,6 @@ const FadeIn = ({ children, delay = 0 }) => {
 
   useEffect(() => {
     // Scroll to bottom (optional) and trigger animation after delay
-    window.scrollTo(0, document.body.scrollHeight);
     const timer = setTimeout(() => {
       setAnimate("opacity-100 translate-y-0");
     }, delay * 1000);
@@ -14,7 +13,7 @@ const FadeIn = ({ children, delay = 0 }) => {
   }, [delay]);
 
   return (
-    <div className={`transition-all ease-out duration-1000 ${animate}`}>  
+    <div className={`transition-all ease-out duration-500 ${animate}`}>  
       {children}
     </div>
   );
