@@ -65,10 +65,12 @@ function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {
 function BlogList({content, page_name, selectedTags}) {
   useEffect(() => {
     window.scrollTo(0, 0);
+    setLoaded(true);
   }, []);
   
   const nav = useNavigate();
-  
+  const [loaded, setLoaded] = useState(false);
+
   const filteredContent = selectedTags.length === 0 
     ? content 
     : content.filter(item => 
@@ -88,7 +90,7 @@ function BlogList({content, page_name, selectedTags}) {
   return (
     <div className="flex flex-col w-full z-10">
       {filteredContent.map(p => (
-      <FadeIn key={p.slug} delay={p.fade_in}> 
+      <FadeIn key={p.slug} delay={loaded ? 0 : p.fade_in}> 
         <div 
           onClick={() => nav(`/${page_name}/${p.slug}`)}
           className="cursor-pointer bg-white rounded-lg shadow-md hover:drop-shadow-lg transition mb-6 md:mb-10 flex flex-col md:flex-row justify-between hover:cursor-pointer hover:bg-stone-50"

@@ -1,15 +1,13 @@
 import './App.css';
+import React from 'react';
 import CoursePage from "./components/courses_page.js";
 import ProjectsPage from './components/projects_page.js';
 import BlogPage from './components/blog_page.js';
 import FadeIn from './components/fade_in.js';
 import { Link } from "react-router-dom";
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { RiPaintFill } from "react-icons/ri";
 import NavBarDesktop from './sub_components/nav_bar_desktop.js';
-import FluidBackground from './sub_components/fluid_background.js';
 import TailwindFluidBg from './sub_components/fluid_background_compatible.js';
 
 // Not found page (in case of invalid route)
@@ -31,7 +29,6 @@ function NotFoundPage() {
 
 // New Home Page with less vw, more responsive design
 function HomePage() {
-  const [colorScheme, setColorScheme] = useState(0);
   const currentLinkedIn = "https://linkedin.com/in/nishchay-jasuja"; 
   const currentGitHub = "https://github.com/jasujanish"; 
 
@@ -77,7 +74,6 @@ function HomePage() {
   );
 }
 
-//
 export default function App() {
   const router = createHashRouter([
     {

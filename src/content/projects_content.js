@@ -127,7 +127,7 @@ export const content = [
     ),
     tags: ['systems'],
     term: '2025',
-    fade_in: 1.25
+    fade_in: 1.00
   },
   {
     slug: 'vm',
@@ -147,7 +147,7 @@ export const content = [
     ),
     tags: ['systems'],
     term: '2024',
-    fade_in: 1.50
+    fade_in: 1.00
   },
   {
     slug: 'wizard',
@@ -167,7 +167,7 @@ export const content = [
     ),
     tags: ['ai', 'llms'],
     term: '2024',
-    fade_in: 1.75
+    fade_in: 1.00
   },
   {
     slug: 'text-editor',
@@ -186,6 +186,6 @@ export const content = [
       </div>
     ),
     term: '2024',
-    fade_in: 2.00
+    fade_in: 1.00
   }
 ];

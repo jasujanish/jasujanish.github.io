@@ -4,7 +4,6 @@ const FadeIn = ({ children, delay = 0 }) => {
   const [animate, setAnimate] = useState("opacity-0 translate-y-10");
 
   useEffect(() => {
-    // Scroll to bottom (optional) and trigger animation after delay
     const timer = setTimeout(() => {
       setAnimate("opacity-100 translate-y-0");
     }, delay * 1000);
