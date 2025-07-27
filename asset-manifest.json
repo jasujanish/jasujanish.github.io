@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f9f73d9.css",
-    "main.js": "/static/js/main.d6941161.js",
+    "main.css": "/static/css/main.223c4f53.css",
+    "main.js": "/static/js/main.558cfc4f.js",
     "static/js/453.196db435.chunk.js": "/static/js/453.196db435.chunk.js",
-    "static/media/background.mp4": "/static/media/background.ded49a17576bb2e15832.mp4",
+    "static/media/background_1.mp4": "/static/media/background_1.ded49a17576bb2e15832.mp4",
     "static/media/bunny.png": "/static/media/bunny.06e5d4cf3a7557f17e76.png",
     "static/media/castle_1.png": "/static/media/castle_1.c13abc2577db866c23d4.png",
     "static/media/213.png": "/static/media/213.9694055ee8a7fa26851c.png",
     "static/media/castle_3.png": "/static/media/castle_3.a064f08f428c810dcc1a.png",
+    "static/media/background_1.png": "/static/media/background_1.60ed5a12c8f098c79152.png",
     "static/media/mountain_9.png": "/static/media/mountain_9.9f279daac094608dd8cf.png",
     "static/media/castle_2.png": "/static/media/castle_2.2f23ee9ba0d9f6c3b617.png",
     "static/media/mountain_2.png": "/static/media/mountain_2.5ab03e0600e4192310e5.png",
@@ -20,12 +21,12 @@
     "static/media/mountain_6.png": "/static/media/mountain_6.5c9d1953628ab0fa3dd9.png",
     "static/media/21127.png": "/static/media/21127.243411d60bf4494c5f7e.png",
     "index.html": "/index.html",
-    "main.5f9f73d9.css.map": "/static/css/main.5f9f73d9.css.map",
-    "main.d6941161.js.map": "/static/js/main.d6941161.js.map",
+    "main.223c4f53.css.map": "/static/css/main.223c4f53.css.map",
+    "main.558cfc4f.js.map": "/static/js/main.558cfc4f.js.map",
     "453.196db435.chunk.js.map": "/static/js/453.196db435.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f9f73d9.css",
-    "static/js/main.d6941161.js"
+    "static/css/main.223c4f53.css",
+    "static/js/main.558cfc4f.js"
   ]
 }
