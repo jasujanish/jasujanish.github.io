@@ -53,11 +53,11 @@ function HomePage() {
           <h1 className="text-8xl md:text-9xl xl:text-[8.5vw] text-black font-light mb-4 md:mb-6 lg:mb-10 xl:mb-12"> 
             <span className="hover:cursor-text">I'm  Nish </span> 
           </h1>
-              <div className="text-center text-lg xl:text-[2.5vw] font-light text-stone-700 w-fit bg-white bg-opacity-40 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
+              <div className="items-center text-left text-base md:text-xl xl:text-[2.5vw] font-light text-stone-700 w-auto bg-white bg-opacity-40 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
                 <p className="hover:cursor-text tracking-normal leading-relaxed">
                   Carnegie Mellon University Sophomore
                   <br />
-                  Interested in{' '}
+                  Interested in {' '}
                   <TextType
                     as="span"
                     text={interests}
@@ -65,8 +65,8 @@ function HomePage() {
                     typingSpeed={100}
                     deletingSpeed={50}
                     pauseDuration={650}
-                    className="text-left min-w-[17ch]"
-                    cursorClassName="text-stone-700"
+                    className="min-w-[17ch]"
+                    cursorClassName="text-left text-stone-700"
                   />
                 </p>
               </div>

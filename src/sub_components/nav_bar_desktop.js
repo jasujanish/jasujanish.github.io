@@ -19,7 +19,7 @@ export default function NavBarDesktop({index}) {
         >
         Nishchay Jasuja
         </Link>
-        <nav className="flex flex-wrap gap-x-8 md:gap-x-12 xl:gap-x-16">
+        <nav className="flex flex-wrap gap-x-6 md:gap-x-12 xl:gap-x-16">
         {navLinks.map((link) => (
             <Link
             key={link.to}
