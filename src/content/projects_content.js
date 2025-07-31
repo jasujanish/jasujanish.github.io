@@ -16,7 +16,7 @@ export const content = [
     image_caption: 'Mount Everest | Highest Mountain on Earth | Source: Luca Galuzzi',
     date: 'Jul 2025',
     time: '3 minute read',
-    summary: 'Built a computer-vision tool to identify LaTeX symbols from sketches',
+    summary: "LLM classification of a product's ethical considerations",
     description: (
       <div className="font-light text-gray-700  leading-7">
         <p>

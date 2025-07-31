@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import background from '../images/background_1.mp4';
-import placeholderImage from '../images/background_1.png'; // Import your placeholder image
+import background from '../images/background_2.mp4';
+import placeholderImage from '../images/background_2.png'; // Import your placeholder image
 
 // Replacement for FluidBackground using a video element
 const TailwindFluidBg = ({

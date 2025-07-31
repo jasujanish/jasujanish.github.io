@@ -33,12 +33,12 @@ function HomePage() {
   const currentGitHub = "https://github.com/jasujanish"; 
 
   return (
-    <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative items-center justify-center">
-      <TailwindFluidBg/>
+    <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative items-center justify-center bg-white">
+      <TailwindFluidBg className='opacity-50'/>
       <div className="fixed inset-0 bg-opacity-70 backdrop-blur-sm z-10"></div>
       <NavBarDesktop index={0} />
       <main className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto flex-1 flex flex-col items-center justify-center pb-4 md:pb-[3%] relative z-10 px-4 md:px-0">
-        <FadeIn>
+        <FadeIn opacity={0}>
           <div className='flex flex-col items-center justify-center text-center'>
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-[3.75vw] mb-2 md:mb-4 text-stone-700"> Hi, </h1>
           <h1 className="text-8xl md:text-9xl xl:text-[8.5vw] text-black font-light mb-4 md:mb-6 lg:mb-10 xl:mb-12"> 

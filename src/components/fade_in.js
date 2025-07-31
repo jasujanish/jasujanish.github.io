@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
 
-const FadeIn = ({ children, delay = 0 }) => {
-  const [animate, setAnimate] = useState("opacity-0 translate-y-10");
+const FadeIn = ({ children, delay = 0, opacity=0 }) => {
+  const [animate, setAnimate] = useState(`opacity-${opacity} translate-y-10`);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setAnimate("opacity-100 translate-y-0");
+      setAnimate(`opacity-100 translate-y-0`);
     }, delay * 1000);
 
     return () => clearTimeout(timer);
