@@ -9,6 +9,8 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import NavBarDesktop from './sub_components/nav_bar_desktop.js';
 import TailwindFluidBg from './sub_components/fluid_background_compatible.js';
+import { useState, useEffect } from 'react';
+import TextType from './components/text_type.js';
 
 // Not found page (in case of invalid route)
 function NotFoundPage() {
@@ -32,6 +34,29 @@ function HomePage() {
   const currentLinkedIn = "https://linkedin.com/in/nishchay-jasuja"; 
   const currentGitHub = "https://github.com/jasujanish"; 
 
+  const interests = [
+    "machine learning",
+    "deep learning",
+    "computer systems",
+    "robotics",
+    "data science"
+  ];
+
+  const [interestIndex, setInterestIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIsFading(true); 
+
+      setTimeout(() => {
+        setInterestIndex((prevIndex) => (prevIndex + 1) % interests.length);
+        setIsFading(false); 
+      }, 500); 
+    }, 2500); 
+
+    return () => clearInterval(intervalId); 
+  }, [interests.length]);
+
   return (
     <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative items-center justify-center bg-white">
       <TailwindFluidBg className='opacity-50'/>
@@ -44,11 +69,23 @@ function HomePage() {
           <h1 className="text-8xl md:text-9xl xl:text-[8.5vw] text-black font-light mb-4 md:mb-6 lg:mb-10 xl:mb-12"> 
             <span className="hover:cursor-text">I'm  Nish </span> 
           </h1>
-          <div className="text-center text-lg xl:text-[2.5vw] font-light text-stone-700 w-[30ch] bg-white bg-opacity-40 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
-              <p className="hover:cursor-text tracking-normal leading-relaxed">
-                Carnegie Mellon University Sophomore interested in machine learning, deep learning, computer systems, & robotics
-              </p>
-            </div>
+              <div className="text-center text-lg xl:text-[2.5vw] font-light text-stone-700 w-[30ch] bg-white bg-opacity-40 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
+                <p className="hover:cursor-text tracking-normal leading-relaxed">
+                  Carnegie Mellon University Sophomore
+                  <br />
+                  Interested in{' '}
+                  <TextType
+                    as="span"
+                    text={interests}
+                    loop={true}
+                    typingSpeed={75}
+                    deletingSpeed={50}
+                    pauseDuration={600}
+                    className="text-left min-w-[17ch]"
+                    cursorClassName="text-stone-700"
+                  />
+                </p>
+              </div>
             <div className="flex space-x-4 md:space-x-6 items-center justify-center mt-4 md:mt-6">
               <a
                 href={currentLinkedIn}
