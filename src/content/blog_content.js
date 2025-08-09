@@ -27,7 +27,7 @@ export const content = [
         <p className='font-medium'>Books</p>
         <ul style={{ listStyleType: 'circle' }}>
           <li>Flowers for Algernon by Daniel Keyes: my favorite book (but the story is quite sad)</li>
-          <li>Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O'Hallaron: this book was introduced to me at CMU, and it's been a great resource for learning about computer systems</li>
+          <li>Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O'Hallaron: Introduced to me at CMU; a great resource for learning about computer systems</li>
           <li>Competitive Programmer's Handbook by Antti Laaksonen: my favorite resource for learning about dsa</li>
           <li>Zero to One by Peter Thiel: interesting thoughts on innovation (but a bit harsh in tone)</li>
         </ul>
