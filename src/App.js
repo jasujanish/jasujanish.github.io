@@ -53,9 +53,9 @@ function HomePage() {
           <h1 className="text-8xl md:text-9xl xl:text-[8.5vw] text-black font-light mb-4 md:mb-6 lg:mb-10 xl:mb-12"> 
             <span className="hover:cursor-text">I'm  Nish </span> 
           </h1>
-              <div className="items-center text-left text-base md:text-xl xl:text-[2.5vw] font-light text-stone-700 w-auto bg-white bg-opacity-40 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
+              <div className="items-center text-left text-base md:text-xl lg:text-2xl xl:text-[2.5vw] font-light text-stone-700 w-auto bg-white bg-opacity-40 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
                 <p className="hover:cursor-text tracking-normal leading-relaxed">
-                  Carnegie Mellon University Sophomore
+                  Carnegie Mellon University Student
                   <br />
                   Interested in {' '}
                   <TextType

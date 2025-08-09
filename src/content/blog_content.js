@@ -66,8 +66,8 @@ export const content = [
     description: (
     <div className='font-light text-gray-700 text leading-7 text-left'>
       <ul style={{ listStyleType: 'circle' }}>
-        <li>I'm ~2000 ELO in bullet chess (on chess.com)</li>
-        <li>I'm ~1700 ELO in blitz chess (on chess.com)</li>
+        <li>I'm ~2050 ELO in bullet chess (on chess.com)</li>
+        <li>I'm ~1750 ELO in blitz chess (on chess.com)</li>
         <li>I'm an avid connect 4 player (though it's a bit difficult to find opponents)</li>
         <li>I've been on submarines, boats, and kayaks</li>
       </ul>
