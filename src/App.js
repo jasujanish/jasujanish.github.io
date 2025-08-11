@@ -10,7 +10,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import NavBarDesktop from './sub_components/nav_bar_desktop.js';
 import TailwindFluidBg from './sub_components/fluid_background_compatible.js';
 import TextType from './components/text_type.js';
-
+import FluidBackgroundCSS from './sub_components/fluid_background_fast.js';
 // Not found page (in case of invalid route)
 function NotFoundPage() {
   return (
@@ -42,8 +42,8 @@ function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative items-center justify-center bg-white">
-      <TailwindFluidBg className='opacity-50'/>
+    <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative items-center justify-center">
+      <FluidBackgroundCSS className="opacity-90"/>
       <div className="fixed inset-0 bg-opacity-70 backdrop-blur-sm z-10"></div>
       <NavBarDesktop index={0} />
       <main className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto flex-1 flex flex-col items-center justify-center pb-4 md:pb-[3%] relative z-10 px-4 md:px-0">
@@ -64,7 +64,7 @@ function HomePage() {
                     loop={true}
                     typingSpeed={100}
                     deletingSpeed={50}
-                    pauseDuration={650}
+                    pauseDuration={750}
                     className="min-w-[17ch]"
                     cursorClassName="text-left text-stone-700"
                   />

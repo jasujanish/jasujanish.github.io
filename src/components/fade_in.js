@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-const FadeIn = ({ children, delay = 0, opacity=0 }) => {
+const FadeIn = ({ children, delay = 0, opacity }) => {
   const [animate, setAnimate] = useState(`opacity-${opacity} translate-y-10`);
 
   useEffect(() => {
