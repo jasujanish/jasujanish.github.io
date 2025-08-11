@@ -11,6 +11,8 @@ import NavBarDesktop from './sub_components/nav_bar_desktop.js';
 import TailwindFluidBg from './sub_components/fluid_background_compatible.js';
 import TextType from './components/text_type.js';
 import FluidBackgroundCSS from './sub_components/fluid_background_fast.js';
+import StillBackgroundCSS from './sub_components/still_background.js';
+
 // Not found page (in case of invalid route)
 function NotFoundPage() {
   return (
@@ -43,11 +45,10 @@ function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative items-center justify-center">
-      <FluidBackgroundCSS className="opacity-90"/>
+      <StillBackgroundCSS className="opacity-90"/>
       <div className="fixed inset-0 bg-opacity-70 backdrop-blur-sm z-10"></div>
       <NavBarDesktop index={0} />
       <main className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto flex-1 flex flex-col items-center justify-center pb-4 md:pb-[3%] relative z-10 px-4 md:px-0">
-        <FadeIn opacity={0}>
           <div className='flex flex-col items-center justify-center text-center'>
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-[3.75vw] mb-2 md:mb-4 text-stone-700"> Hi, </h1>
           <h1 className="text-8xl md:text-9xl xl:text-[8.5vw] text-black font-light mb-4 md:mb-6 lg:mb-10 xl:mb-12"> 
@@ -62,7 +63,7 @@ function HomePage() {
                     as="span"
                     text={interests}
                     loop={true}
-                    typingSpeed={100}
+                    typingSpeed={125}
                     deletingSpeed={50}
                     pauseDuration={750}
                     className="min-w-[17ch]"
@@ -70,26 +71,27 @@ function HomePage() {
                   />
                 </p>
               </div>
-            <div className="flex space-x-4 md:space-x-6 items-center justify-center mt-4 md:mt-6">
-              <a
-                href={currentLinkedIn}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 md:p-3 bg-white bg-opacity-40 backdrop-blur-sm rounded-full hover:bg-opacity-80 transition duration-300 hover:cursor-pointer"
-              > 
-                <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 text-stone-700" />
-              </a>
-              <a
-                href={currentGitHub}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 md:p-3 bg-white bg-opacity-40 backdrop-blur-sm rounded-full hover:bg-opacity-80 transition duration-300 hover:cursor-pointer"
-              >
-                <FaGithub className="w-6 h-6 md:w-8 md:h-8 text-stone-700" />
-              </a>
+            <FadeIn opacity={0} delay={0.5}>
+              <div className="flex space-x-4 md:space-x-6 items-center justify-center mt-4 md:mt-6">
+                <a
+                  href={currentLinkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 md:p-3 bg-white bg-opacity-40 backdrop-blur-sm rounded-full hover:bg-opacity-80 transition duration-300 hover:cursor-pointer"
+                > 
+                  <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 text-stone-700" />
+                </a>
+                <a
+                  href={currentGitHub}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 md:p-3 bg-white bg-opacity-40 backdrop-blur-sm rounded-full hover:bg-opacity-80 transition duration-300 hover:cursor-pointer"
+                >
+                  <FaGithub className="w-6 h-6 md:w-8 md:h-8 text-stone-700" />
+                </a>
+              </div>
+            </FadeIn>
             </div>
-            </div>
-          </FadeIn>
         </main>
     </div>
   );

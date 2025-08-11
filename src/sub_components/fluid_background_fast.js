@@ -29,9 +29,6 @@ export default function FluidBackgroundCSS({ className = "", opacity = 0.6 }) {
         <span className="fb-blob fb-blob--c" />
         <span className="fb-blob fb-blob--d" />
         <span className="fb-blob fb-blob--e" />
-        <span className="fb-blob fb-blob--f" />
-        {/* New additional orb */}
-        <span className="fb-blob fb-blob--g" />
       </div>
 
       {/* Subtle vignette for depth */}
@@ -77,8 +74,6 @@ export default function FluidBackgroundCSS({ className = "", opacity = 0.6 }) {
         .fb-blob--c { left: 20vmax; bottom: -16vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(52,211,153,0.9) 0%, rgba(52,211,153,0.4) 35%, rgba(52,211,153,0.0) 60%); animation: fb-path-c 30s ease-in-out infinite; }
         .fb-blob--d { right: 18vmax; bottom: -14vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(251,146,60,0.9) 0%, rgba(251,146,60,0.4) 35%, rgba(251,146,60,0.0) 60%); animation: fb-path-d 24s ease-in-out infinite; }
         .fb-blob--e { left: -18vmax; bottom: 8vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(251,113,133,0.9) 0%, rgba(251,113,133,0.4) 35%, rgba(251,113,133,0.0) 60%); animation: fb-path-e 34s ease-in-out infinite; }
-        .fb-blob--f { right: -8vmax; top: -12vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(251,191,36,0.9) 0%, rgba(251,191,36,0.4) 35%, rgba(251,191,36,0.0) 60%); animation: fb-path-f 28s ease-in-out infinite; }
-        .fb-blob--g { left: 8vmax; top: 22vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(192,132,252,0.9) 0%, rgba(192,132,252,0.4) 35%, rgba(192,132,252,0.0) 60%); animation: fb-path-g 29s ease-in-out infinite; }
 
         @keyframes fb-path-a {
           0%   { transform: translate3d(0,0,0) scale(1); }
@@ -110,18 +105,6 @@ export default function FluidBackgroundCSS({ className = "", opacity = 0.6 }) {
           40%  { transform: translate3d(16vmax,-6vmax,0) scale(0.9); }
           85%  { transform: translate3d(8vmax, 10vmax,0) scale(1.1); }
           100% { transform: translate3d(0,0,0) scale(1.05); }
-        }
-        @keyframes fb-path-f {
-          0%   { transform: translate3d(0,0,0) scale(0.9); }
-          25%  { transform: translate3d(-10vmax, 12vmax,0) scale(1.05); }
-          60%  { transform: translate3d(6vmax, 18vmax,0) scale(1.15); }
-          100% { transform: translate3d(0,0,0) scale(0.9); }
-        }
-        @keyframes fb-path-g {
-          0%   { transform: translate3d(0,0,0) scale(1.0); }
-          30%  { transform: translate3d(10vmax, -8vmax,0) scale(1.08); }
-          60%  { transform: translate3d(-6vmax, 10vmax,0) scale(1.12); }
-          100% { transform: translate3d(0,0,0) scale(1.0); }
         }
       `}</style>
     </div>

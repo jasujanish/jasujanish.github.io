@@ -3,7 +3,7 @@ import {useNavigate} from "react-router";
 import FadeIn from './fade_in'
 import { useParams } from 'react-router';
 import NavBarDesktop from '../sub_components/nav_bar_desktop';
-import FluidBackgroundCSS from '../sub_components/fluid_background_fast';
+import NoMotionBackground from '../sub_components/no_motion_background';
 // Tag filter, successfully vibe-coded
 function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {
   const allTags = [...new Set(content.flatMap(item => item.tags || []))];
@@ -92,7 +92,7 @@ function BlogList({content, page_name, selectedTags}) {
   return (
     <div className="flex flex-col w-full z-10">
       {filteredContent.map(p => (
-      <FadeIn key={p.slug} delay={loaded ? 0 : p.fade_in} opacity={loaded ? 100 : 0}> 
+      <FadeIn key={p.slug} delay={loaded ? 0 : p.fade_in} opacity={100}> 
         <div 
           onClick={() => nav(`/${page_name}/${p.slug}`)}
           className="cursor-pointer bg-white bg-opacity-40 rounded-lg shadow-md hover:drop-shadow-lg transition mb-6 md:mb-10 flex flex-col md:flex-row justify-between hover:cursor-pointer hover:bg-stone-50"
@@ -161,7 +161,7 @@ export default function StandardSubPage({page_name, content, idx}) {
   else{
     return (
       <div className="min-h-screen w-screen flex flex-col font-inter">
-      <FluidBackgroundCSS className="opacity-70"/>
+      <NoMotionBackground className="opacity-70"/>
         <NavBarDesktop index={idx} />
         <div className='flex flex-col justify-center items-center w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto px-4 md:px-0'>
           <TagFilter 
