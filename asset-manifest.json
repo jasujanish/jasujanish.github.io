@@ -1,16 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.cf88b066.css",
-    "main.js": "/static/js/main.c2889184.js",
+    "main.js": "/static/js/main.6136214d.js",
     "static/js/453.196db435.chunk.js": "/static/js/453.196db435.chunk.js",
     "static/media/bunny.png": "/static/media/bunny.06e5d4cf3a7557f17e76.png",
     "static/media/background_2.mp4": "/static/media/background_2.134379918ce59f686b3e.mp4",
     "static/media/background_2.png": "/static/media/background_2.2f274fa60a95544a113a.png",
     "static/media/castle_1.png": "/static/media/castle_1.c13abc2577db866c23d4.png",
     "static/media/213.png": "/static/media/213.9694055ee8a7fa26851c.png",
-    "static/media/castle_3.png": "/static/media/castle_3.a064f08f428c810dcc1a.png",
     "static/media/mountain_9.png": "/static/media/mountain_9.9f279daac094608dd8cf.png",
-    "static/media/castle_2.png": "/static/media/castle_2.2f23ee9ba0d9f6c3b617.png",
     "static/media/mountain_2.png": "/static/media/mountain_2.5ab03e0600e4192310e5.png",
     "static/media/mountain_1.png": "/static/media/mountain_1.a8d95f520ea251f1f625.png",
     "static/media/mountain_4.png": "/static/media/mountain_4.ef59ca205b0b1d947b52.png",
@@ -22,11 +20,11 @@
     "static/media/21127.png": "/static/media/21127.243411d60bf4494c5f7e.png",
     "index.html": "/index.html",
     "main.cf88b066.css.map": "/static/css/main.cf88b066.css.map",
-    "main.c2889184.js.map": "/static/js/main.c2889184.js.map",
+    "main.6136214d.js.map": "/static/js/main.6136214d.js.map",
     "453.196db435.chunk.js.map": "/static/js/453.196db435.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cf88b066.css",
-    "static/js/main.c2889184.js"
+    "static/js/main.6136214d.js"
   ]
 }
