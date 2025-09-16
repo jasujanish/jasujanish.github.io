@@ -10,42 +10,42 @@ import mountain_9 from '../images/mountain_9.png';
 
 export const content = [
   {
-    slug: 'ethics',
-    name: 'Ethics Tracker',
+    slug: 'speech',
+    name: 'Speech Classifier',
     image: mountain_1,
     image_caption: 'Mount Everest | Highest Mountain on Earth | Source: Luca Galuzzi',
+    date: 'Jul 2025',
+    time: '3 minute read',
+    summary: "Custom neural-net for speech classification",
+    description: (
+      <div className="font-light text-gray-700  leading-7">
+        <p>
+          Developed May 2025<br />
+          I designed and implemented a custom multi-layer perceptron architecture for mel-spectrogram-based speech classification using PyTorch. Utilizing cloud computing resources and hyperparameter tuning, I was able to reach 87 percent accuracy with this architecture.
+        </p>
+      </div>
+    ),
+    tags:['ai', 'neural nets'],
+    term: '2025',
+    fade_in: 0.0
+  },
+  {
+    slug: 'ethics',
+    name: 'Ethics Tracker',
+    image: mountain_2,
+    image_caption: 'K2 | Second Highest Mountain on Earth | Source: Zacharie Grossen',
     date: 'Jul 2025',
     time: '3 minute read',
     summary: "LLM classification of a product's ethical considerations",
     description: (
       <div className="font-light text-gray-700  leading-7">
         <p>
-          Developed May 2025<br />
+          Developed June 2025<br />
           I developed a tool that takes in a product and determines how ethical the brand creating the product is. I utilized autonomous web scraping and an agentic workflow of 3 fine-tuned LLM agents (using Llama 3.1 8b) to autonomously collect information and analyze sources.
         </p>
       </div>
     ),
     tags:['ai', 'llms'],
-    term: '2025',
-    fade_in: 0.0
-  },
-  {
-    slug: 'latex',
-    name: 'LaTeX Classifier',
-    image: mountain_2,
-    image_caption: 'K2 | Second Highest Mountain on Earth | Source: Zacharie Grossen',
-    date: 'May 2025',
-    time: '1 minute read',
-    summary: 'Computer-vision tool for LaTeX recognition',
-    description: (
-      <div className="font-light text-gray-700  leading-7">
-        <p>
-          Developed May 2025<br />
-          Built a computer-vision tool to help me identify LaTeX symbols from quick sketches. (More details coming soon!)
-        </p>
-      </div>
-    ),
-    tags: ['ai', 'computer vision'],
     term: '2025',
     fade_in: 0.25
   },

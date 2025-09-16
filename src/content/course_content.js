@@ -17,6 +17,7 @@ export const content = [
         11785 <span className='font-medium'>Intro to Deep Learning </span> (PhD)<br />
         10701 <span className='font-medium'>Intro to Machine Learning </span> (PhD)<br />
         11711 <span className='font-medium'>Advanced Natural Language Processing </span> (PhD)<br />
+        15281 <span className='font-medium'>AI: Representation and Problem Solving</span><br />
       </p>
     ),
     term: 'F25',
@@ -25,15 +26,19 @@ export const content = [
     <ul style={{ listStyleType: 'circle' }}>
       <li>
         <span className='font-medium'>Intro to Deep Learning (PhD)</span><br />
-        Upcoming Course - Description Coming Soon. <br /> <br />
+        Current Course - Description Coming Soon. <br /> <br />
       </li>
       <li>
         <span className='font-medium'>Intro to Machine Learning (PhD)</span><br />
-        Upcoming Course - Description Coming Soon. <br /> <br />
+        Current Course - Description Coming Soon. <br /> <br />
       </li>
       <li>
         <span className='font-medium'>Natural Language Processing (PhD)</span><br />
-        Upcoming Course - Description Coming Soon. <br /> <br />
+        Current Course - Description Coming Soon. <br /> <br />
+      </li>
+      <li>
+        <span className='font-medium'>Artificial Intelligence</span><br />
+        Current Course - Description Coming Soon. <br /> <br />
       </li>
     </ul>
     ),
@@ -52,7 +57,7 @@ export const content = [
     description: (
       <>
         <p>
-          Since I was working as a research assistant at CMU over the summer, I had the opportunity to take classes at CMU over the summer alongside my work as a research assistant. I opted to take 21-325 <span className='font-medium'>Probability Theory</span> as it was a prerequisite for future machine learning courses. I ended up greatly enjoying the course's mathematically rigorous approach to probability theory. Further, due to this course, I've finally started attending professor office hours.
+          Before taking 21-325 <span className='font-medium'>Probability Theory</span>, I'd always felt shaky about probability as a concept since most of my understanding of probability was based on intuition. However, this course's mathematically rigorous approach to probability theory helped me establish a strong foundation in the subject. 
         </p>
       </>
     ),
@@ -73,7 +78,7 @@ export const content = [
         <ul style={{ listStyleType: 'circle' }}>
           <li>15-213 <span className='font-medium'>Intro to Computer Systems</span><br />         
           <p>
-          15213 has been my favorite course at CMU so far. The course is very project-focused, with the majority of a student's grades coming from labs like the Malloc lab or Web proxy lab. I enjoyed this aspect of the course as it challenged me to reason about design choices and debug with intent. Further, the course covers a wide array of core computer systems concepts, such as        
+          15213 has been one of my favorite courses. The course is very project-focused, with the majority of a student's grades coming from labs, like the Malloc lab in which students implement a dynamic memory allocator. I enjoyed this aspect of the course as it challenged me to reason about design choices and debug with intent, rather than just solving small self-contained problems. Further, the course covers a wide array of core computer systems concepts, such as        
         </p>
         <ul className="list-disc list-inside ml-4">
           <li>Assembly</li>
@@ -83,7 +88,9 @@ export const content = [
           <li>Virtual memory fundamentals</li>
           <li>Network programming & system I/O</li>
           <li>Concurrency & multi-threading</li>
-        </ul> <br /><br />
+        </ul> 
+        <p> which I enjoyed delving into. </p>
+        <br />
         </li>
           <li>15-150 <span className='font-medium'>Principles of Functional Programming</span><br />  Functional programming is a type-oriented programming paradigm that emphasizes reasoning about problems mathematically, breaking up code into modular sections, and designing elegant solutions. This course introduced me to numerous functional programming concepts, but the most significant lesson I learned was the importance of visualizing more abstract concepts, such as infinite sequences or trees, when tackling problems. <br /><br /></li>
           <li>21-259 <span className='font-medium'>Calculus in Three Dimensions</span><br /> A strong introduction to foundational multivariable and vector calculus topics with a focus on computational questions. Greatly enjoyable!<br /><br /></li>

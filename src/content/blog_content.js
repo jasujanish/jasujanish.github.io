@@ -1,10 +1,10 @@
 import castle_1 from '../images/castle_1.png'
-import castle_2 from '../images/castle_2.png'
-import castle_3 from '../images/castle_3.png'
+//import castle_2 from '../images/castle_2.png'
+//import castle_3 from '../images/castle_3.png'
 export const content = [
   {
     slug: 'books',
-    name: 'Interesting Reads',
+    name: 'Noteworthy Reads',
     image: castle_1,
     image_caption: 'Hohenzollern Castle | Germany | Source: A. Kniesel',
     date: 'Jul 18 2025',
@@ -19,17 +19,21 @@ export const content = [
             <a className= "underline text-blue-600 hover:text-blue-800" href="https://deepmind.google/research/publications/106025/">deepmind.google/research/publications/106025/</a>
           </li>
           <li>
-            Not exactly an article, but the portfolio that inspired this page:{" "}
+            Scaling compute during LLM inference: {" "}
+            <a className= "underline text-blue-600 hover:text-blue-800" href="https://arxiv.org/pdf/2406.16838">https://arxiv.org/pdf/2406.16838</a>
+          </li>
+          <li>
+            The portfolio that inspired this page:{" "}
             <a className= "underline text-blue-600 hover-text-blue-800" href="https://azumbrunnen.me/">https://azumbrunnen.me/</a>
           </li>
         </ul>
         <br></br>
         <p className='font-medium'>Books</p>
         <ul style={{ listStyleType: 'circle' }}>
-          <li>Flowers for Algernon by Daniel Keyes: my favorite book (but the story is quite sad)</li>
+          <li>Flowers for Algernon by Daniel Keyes: my favorite book</li>
           <li>Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O'Hallaron: Introduced to me at CMU; a great resource for learning about computer systems</li>
           <li>Competitive Programmer's Handbook by Antti Laaksonen: my favorite resource for learning about dsa</li>
-          <li>Zero to One by Peter Thiel: interesting thoughts on innovation (but a bit harsh in tone)</li>
+          <li>Zero to One by Peter Thiel: interesting thoughts on innovation and societal trends</li>
         </ul>
       </div>
     ),
@@ -37,6 +41,7 @@ export const content = [
     term: '2025',
     fade_in : 0.0
   },
+  /*
   {
     slug: 'background',
     name: 'About Me',
@@ -73,6 +78,6 @@ export const content = [
       </ul>
     </div>),
     fade_in : 0.5
-  },
+  },*/
 ];
 
