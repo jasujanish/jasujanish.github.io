@@ -1,6 +1,3 @@
-import castle_1 from '../images/castle_1.png'
-//import castle_2 from '../images/castle_2.png'
-//import castle_3 from '../images/castle_3.png'
 import mamba from '../images/mamba.jpg'
 
 export const content = [
@@ -91,44 +88,5 @@ export const content = [
     term: '2025',
     fade_in : 0.0
   },
-
-  /*
-  {
-    slug: 'background',
-    name: 'About Me',
-    image: castle_2,
-    image_caption: 'Wernigerode Castle | Germany | Source: Andreas Tille',
-    date: 'Jun 20 2025',
-    time: '2 minute read',
-    summary: 'A short introduction about me',
-    tags: ['personal', 'about me'],
-    description: (
-    <div className='font-light text-gray-700 text leading-7 text-left'>
-        <p>
-            I'm Nishchay Jasuja. I'm from the bay area, though I'm now based in Pittsburgh as I attend Carnegie Mellon University (CMU). At CMU, I'm studying Statistics and Machine Learning with an additional major in Computer Science. I'm currently interested in exploring the fields of machine learning, deep learning, robotics, and computer systems.<br></br>Outside of academic interests, I enjoy playing chess, creating quick sketches with my iPad, reading nonfiction novels, and following the NBA & La Liga. If you want to reach me, please email me at <span className='font-normal'> njasuja [at] andrew [dot] cmu [dot] edu</span>
-        </p>
-    </div>),
-    fade_in : 0.25
-  },
-  {
-    slug: 'fun-facts',                  
-    name: 'Fun Facts',
-    image: castle_3,
-    image_caption: 'Stolzenfels Castle | Germany | Source: Holger Weinandt',
-    date: 'Jun 20 2025',
-    time: '2 minute read',
-    summary: 'A collection of fun facts about me',
-    tags: ['personal', 'about me'],
-    description: (
-    <div className='font-light text-gray-700 text leading-7 text-left'>
-      <ul style={{ listStyleType: 'circle' }}>
-        <li>I'm ~2050 ELO in bullet chess (on chess.com)</li>
-        <li>I'm ~1750 ELO in blitz chess (on chess.com)</li>
-        <li>I'm an avid connect 4 player (though it's a bit difficult to find opponents)</li>
-        <li>I've been on submarines, boats, and kayaks</li>
-      </ul>
-    </div>),
-    fade_in : 0.5
-  },*/
 ];
 
