@@ -16,7 +16,7 @@ function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {
       } else {
         updated = [...prev, tag];
       }
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return updated;
     });
   };
@@ -25,7 +25,6 @@ function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setSelectedTags([]);
   }
-
   return (
     <div className="w-full mx-auto my-6 md:my-10 z-20">
       <div className="flex flex-wrap gap-2 items-center">
@@ -63,15 +62,24 @@ function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {
 
 // List of blog elements (filtered using TagFilter)
 function BlogList({content, page_name, selectedTags}) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  useEffect(() => {
-    setLoaded(selectedTags.length > 0);
-  }, [selectedTags]);
-
   const nav = useNavigate();
-  const [loaded, setLoaded] = useState(selectedTags.length > 0);
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+
+      const timer = setTimeout(() => {
+        setLoaded(true);
+      }, 1000); 
+
+      return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+      if (selectedTags.length > 0) {
+        setLoaded(true);
+      }
+    }, [selectedTags]);
 
   const filteredContent = selectedTags.length === 0 
     ? content 
@@ -137,7 +145,8 @@ export default function StandardSubPage({page_name, content, idx}) {
           className="m-6 md:m-10"><img src={post.image} alt={post.name} className="w-full h-auto rounded-lg" />
           <p className="text-gray-500 text-center font-light font-sans m-1 text-xs md:text-sm"> {post.image_caption}</p>
         </div>
-        <div className="font-sans text-gray-700 font-light text-sm md:text-base lg:text-lg leading-relaxed">{post.description}</div>
+        <div className="font-sans text-gray-700 font-light text-sm md:text-base lg:text-lg leading-relaxed p-4">{post.description}</div>
+
         {post.tags && post.tags.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-2 justify-center">
             <span className="text-gray-600 font-medium text-base md:text-lg">Tags:</span>

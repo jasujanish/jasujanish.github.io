@@ -36,11 +36,11 @@ function HomePage() {
   const currentGitHub = "https://github.com/jasujanish"; 
 
   const interests = [
-    "machine learning",
-    "deep learning",
-    "computer systems",
+    "data science",
+    "reinforcement learning",
+    "multi-stage training",
     "robotics",
-    "data science"
+    "continuous learning",
   ];
 
   return (
@@ -56,9 +56,9 @@ function HomePage() {
           </h1>
               <div className="items-center text-left text-base md:text-xl lg:text-2xl xl:text-[2.5vw] font-light text-stone-700 w-auto bg-white bg-opacity-40 backdrop-blur-sm rounded-2xl py-4 md:py-6 px-4 md:px-6 shadow-lg">
                 <p className="hover:cursor-text tracking-normal leading-relaxed">
-                  Carnegie Mellon University Student
+                  AI @ Carnegie Mellon University
                   <br />
-                  Interested in {' '}
+                  Focused on {' '}
                   <TextType
                     as="span"
                     text={interests}
