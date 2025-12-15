@@ -1,4 +1,4 @@
-import castle_1 from '../images/castle_1.png'
+import ai_eff from '../images/ai_efficient.png'
 import concepts_img from '../images/21127.png'
 import systems_img from '../images/213.png'
 import bunny_img from '../images/bunny.png'
@@ -7,10 +7,10 @@ export const content = [
   {
     slug: 'Fall2025',
     name: 'Fall 2025',
-    image: castle_1,
-    image_caption: 'Place Holder Image For Now | Source: A. Kniesel',
-    date: '3 Courses',
-    time: '1 Minute Read',
+    image: ai_eff,
+    image_caption: 'AI progress, for a semester of personal progress in AI | Source: 2025 AI Index Report',
+    date: '4 Courses',
+    time: '6 Minute Read',
     tags: ['ai'],
     summary: (
       <p>
