@@ -8,9 +8,7 @@ import { Link } from "react-router-dom";
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import NavBarDesktop from './sub_components/nav_bar_desktop.js';
-import TailwindFluidBg from './sub_components/fluid_background_compatible.js';
 import TextType from './components/text_type.js';
-import FluidBackgroundCSS from './sub_components/fluid_background_fast.js';
 import StillBackgroundCSS from './sub_components/still_background.js';
 
 // Not found page (in case of invalid route)
