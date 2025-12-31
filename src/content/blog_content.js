@@ -49,7 +49,7 @@ export const content = [
     image_caption: 'Black Mamba! | Source: Hendrik van den Berg',
     date: 'December 15th, 2025',
     time: '2 minute read',
-    summary: 'A collection of books & articles that I found particularly interesting',
+    summary: 'A collection of papers focused on the Mamba architecture',
     description: (
       <div className='font-light text-gray-700 leading-7'>
         <p className='font-medium'>Context</p>
@@ -59,7 +59,7 @@ export const content = [
           </li>
         </ul>
         <br></br>
-        <p className='font-medium'>Books</p>
+        <p className='font-medium'>Papers</p>
         <ul style={{ listStyleType: 'circle' }}>
           <li>
             Original Mamba paper:{" "}

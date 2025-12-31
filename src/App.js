@@ -30,7 +30,7 @@ function NotFoundPage() {
 
 // New Home Page with less vw, more responsive design
 function HomePage() {
-  const currentLinkedIn = "https://linkedin.com/in/nishchay-jasuja"; 
+  const currentLinkedIn = "https://linkedin.com/in/nishchay-j/"; 
   const currentGitHub = "https://github.com/jasujanish"; 
 
   const interests = [
