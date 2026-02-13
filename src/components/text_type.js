@@ -49,25 +49,25 @@ const TextType = ({
       timeout = setTimeout(() => {
         setDisplayedText(currentSentence.substring(0, displayedText.length + 1));
       }, typingSpeed);
-    
-    // Switch to deleting after pause
+
+      // Switch to deleting after pause
     } else if (!isDeleting && displayedText.length === currentSentence.length) {
-        if (loop || currentTextIndex < textArray.length - 1) {
-            timeout = setTimeout(() => {
-                setIsDeleting(true);
-            }, pauseDuration);
-        }
-    
-    // Deleting logic
+      if (loop || currentTextIndex < textArray.length - 1) {
+        timeout = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseDuration);
+      }
+
+      // Deleting logic
     } else if (isDeleting && displayedText.length > 0) {
       timeout = setTimeout(() => {
         setDisplayedText(currentSentence.substring(0, displayedText.length - 1));
       }, deletingSpeed);
-    
-    // Switch to next sentence after deleting
+
+      // Switch to next sentence after deleting
     } else if (isDeleting && displayedText.length === 0) {
-        setIsDeleting(false);
-        setCurrentTextIndex((prevIndex) => (prevIndex + 1) % textArray.length);
+      setIsDeleting(false);
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % textArray.length);
     }
 
     return () => clearTimeout(timeout);

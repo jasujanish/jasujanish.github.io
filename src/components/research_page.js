@@ -1,23 +1,90 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
 import NavBarDesktop from '../sub_components/nav_bar_desktop';
+import photo1 from '../images/research1.jpg';
+import photo2 from '../images/research1.jpg';
+import StillBackgroundCSS from '../sub_components/still_background';
+import FadeIn from './fade_in';
+
+const ResearchItem = ({ logo, company, role, date, children, isLast }) => {
+    return (
+        <div className="flex w-full max-w-4xl mx-auto group">
+            {/* Left Column: Logo & Timeline Line */}
+            <div className="flex flex-col items-center mr-6 md:mr-10 relative">
+                {/* Logo Container */}
+                <div className="w-12 h-12 md:w-16 md:h-16 flex-shrink-0 z-10 bg-white rounded-full p-1 shadow-sm border border-stone-100">
+                    <img
+                        src={logo}
+                        alt={`${company} logo`}
+                        className="w-full h-full object-contain rounded-full"
+                    />
+                </div>
+                {/* Vertical Line */}
+                {!isLast && (
+                    <div className="w-0.5 bg-stone-200 h-full absolute top-16 md:top-20 bottom-0 left-1/2 -translate-x-1/2"></div>
+                )}
+            </div>
+
+            {/* Right Column: Content */}
+            <div className="pb-12 md:pb-16 flex-1 text-left">
+                <h3 className="text-xl md:text-2xl font-semibold text-stone-800 mb-1">
+                    {company}
+                </h3>
+                <p className="text-sm md:text-base text-stone-500 mb-4 font-normal">
+                    {role} • {date}
+                </p>
+                <div className="text-stone-700 text-sm md:text-base leading-relaxed space-y-4">
+                    {children}
+                </div>
+            </div>
+        </div>
+    );
+};
 
 const ResearchPage = () => {
     return (
-        <div className="min-h-screen bg-white">
-            <NavBarDesktop index={3} />
-            <div className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-800">Research</h1>
-                <p className="text-xl text-stone-600 mb-8">
-                    Coming Soon...
-                </p>
-                <Link
-                    to="/"
-                    className="px-6 py-3 bg-stone-800 text-white rounded-lg hover:bg-stone-700 transition-colors"
-                >
-                    Return Home
-                </Link>
+        <div className="min-h-screen font-inter relative overflow-x-hidden">
+            <StillBackgroundCSS className="opacity-90" />
+
+            {/* Navigation */}
+            <NavBarDesktop index={4} />
+
+            {/* Main Content */}
+            <div className="relative z-10 flex flex-col items-center pt-12 md:pt-20 px-6 md:px-12 lg:px-24 pb-20">
+                {/* Page Header */}
+                <FadeIn opacity={0} delay={0.1}>
+
+                    {/* Timeline Container */}
+                    <div className="w-full max-w-3xl">
+
+                        {/* Felicis */}
+                        <ResearchItem
+                            logo={photo1}
+                            company="CMU College of Computer Science"
+                            role="Research Assistant"
+                            date="January 2026 - Present"
+                        >
+                            <p>
+                                Investigating mid-training strategies for large language models (LLMs) to improve the effectiveness of domain-specific reinforcement learning post-training techniques
+                            </p>
+                        </ResearchItem>
+
+                        {/* Shopify */}
+                        <ResearchItem
+                            logo={photo2}
+                            company="CMU College of Engineering"
+                            role="Research Assistant"
+                            date="May 2025 - July 2025"
+                            isLast={true}
+                        >
+                            <p>
+                                <span className="font-semibold text-stone-800">Tasks:</span> Leveraged Python, Slurm, and high-performance computing resources at the Pittsburgh Supercomputing Center to integrate, clean, and analyze large-scale energy usage datasets.
+                            </p>
+                            <p>
+                                <span className="font-semibold text-stone-800">Impacts:</span> Applied multi-threading, multi-processing, and differential evolution to reduce compute time by over 80%. Concurrently fitted piecewise linear regression models to 100,000+ households to evaluate the impact of consumer-facing energy subsidies, generating insights into policy efficacy.
+                            </p>
+                        </ResearchItem>
+                    </div>
+                </FadeIn>
             </div>
         </div>
     );

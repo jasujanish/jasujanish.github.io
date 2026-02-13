@@ -92,9 +92,9 @@ function HomePage() {
   ];
 
   const captions = [
-    "(Play With) Me",
-    "My school",
-    "My place of work",
+    "(Interact With) Me",
+    "(Interact With) My school",
+    "(Interact With) My place of work",
   ];
 
   const [activeIndex, setActiveIndex] = React.useState(0);
