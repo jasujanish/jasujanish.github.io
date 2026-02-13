@@ -43,7 +43,6 @@ const ResearchItem = ({ logo, company, role, date, children, isLast }) => {
 const ResearchPage = () => {
     return (
         <div className="min-h-screen font-inter relative overflow-x-hidden">
-            <StillBackgroundCSS className="opacity-90" />
 
             {/* Navigation */}
             <NavBarDesktop index={4} />
