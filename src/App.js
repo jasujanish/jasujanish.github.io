@@ -154,8 +154,9 @@ function HomePage() {
             )}
 
             <p className="text-lg md:text-[1.34rem] text-slate-600 leading-[1.92] max-w-[39rem] mb-10 font-light">
-              I'm currently studying computer science and machine learning at <span className="font-medium text-[#C41E3A]">Carnegie Mellon University</span>.
-              My work spans across <Link to="/projects/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">projects</Link>, <Link to="/courses/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">coursework</Link>, and <Link to="/research" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">research</Link>.
+             Studying computer science and artificial intelligence at <span className="font-medium text-[#C41E3A]">Carnegie Mellon University</span>.
+             
+             Working on <Link to="/projects/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">projects</Link>, <Link to="/courses/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">coursework</Link>, and <Link to="/research" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">research</Link>.
             </p>
 
             {/* Social & Contact */}
