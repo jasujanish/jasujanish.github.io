@@ -84,11 +84,9 @@ function HomePage() {
   const currentGitHub = "https://github.com/jasujanish";
 
   const interests = [
-    "data science",
     "reinforcement learning",
-    "multi-stage training",
+    "LLM post-training",
     "robotics",
-    "continuous learning",
   ];
 
   const captions = [
@@ -114,7 +112,7 @@ function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative overflow-x-hidden">
-      <FluidBackgroundCSS opacity={0.70} className="opacity-100" />
+      <FluidBackgroundCSS opacity={0.40} className="opacity-100" />
       <div className="fixed inset-0 bg-white/38 backdrop-blur-[72px] z-10"></div>
       <div className="fixed inset-0 z-10 bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.7),transparent_26%),radial-gradient(circle_at_82%_18%,rgba(255,255,255,0.5),transparent_22%),linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.52))]"></div>
 

@@ -2,22 +2,41 @@ import React from 'react';
 import NavBarDesktop from '../sub_components/nav_bar_desktop';
 import photo1 from '../images/research1.jpg';
 import photo2 from '../images/research1.jpg';
-import StillBackgroundCSS from '../sub_components/still_background';
 import FadeIn from './fade_in';
 
 const ResearchItem = ({ logo, company, role, date, children, isLast }) => {
+    const logoButtonRef = React.useRef(null);
+
+    const handleLogoClick = () => {
+        const logoButton = logoButtonRef.current;
+        if (!logoButton) return;
+
+        logoButton.classList.remove('research-logo-button--animate');
+        void logoButton.offsetWidth;
+        logoButton.classList.add('research-logo-button--animate');
+    };
+
     return (
         <div className="flex w-full max-w-4xl mx-auto group">
             {/* Left Column: Logo & Timeline Line */}
             <div className="flex flex-col items-center mr-6 md:mr-10 relative">
                 {/* Logo Container */}
-                <div className="w-12 h-12 md:w-16 md:h-16 flex-shrink-0 z-10 bg-white rounded-full p-1 shadow-sm border border-stone-100">
-                    <img
-                        src={logo}
-                        alt={`${company} logo`}
-                        className="w-full h-full object-contain rounded-full"
-                    />
-                </div>
+                <button
+                    type="button"
+                    ref={logoButtonRef}
+                    onClick={handleLogoClick}
+                    onAnimationEnd={() => logoButtonRef.current?.classList.remove('research-logo-button--animate')}
+                    aria-label={`Animate ${company} logo`}
+                    className="research-logo-button w-12 h-12 md:w-16 md:h-16 flex-shrink-0 z-10"
+                >
+                    <div className="research-logo-disc bg-white rounded-full p-1 shadow-sm border border-stone-100">
+                        <img
+                            src={logo}
+                            alt={`${company} logo`}
+                            className="w-full h-full object-contain rounded-full"
+                        />
+                    </div>
+                </button>
                 {/* Vertical Line */}
                 {!isLast && (
                     <div className="w-0.5 bg-stone-200 h-full absolute top-16 md:top-20 bottom-0 left-1/2 -translate-x-1/2"></div>
