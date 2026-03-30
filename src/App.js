@@ -155,7 +155,7 @@ function HomePage() {
 
             <p className="text-lg md:text-[1.34rem] text-slate-600 leading-[1.92] max-w-[39rem] mb-10 font-light">
              Studying computer science and artificial intelligence at <span className="font-medium text-[#C41E3A]">Carnegie Mellon University</span>.
-             
+
              Working on <Link to="/projects/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">projects</Link>, <Link to="/courses/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">coursework</Link>, and <Link to="/research" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">research</Link>.
             </p>
 
@@ -175,7 +175,7 @@ function HomePage() {
         {/* Right Column: Particle Animation (Desktop Only) */}
         {!isMobile && (
           <div className="flex-[0.98] relative min-h-[50vh] lg:min-h-auto lg:h-auto order-1 lg:order-2 flex flex-col items-center justify-center px-4 md:px-8 lg:px-0 pt-8 lg:pt-0">
-            <div className="w-full h-full lg:max-w-[620px] xl:max-w-[680px] lg:max-h-[620px] xl:max-h-[680px] flex flex-col items-center justify-center relative">
+            <div className="w-full h-full lg:max-w-[500px] xl:max-w-[560px] lg:max-h-[500px] xl:max-h-[560px] flex flex-col items-center justify-center relative">
               <ResponsiveParticleImage onIndexChange={setActiveIndex} />
               {/* Caption */}
               <div className="mt-5 h-8 flex items-center justify-center">

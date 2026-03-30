@@ -35,7 +35,7 @@ const ParticleImage = ({
 
     // Responsive particle config
     const getParticleConfig = (w) => {
-        if (w < 768) return { gap: 4, size: 4 };       // mobile
+        if (w < 768) return { gap: 4, size: 5 };       // mobile
         if (w > 1600) return { gap: 6, size: 6 };      // large screens
         return { gap: 5, size: 5 };                    // default
     };
