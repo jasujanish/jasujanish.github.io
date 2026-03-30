@@ -86,6 +86,7 @@ function HomePage() {
   const interests = [
     "reinforcement learning",
     "LLM post-training",
+    "computer vision",
     "robotics",
   ];
 
