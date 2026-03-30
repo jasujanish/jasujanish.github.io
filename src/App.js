@@ -10,7 +10,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import NavBarDesktop from './sub_components/nav_bar_desktop.js';
 import TextType from './components/text_type.js';
-import StillBackgroundCSS from './sub_components/still_background.js';
+import FluidBackgroundCSS from './sub_components/fluid_background_fast.js';
 import ParticleImage from './components/ParticleImage';
 
 // Not found page (in case of invalid route)
@@ -114,22 +114,22 @@ function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col font-inter text-gray-900 tracking-tight relative overflow-x-hidden">
-      <StillBackgroundCSS className="opacity-90" />
-      {/* Make the overlay more subtle/glassy to show the background colors */}
-      <div className="fixed inset-0 bg-white/40 backdrop-blur-3xl z-10"></div>
+      <FluidBackgroundCSS opacity={0.70} className="opacity-100" />
+      <div className="fixed inset-0 bg-white/38 backdrop-blur-[72px] z-10"></div>
+      <div className="fixed inset-0 z-10 bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.7),transparent_26%),radial-gradient(circle_at_82%_18%,rgba(255,255,255,0.5),transparent_22%),linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.52))]"></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-20 flex-1 flex flex-col lg:flex-row min-h-screen max-w-7xl mx-auto w-full">
+      <div className="relative z-20 flex-1 flex flex-col lg:flex-row min-h-screen max-w-[1380px] mx-auto w-full">
 
         {/* Left Column: Text & Content */}
-        <div className="flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-16 py-8 lg:py-0 order-2 lg:order-1 mt-8 lg:mt-0">
+        <div className="flex-[1.02] flex flex-col justify-center px-6 md:px-12 lg:px-16 xl:px-20 py-10 lg:py-0 order-2 lg:order-1 mt-8 lg:mt-0">
           <FadeIn opacity={0} delay={0.2} className="flex flex-col items-start text-left">
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 text-slate-800 tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-[5.25rem] font-bold mb-5 text-slate-800 tracking-tight leading-[0.95]">
               Nishchay Jasuja
             </h1>
 
-            <div className="text-xl md:text-2xl lg:text-3xl font-light text-slate-700 mb-6 h-16 md:h-12 flex items-center flex-wrap">
+            <div className="text-xl md:text-[1.65rem] lg:text-[2.1rem] font-light text-slate-700 mb-8 min-h-[4.5rem] md:min-h-[3.75rem] flex items-center flex-wrap leading-[1.35]">
               <span>Interested in&nbsp;</span>
               <span className="font-medium text-slate-900 min-w-[300px]">
                 <TextType
@@ -145,9 +145,9 @@ function HomePage() {
 
             {/* Mobile Animation Placement */}
             {isMobile && (
-              <div className="w-full mb-8 flex flex-col items-center">
+              <div className="w-full mb-10 flex flex-col items-center">
                 <ResponsiveParticleImage onIndexChange={setActiveIndex} />
-                <div className="mt-2 h-8 flex items-center justify-center">
+                <div className="mt-3 h-8 flex items-center justify-center">
                   <p className="text-slate-400 font-light tracking-widest text-xs uppercase">
                     {captions[activeIndex]}
                   </p>
@@ -155,7 +155,7 @@ function HomePage() {
               </div>
             )}
 
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mb-8 font-light">
+            <p className="text-lg md:text-[1.34rem] text-slate-600 leading-[1.92] max-w-[39rem] mb-10 font-light">
               I'm currently studying computer science and machine learning at <span className="font-medium text-[#C41E3A]">Carnegie Mellon University</span>.
               My work spans across <Link to="/projects/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">projects</Link>, <Link to="/courses/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">coursework</Link>, and <Link to="/research" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">research</Link>.
             </p>
@@ -175,11 +175,11 @@ function HomePage() {
 
         {/* Right Column: Particle Animation (Desktop Only) */}
         {!isMobile && (
-          <div className="flex-1 relative min-h-[50vh] lg:min-h-auto lg:h-auto order-1 lg:order-2 flex flex-col items-center justify-center p-4 lg:p-0">
-            <div className="w-full h-full lg:max-w-[600px] lg:max-h-[600px] flex flex-col items-center justify-center relative">
+          <div className="flex-[0.98] relative min-h-[50vh] lg:min-h-auto lg:h-auto order-1 lg:order-2 flex flex-col items-center justify-center px-4 md:px-8 lg:px-0 pt-8 lg:pt-0">
+            <div className="w-full h-full lg:max-w-[620px] xl:max-w-[680px] lg:max-h-[620px] xl:max-h-[680px] flex flex-col items-center justify-center relative">
               <ResponsiveParticleImage onIndexChange={setActiveIndex} />
               {/* Caption */}
-              <div className="mt-4 h-8 flex items-center justify-center">
+              <div className="mt-5 h-8 flex items-center justify-center">
                 <p className="text-slate-400 font-light tracking-widest text-xs uppercase">
                   {captions[activeIndex]}
                 </p>

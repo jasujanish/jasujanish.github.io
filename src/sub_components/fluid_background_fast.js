@@ -17,18 +17,20 @@ export default function FluidBackgroundCSS({ className = "", opacity = 0.6 }) {
       aria-hidden="true"
     >
       {/* Base gradient wash - light mode only */}
-      <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_0%,#ffffff_0%,#fafafa_35%,#f5f5f5_60%,#e7e5e4_100%)] transition-colors duration-700" />
+      <div className="absolute inset-0 bg-[radial-gradient(140%_110%_at_50%_0%,#ffffff_0%,#f7fbff_28%,#eef6ff_52%,#edf8f7_72%,#fff9ef_100%)] transition-colors duration-700" />
+      <div className="absolute inset-0 opacity-80 bg-[radial-gradient(40%_34%_at_50%_12%,rgba(255,255,255,0.96),rgba(255,255,255,0)_72%),radial-gradient(32%_28%_at_82%_22%,rgba(191,219,254,0.44),rgba(191,219,254,0)_76%),radial-gradient(26%_22%_at_20%_74%,rgba(167,243,208,0.34),rgba(167,243,208,0)_78%)]" />
 
       {/* Animated blobs container */}
       <div
         className="absolute inset-0 overflow-hidden"
-        style={{ filter: "blur(32px) saturate(1.2)", opacity }}
+        style={{ filter: "blur(42px) saturate(1.3)", opacity }}
       >
         <span className="fb-blob fb-blob--a" />
         <span className="fb-blob fb-blob--b" />
         <span className="fb-blob fb-blob--c" />
         <span className="fb-blob fb-blob--d" />
         <span className="fb-blob fb-blob--e" />
+        <span className="fb-blob fb-blob--f" />
       </div>
 
       {/* Subtle vignette for depth */}
@@ -57,54 +59,59 @@ export default function FluidBackgroundCSS({ className = "", opacity = 0.6 }) {
 
         .fb-blob {
           position: absolute;
-          width: 48vmax;
-          height: 48vmax;
+          width: 52vmax;
+          height: 52vmax;
           border-radius: 9999px;
           will-change: transform, opacity;
           mix-blend-mode: screen;
-          opacity: 0.85;
-          /* Slightly darker default blue core + stronger mid stop */
-          background: radial-gradient(50% 50% at 50% 50%, rgba(59,130,246,0.9) 0%, rgba(59,130,246,0.4) 35%, rgba(59,130,246,0.0) 60%);
+          opacity: 0.82;
+          background: radial-gradient(50% 50% at 50% 50%, rgba(59,130,246,0.82) 0%, rgba(59,130,246,0.32) 38%, rgba(59,130,246,0.06) 56%, rgba(59,130,246,0.0) 72%);
           filter: hue-rotate(0deg);
         }
 
-        /* Slightly darker hues and slightly faster animations */
-        .fb-blob--a { left: -10vmax; top: -8vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(96,165,250,0.9) 0%, rgba(96,165,250,0.4) 35%, rgba(96,165,250,0.0) 60%); animation: fb-path-a 22s ease-in-out infinite; }
-        .fb-blob--b { right: -12vmax; top: 10vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(59,130,246,0.9) 0%, rgba(59,130,246,0.4) 35%, rgba(59,130,246,0.0) 60%); animation: fb-path-b 26s ease-in-out infinite; }
-        .fb-blob--c { left: 20vmax; bottom: -16vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(52,211,153,0.9) 0%, rgba(52,211,153,0.4) 35%, rgba(52,211,153,0.0) 60%); animation: fb-path-c 30s ease-in-out infinite; }
-        .fb-blob--d { right: 18vmax; bottom: -14vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(251,146,60,0.9) 0%, rgba(251,146,60,0.4) 35%, rgba(251,146,60,0.0) 60%); animation: fb-path-d 24s ease-in-out infinite; }
-        .fb-blob--e { left: -18vmax; bottom: 8vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(251,113,133,0.9) 0%, rgba(251,113,133,0.4) 35%, rgba(251,113,133,0.0) 60%); animation: fb-path-e 34s ease-in-out infinite; }
+        .fb-blob--a { left: -12vmax; top: -12vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(125,211,252,0.92) 0%, rgba(125,211,252,0.4) 36%, rgba(125,211,252,0.08) 56%, rgba(125,211,252,0) 74%); animation: fb-path-a 30s ease-in-out infinite; }
+        .fb-blob--b { right: -16vmax; top: 4vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(96,165,250,0.9) 0%, rgba(96,165,250,0.38) 36%, rgba(96,165,250,0.06) 58%, rgba(96,165,250,0) 74%); animation: fb-path-b 34s ease-in-out infinite; }
+        .fb-blob--c { left: 18vmax; bottom: -18vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(110,231,183,0.88) 0%, rgba(110,231,183,0.34) 36%, rgba(110,231,183,0.08) 56%, rgba(110,231,183,0) 74%); animation: fb-path-c 38s ease-in-out infinite; }
+        .fb-blob--d { right: 12vmax; bottom: -16vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(253,186,116,0.86) 0%, rgba(253,186,116,0.32) 34%, rgba(253,186,116,0.05) 54%, rgba(253,186,116,0) 72%); animation: fb-path-d 32s ease-in-out infinite; }
+        .fb-blob--e { left: -20vmax; bottom: 2vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(244,114,182,0.78) 0%, rgba(244,114,182,0.28) 34%, rgba(244,114,182,0.04) 54%, rgba(244,114,182,0) 72%); animation: fb-path-e 42s ease-in-out infinite; }
+        .fb-blob--f { right: 24vmax; top: -10vmax; background: radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.34) 34%, rgba(255,255,255,0.08) 54%, rgba(255,255,255,0) 72%); animation: fb-path-f 28s ease-in-out infinite; }
 
         @keyframes fb-path-a {
           0%   { transform: translate3d(0,0,0) scale(1); }
-          25%  { transform: translate3d(12vmax, 6vmax, 0) scale(1.1); }
-          50%  { transform: translate3d(4vmax, 16vmax, 0) scale(0.95); }
-          75%  { transform: translate3d(-8vmax, 8vmax, 0) scale(1.05); }
+          25%  { transform: translate3d(14vmax, 5vmax, 0) scale(1.08); }
+          50%  { transform: translate3d(9vmax, 18vmax, 0) scale(0.94); }
+          75%  { transform: translate3d(-6vmax, 8vmax, 0) scale(1.04); }
           100% { transform: translate3d(0,0,0) scale(1); }
         }
         @keyframes fb-path-b {
-          0%   { transform: translate3d(0,0,0) scale(1.05); }
-          20%  { transform: translate3d(-10vmax,-6vmax,0) scale(0.95); }
-          55%  { transform: translate3d(-18vmax, 2vmax,0) scale(1.1); }
-          100% { transform: translate3d(0,0,0) scale(1.05); }
+          0%   { transform: translate3d(0,0,0) scale(1.03); }
+          30%  { transform: translate3d(-12vmax,-4vmax,0) scale(0.96); }
+          65%  { transform: translate3d(-20vmax, 5vmax,0) scale(1.1); }
+          100% { transform: translate3d(0,0,0) scale(1.03); }
         }
         @keyframes fb-path-c {
-          0%   { transform: translate3d(0,0,0) scale(0.95); }
-          30%  { transform: translate3d(-8vmax,-10vmax,0) scale(1.05); }
-          65%  { transform: translate3d(6vmax, -16vmax,0) scale(1.15); }
-          100% { transform: translate3d(0,0,0) scale(0.95); }
+          0%   { transform: translate3d(0,0,0) scale(0.98); }
+          30%  { transform: translate3d(-10vmax,-10vmax,0) scale(1.04); }
+          65%  { transform: translate3d(8vmax, -18vmax,0) scale(1.14); }
+          100% { transform: translate3d(0,0,0) scale(0.98); }
         }
         @keyframes fb-path-d {
-          0%   { transform: translate3d(0,0,0) scale(1.1); }
-          35%  { transform: translate3d(-12vmax, 8vmax,0) scale(0.9); }
-          70%  { transform: translate3d(-4vmax, -10vmax,0) scale(1.05); }
-          100% { transform: translate3d(0,0,0) scale(1.1); }
+          0%   { transform: translate3d(0,0,0) scale(1.08); }
+          35%  { transform: translate3d(-14vmax, 6vmax,0) scale(0.92); }
+          70%  { transform: translate3d(-2vmax, -12vmax,0) scale(1.03); }
+          100% { transform: translate3d(0,0,0) scale(1.08); }
         }
         @keyframes fb-path-e {
-          0%   { transform: translate3d(0,0,0) scale(1.05); }
-          40%  { transform: translate3d(16vmax,-6vmax,0) scale(0.9); }
-          85%  { transform: translate3d(8vmax, 10vmax,0) scale(1.1); }
-          100% { transform: translate3d(0,0,0) scale(1.05); }
+          0%   { transform: translate3d(0,0,0) scale(1.04); }
+          40%  { transform: translate3d(18vmax,-4vmax,0) scale(0.9); }
+          85%  { transform: translate3d(12vmax, 12vmax,0) scale(1.08); }
+          100% { transform: translate3d(0,0,0) scale(1.04); }
+        }
+        @keyframes fb-path-f {
+          0%   { transform: translate3d(0,0,0) scale(0.92); }
+          30%  { transform: translate3d(-8vmax,8vmax,0) scale(1.02); }
+          60%  { transform: translate3d(-16vmax,2vmax,0) scale(0.96); }
+          100% { transform: translate3d(0,0,0) scale(0.92); }
         }
       `}</style>
     </div>
