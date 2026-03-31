@@ -24,8 +24,6 @@ const TextType = ({
   const containerRef = useRef(null);
   const cursorRef = useRef(null);
 
-  const textArray = Array.isArray(text) ? text : [text];
-
   // GSAP Cursor Animation Effect
   useEffect(() => {
     if (showCursor && cursorRef.current) {
@@ -42,6 +40,7 @@ const TextType = ({
   // Main Typing and Looping Effect
   useEffect(() => {
     let timeout;
+    const textArray = Array.isArray(text) ? text : [text];
     const currentSentence = textArray[currentTextIndex];
 
     // Typing logic
@@ -72,7 +71,7 @@ const TextType = ({
 
     return () => clearTimeout(timeout);
 
-  }, [displayedText, isDeleting, currentTextIndex, textArray, loop, typingSpeed, deletingSpeed, pauseDuration]);
+  }, [displayedText, isDeleting, currentTextIndex, text, loop, typingSpeed, deletingSpeed, pauseDuration]);
 
   return createElement(
     Component,

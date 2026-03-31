@@ -3,6 +3,7 @@ import NavBarDesktop from '../sub_components/nav_bar_desktop';
 import photo1 from '../images/research1.jpg';
 import photo2 from '../images/research1.jpg';
 import FadeIn from './fade_in';
+import { PretextBlock, PretextRichContent } from './pretext_block';
 
 const ResearchItem = ({ logo, company, role, date, children, isLast }) => {
     const logoButtonRef = React.useRef(null);
@@ -45,14 +46,22 @@ const ResearchItem = ({ logo, company, role, date, children, isLast }) => {
 
             {/* Right Column: Content */}
             <div className="pb-12 md:pb-16 flex-1 text-left">
-                <h3 className="text-xl md:text-2xl font-semibold text-stone-800 mb-1">
+                <PretextBlock
+                    as="h3"
+                    measurementText={company}
+                    className="text-xl md:text-2xl font-semibold text-stone-800 mb-1"
+                >
                     {company}
-                </h3>
-                <p className="text-sm md:text-base text-stone-500 mb-4 font-normal">
+                </PretextBlock>
+                <PretextBlock
+                    as="p"
+                    measurementText={`${role} • ${date}`}
+                    className="text-sm md:text-base text-stone-500 mb-4 font-normal"
+                >
                     {role} • {date}
-                </p>
+                </PretextBlock>
                 <div className="text-stone-700 text-sm md:text-base leading-relaxed space-y-4">
-                    {children}
+                    <PretextRichContent whiteSpace="pre-wrap">{children}</PretextRichContent>
                 </div>
             </div>
         </div>

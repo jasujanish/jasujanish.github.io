@@ -8,16 +8,20 @@ import FadeIn from './components/fade_in.js';
 import { Link } from "react-router-dom";
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import NavBarDesktop from './sub_components/nav_bar_desktop.js';
 import TextType from './components/text_type.js';
 import FluidBackgroundCSS from './sub_components/fluid_background_fast.js';
 import ParticleImage from './components/ParticleImage';
+import { PretextBlock } from './components/pretext_block.js';
 
 // Not found page (in case of invalid route)
 function NotFoundPage() {
   return (
     <div className="min-h-screen min-w-screen flex items-center justify-center bg-fade text-stone-800 p-8">
-      <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">
+      <PretextBlock
+        as="p"
+        measurementText={'Page Not Found Return Home'}
+        className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center"
+      >
         <Link
           to="/"
           className="text-stone-800 hover:text-blue-800 hover:cursor-pointer transition-all duration-300"
@@ -25,7 +29,7 @@ function NotFoundPage() {
           Page Not Found <br></br>
           Return Home
         </Link>
-      </p>
+      </PretextBlock>
     </div>
   );
 }
@@ -97,6 +101,9 @@ function HomePage() {
   ];
 
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const interestMeasurementText = interests.map(
+    (interest) => `Interested in ${interest}`
+  );
 
   // Mobile detection
   const [isMobile, setIsMobile] = React.useState(false); // Default false, update on mount
@@ -124,11 +131,19 @@ function HomePage() {
         <div className="flex-[1.02] flex flex-col justify-center px-6 md:px-12 lg:px-16 xl:px-20 py-10 lg:py-0 order-2 lg:order-1 mt-8 lg:mt-0">
           <FadeIn opacity={0} delay={0.2} className="flex flex-col items-start text-left">
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-[5.25rem] font-bold mb-5 text-slate-800 tracking-tight leading-[0.95]">
+            <PretextBlock
+              as="h1"
+              measurementText="Nishchay Jasuja"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-[5.25rem] font-bold mb-5 text-slate-800 tracking-tight leading-[0.95]"
+            >
               Nishchay Jasuja
-            </h1>
+            </PretextBlock>
 
-            <div className="text-xl md:text-[1.65rem] lg:text-[2.1rem] font-light text-slate-700 mb-8 min-h-[4.5rem] md:min-h-[3.75rem] flex items-center flex-wrap leading-[1.35]">
+            <PretextBlock
+              as="div"
+              measurementText={interestMeasurementText}
+              className="text-xl md:text-[1.65rem] lg:text-[2.1rem] font-light text-slate-700 mb-8 min-h-[4.5rem] md:min-h-[3.75rem] flex items-center flex-wrap leading-[1.35]"
+            >
               <span>Interested in&nbsp;</span>
               <span className="font-medium text-slate-900 min-w-[300px]">
                 <TextType
@@ -140,25 +155,32 @@ function HomePage() {
                   cursorClassName="text-slate-900"
                 />
               </span>
-            </div>
+            </PretextBlock>
 
             {/* Mobile Animation Placement */}
             {isMobile && (
               <div className="w-full mb-10 flex flex-col items-center">
                 <ResponsiveParticleImage onIndexChange={setActiveIndex} />
                 <div className="mt-3 h-8 flex items-center justify-center">
-                  <p className="text-slate-400 font-light tracking-widest text-xs uppercase">
+                  <PretextBlock
+                    as="p"
+                    measurementText={captions}
+                    className="text-slate-400 font-light tracking-widest text-xs uppercase"
+                  >
                     {captions[activeIndex]}
-                  </p>
+                  </PretextBlock>
                 </div>
               </div>
             )}
 
-            <p className="text-lg md:text-[1.34rem] text-slate-600 leading-[1.92] max-w-[39rem] mb-10 font-light">
+            <PretextBlock
+              as="p"
+              className="text-lg md:text-[1.34rem] text-slate-600 leading-[1.92] max-w-[39rem] mb-10 font-light"
+            >
              Studying computer science and artificial intelligence at <span className="font-medium text-[#C41E3A]">Carnegie Mellon University</span>.
 
              Working on <Link to="/projects/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">projects</Link>, <Link to="/courses/all" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">coursework</Link>, and <Link to="/research" className="font-medium text-slate-900 hover:text-blue-600 underline decoration-slate-300 underline-offset-4 transition-all duration-300 hover:decoration-blue-400">research</Link>.
-            </p>
+            </PretextBlock>
 
             {/* Social & Contact */}
             <div className="flex space-x-6 mb-12">
@@ -180,9 +202,13 @@ function HomePage() {
               <ResponsiveParticleImage onIndexChange={setActiveIndex} />
               {/* Caption */}
               <div className="mt-5 h-8 flex items-center justify-center">
-                <p className="text-slate-400 font-light tracking-widest text-xs uppercase">
+                <PretextBlock
+                  as="p"
+                  measurementText={captions}
+                  className="text-slate-400 font-light tracking-widest text-xs uppercase"
+                >
                   {captions[activeIndex]}
-                </p>
+                </PretextBlock>
               </div>
             </div>
           </div>

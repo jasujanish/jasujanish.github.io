@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import { motion, AnimatePresence } from "framer-motion"; // The magic engine
 import NavBarDesktop from '../sub_components/nav_bar_desktop';
 import NoMotionBackground from '../sub_components/no_motion_background';
+import { PretextBlock, PretextRichContent } from './pretext_block';
 
 // --- ANIMATION VARIANTS ---
 
@@ -41,6 +42,26 @@ const buttonSpring = {
 
 // --- COMPONENTS ---
 
+function renderMeasuredContent(content, { as = 'div', className = '', whiteSpace = 'normal' } = {}) {
+  if (React.isValidElement(content) || Array.isArray(content)) {
+    return (
+      <div className={className}>
+        <PretextRichContent whiteSpace={whiteSpace}>{content}</PretextRichContent>
+      </div>
+    );
+  }
+
+  return (
+    <PretextBlock
+      as={as}
+      className={className}
+      whiteSpace={whiteSpace}
+    >
+      {content}
+    </PretextBlock>
+  );
+}
+
 function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {
   const allTags = [...new Set(content.flatMap(item => item.tags || []))];
   
@@ -66,7 +87,13 @@ function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {
   return (
     <div className="w-full mx-auto my-6 md:my-10 z-20">
       <motion.div layout className="flex flex-wrap gap-2 items-center">
-        <span className="text-gray-600 font-medium mr-2 text-sm md:text-base">Filter by tags:</span>
+        <PretextBlock
+          as="span"
+          measurementText="Filter by tags:"
+          className="text-gray-600 font-medium mr-2 text-sm md:text-base inline-block"
+        >
+          Filter by tags:
+        </PretextBlock>
         
         <AnimatePresence mode='popLayout'>
           {allTags.map(tag => {
@@ -123,7 +150,9 @@ function TagFilter({ content, page_name, selectedTags, setSelectedTags }) {
             exit={{ opacity: 0, height: 0 }}
             className="mt-2 text-xs md:text-sm text-gray-600 overflow-hidden"
           >
-            Showing items with tags: {selectedTags.join(', ')}
+            <PretextBlock as="div">
+              Showing items with tags: {selectedTags.join(', ')}
+            </PretextBlock>
           </motion.div>
         )}
       </AnimatePresence>
@@ -143,9 +172,13 @@ function BlogList({content, page_name, selectedTags}) {
   if (filteredContent.length === 0) {
     return (
       <div className="flex flex-col w-full z-10">
-        <div className="text-center py-10 text-gray-500 text-sm md:text-base">
+        <PretextBlock
+          as="div"
+          measurementText="No posts match the selected tags."
+          className="text-center py-10 text-gray-500 text-sm md:text-base"
+        >
           No posts match the selected tags.
-        </div>
+        </PretextBlock>
       </div>
     );
   }
@@ -182,15 +215,26 @@ function BlogList({content, page_name, selectedTags}) {
             />
             
             <div className='w-full md:w-1/2 p-[2%] flex flex-col'>
-              <motion.p layout className="font-mono text-gray-800 font-light text-base md:text-lg lg:text-xl">
-                {p.name}
-              </motion.p>
-              <p className="font-mono text-gray-600 font-light text-xs md:text-sm mb-2">
+              <motion.div layout>
+                <PretextBlock
+                  as="p"
+                  measurementText={p.name}
+                  className="font-mono text-gray-800 font-light text-base md:text-lg lg:text-xl"
+                >
+                  {p.name}
+                </PretextBlock>
+              </motion.div>
+              <PretextBlock
+                as="p"
+                measurementText={`${p.date} · ${p.time}`}
+                className="font-mono text-gray-600 font-light text-xs md:text-sm mb-2"
+              >
                 {p.date} · {p.time}
-              </p>
-              <div className="font-sans text-gray-700 font-light text-sm md:text-base">
-                {p.summary}
-              </div>
+              </PretextBlock>
+              {renderMeasuredContent(p.summary, {
+                className: "font-sans text-gray-700 font-light text-sm md:text-base",
+                whiteSpace: 'pre-wrap',
+              })}
               {p.tags && p.tags.length > 0 && (
                 <div className="mt-2 flex flex-wrap gap-1">
                   {p.tags.map(tag => (
@@ -231,23 +275,33 @@ export default function StandardSubPage({page_name, content, idx}) {
           transition={{ duration: 0.5 }}
           className="flex flex-col justify-between items-center w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto p-4 md:p-6 lg:p-[3%]"
         >
-          <motion.h1 
+          <motion.div 
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="font-mono text-gray-800 font-bold text-xl md:text-2xl lg:text-3xl mb-2 text-center"
           >
-            {post.name}
-          </motion.h1>
+            <PretextBlock
+              as="h1"
+              measurementText={post.name}
+              className="font-mono text-gray-800 font-bold text-xl md:text-2xl lg:text-3xl mb-2 text-center"
+            >
+              {post.name}
+            </PretextBlock>
+          </motion.div>
           
-          <motion.p 
+          <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="font-mono text-gray-600 font-light text-sm md:text-md mb-2"
           >
-            {post.date} · {post.time}
-          </motion.p>
+            <PretextBlock
+              as="p"
+              measurementText={`${post.date} · ${post.time}`}
+              className="font-mono text-gray-600 font-light text-sm md:text-md mb-2"
+            >
+              {post.date} · {post.time}
+            </PretextBlock>
+          </motion.div>
           
           <div className="m-6 md:m-10">
             {/* Matches the list view image for smooth transition if supported by router setup */}
@@ -257,9 +311,13 @@ export default function StandardSubPage({page_name, content, idx}) {
               alt={post.name} 
               className="w-full h-auto rounded-lg shadow-lg" 
             />
-            <p className="text-gray-500 text-center font-light font-sans m-1 text-xs md:text-sm"> 
+            <PretextBlock
+              as="p"
+              measurementText={post.image_caption}
+              className="text-gray-500 text-center font-light font-sans m-1 text-xs md:text-sm"
+            >
               {post.image_caption}
-            </p>
+            </PretextBlock>
           </div>
 
           <motion.div 
@@ -268,7 +326,9 @@ export default function StandardSubPage({page_name, content, idx}) {
             transition={{ delay: 0.4 }}
             className="font-sans text-gray-700 font-light text-sm md:text-base lg:text-lg leading-relaxed p-4"
           >
-            {post.description}
+            <PretextRichContent whiteSpace="pre-wrap">
+              {post.description}
+            </PretextRichContent>
           </motion.div>
 
           {post.tags && post.tags.length > 0 && (
@@ -292,7 +352,13 @@ export default function StandardSubPage({page_name, content, idx}) {
               className="text-blue-600 hover:text-blue-800 underline hover:cursor-pointer self-start"
               onClick={() => navigate(`/${page_name}/main`)}
             > 
-              Back to Blog
+              <PretextBlock
+                as="span"
+                measurementText="Back to Blog"
+                className="inline-block"
+              >
+                Back to Blog
+              </PretextBlock>
             </span> 
           </div>
         </motion.div>

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useMemo } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import photo1 from '../images/photo_1.jpeg';
 import photo2 from '../images/photo_2.jpeg';
 import photo3 from '../images/photo_3.jpeg';
@@ -11,9 +11,6 @@ const ParticleImage = ({
     onIndexChange
 }) => {
     const canvasRef = useRef(null);
-
-    // Keep state only for external/react reasons (not required for animation correctness)
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     // Refs (no re-render churn)
     const imagesRef = useRef([]);
@@ -305,7 +302,6 @@ const ParticleImage = ({
         });
 
         currentIndexRef.current = nextIndex;
-        setCurrentImageIndex(nextIndex);
         if (onIndexChange) onIndexChange(nextIndex);
     };
 

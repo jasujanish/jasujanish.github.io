@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { PretextBlock } from "../components/pretext_block";
 
 // Nav bar at the top of each page
 export default function NavBarDesktop({ index }) {
@@ -18,7 +19,13 @@ export default function NavBarDesktop({ index }) {
                         : 'tracking-normal text-base md:text-xl font-normal cursor-pointer relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full'
                 }
             >
-                Nishchay Jasuja
+                <PretextBlock
+                    as="span"
+                    measurementText="Nishchay Jasuja"
+                    className="inline-block"
+                >
+                    Nishchay Jasuja
+                </PretextBlock>
             </Link>
             <nav className="flex flex-wrap gap-x-6 md:gap-x-12 xl:gap-x-16">
                 {navLinks.map((link) => (
@@ -30,7 +37,13 @@ export default function NavBarDesktop({ index }) {
                             : 'hover:cursor-pointer text-sm md:text-lg font-extralight relative pb-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-stone-800 after:transition-all after:duration-300 hover:after:w-full'
                         }
                     >
-                        {link.label}
+                        <PretextBlock
+                            as="span"
+                            measurementText={link.label}
+                            className="inline-block"
+                        >
+                            {link.label}
+                        </PretextBlock>
                     </Link>
                 ))}
             </nav>
