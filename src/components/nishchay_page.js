@@ -2,13 +2,10 @@ import React from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import todayImage from '../images/today.jpeg';
-import photoOne from '../images/photo_1.jpeg';
-import photoThree from '../images/photo_3.jpeg';
-import bunnyImage from '../images/bunny.png';
-import mambaImage from '../images/mamba.jpg';
-import artImage from '../images/213.png';
-import bookImage from '../images/21127.png';
-import ocamlImage from '../images/ocaml.png'
+import fall2024_image from '../images/fall2024.png';
+import spring2025_image from '../images/spring2025.png';
+import summer2025_image from '../images/summer2025.png';
+import fall2025_image from '../images/fall2025.png'
 
 const TIMELINE_ENTRIES = [
   {
@@ -24,7 +21,7 @@ const TIMELINE_ENTRIES = [
   },
   {
     season: 'Fall + Winter 2025',
-    image: ocamlImage,
+    image: fall2025_image,
     objectPosition: 'center center',
     imageCaption: 'OCaml Logo // Source: ocamlverse.net',
     bullets: [
@@ -35,7 +32,7 @@ const TIMELINE_ENTRIES = [
   },
   {
     season: 'Summer 2025',
-    image: bunnyImage,
+    image: summer2025_image,
     objectPosition: '56% center',
     imageCaption: 'A bunny I randomly saw // Source: Me',
     bullets: [
@@ -45,7 +42,7 @@ const TIMELINE_ENTRIES = [
   },
   {
     season: 'Spring 2025',
-    image: artImage,
+    image: spring2025_image,
     objectPosition: 'center center',
     imageCaption: "My favorite systems textbook // Source: Bryant & O'Hallaron",
     bullets: [
@@ -55,7 +52,7 @@ const TIMELINE_ENTRIES = [
   },
   {
     season: 'Fall + Winter 2024',
-    image: bookImage,
+    image: fall2024_image,
     objectPosition: 'center top',
     imageCaption: "My favorite discrete math textbook // Source: Clive Newstead",
     bullets: [
