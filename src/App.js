@@ -12,6 +12,7 @@ import TextType from './components/text_type.js';
 import FluidBackgroundCSS from './sub_components/fluid_background_fast.js';
 import ParticleImage from './components/ParticleImage';
 import { PretextBlock } from './components/pretext_block.js';
+import NishchayPage from './components/nishchay_page.js';
 
 // Not found page (in case of invalid route)
 function NotFoundPage() {
@@ -223,7 +224,11 @@ export default function App() {
   const router = createHashRouter([
     {
       path: '/',
-      element: (<HomePage />)
+      element: <NishchayPage />
+    },
+    {
+      path: '/home',
+      element: <HomePage />
     },
     {
       path: '/about/:slug',
@@ -240,6 +245,10 @@ export default function App() {
     {
       path: '/research',
       element: <ResearchPage />
+    },
+    {
+      path: '/Nishchay',
+      element: <NishchayPage />
     },
     {
       path: '*',
