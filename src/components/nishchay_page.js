@@ -16,7 +16,6 @@ const TIMELINE_ENTRIES = [
     bullets: [
       "Currently working as a research assistant at CMU's Language Technologies Institute",
       'Currently trying to figure out how to improve speculative decoding throughput with reinforcement learning.',
-      'Currently thinking about Kierkegaard and what it means to live correctly.',
     ],
   },
   {
