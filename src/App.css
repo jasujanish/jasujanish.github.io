@@ -192,17 +192,26 @@
   display: none;
 }
 
+.nishchay-window-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
 .nishchay-minitab {
+  position: absolute;
   width: min(78vw, 860px);
-  height: min(82vh, 760px);
+  height: min(82dvh, 760px);
   min-width: 340px;
   min-height: 320px;
   max-width: calc(100vw - 24px);
-  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
   display: flex;
   flex-direction: column;
   resize: both;
   overflow: hidden;
+  pointer-events: auto;
   border: 1px solid #d4d5d6;
   border-radius: 1.5rem;
   background: rgba(255, 255, 255, 0.9);
@@ -215,13 +224,29 @@
 
 .nishchay-minitab--expanded {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   min-width: 0;
   min-height: 0;
   max-width: 100vw;
-  max-height: 100vh;
+  max-height: 100dvh;
   border-radius: 0;
   resize: none;
+}
+
+.nishchay-minitab--collapsed {
+  height: auto;
+  min-height: 0;
+  resize: none;
+}
+
+.nishchay-minitab-titlebar {
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+}
+
+.nishchay-minitab--expanded .nishchay-minitab-titlebar {
+  cursor: default;
 }
 
 .nishchay-window-control {
@@ -288,14 +313,27 @@
 
 @media (max-width: 767px) {
   .nishchay-minitab {
+    width: calc(100vw - 1rem);
+    height: min(72dvh, 620px);
+    min-width: 0;
+    min-height: 300px;
+    max-width: calc(100vw - 1rem);
+    max-height: calc(100dvh - 1rem);
+    border-radius: 1rem;
+    resize: none;
+  }
+
+  .nishchay-minitab--expanded {
     width: 100vw;
     height: 100dvh;
-    min-width: 0;
-    min-height: 0;
     max-width: 100vw;
     max-height: 100dvh;
     border-radius: 0;
-    resize: none;
+  }
+
+  .nishchay-minitab--collapsed {
+    height: auto;
+    min-height: 0;
   }
 
   .nishchay-window-control {
