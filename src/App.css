@@ -168,7 +168,7 @@
 }
 
 .nishchay-page {
-  --nishchay-bg: #fcfcfc;
+  --nishchay-bg: #ffffff;
   --nishchay-text: #1f1f1f;
   --nishchay-subtext: #2f2f30;
   background-color: var(--nishchay-bg);
@@ -214,7 +214,7 @@
   pointer-events: auto;
   border: 1px solid #d4d5d6;
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffffff;
   box-shadow:
     0 28px 70px rgba(31, 31, 31, 0.12),
     0 6px 18px rgba(31, 31, 31, 0.06);
@@ -283,7 +283,7 @@
 }
 
 .nishchay-minitab-window-label {
-  font-size: clamp(0.64rem, 0.58rem + 0.42cqi, 0.82rem);
+  font-size: clamp(0.64rem, 2.1cqi, 0.88rem);
   font-weight: 500;
   letter-spacing: 0.08em;
 }
@@ -291,22 +291,23 @@
 .nishchay-minitab-body {
   overflow-y: auto;
   overscroll-behavior: contain;
+  container-type: size;
 }
 
 .nishchay-minitab-eyebrow {
-  font-size: clamp(0.66rem, 0.6rem + 0.46cqi, 0.84rem);
+  font-size: clamp(0.64rem, 1.7cqmin, 0.9rem);
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
 .nishchay-minitab-list {
-  font-size: clamp(0.88rem, 0.76rem + 0.55cqi, 1.05rem);
-  line-height: 1.72;
+  font-size: clamp(0.86rem, 3.7cqmin, 1.8rem);
+  line-height: 1.58;
 }
 
 .nishchay-minitab-caption {
-  font-size: clamp(0.68rem, 0.62rem + 0.38cqi, 0.84rem);
+  font-size: clamp(0.66rem, 1.8cqmin, 0.94rem);
   font-style: italic;
   letter-spacing: 0.01em;
 }

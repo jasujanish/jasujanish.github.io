@@ -5,7 +5,7 @@ import todayImage from '../images/today.jpeg';
 import fall2024_image from '../images/fall2024.png';
 import spring2025_image from '../images/spring2025.png';
 import summer2025_image from '../images/summer2025.png';
-import fall2025_image from '../images/fall2025.png'
+import fall2025_image from '../images/fall2025.png';
 
 const TIMELINE_ENTRIES = [
   {
@@ -14,8 +14,9 @@ const TIMELINE_ENTRIES = [
     objectPosition: 'center center',
     imageCaption: 'Me // Source: Me',
     bullets: [
-      "Currently working as a research assistant at CMU's Language Technologies Institute",
+      { text: "Currently working as a research assistant at CMU's Language Technologies Institute", href: 'https://www.lti.cs.cmu.edu/research/index.html' },
       'Currently trying to figure out how to improve speculative decoding throughput with reinforcement learning.',
+      'Currently studying RL',
     ],
   },
   {
@@ -24,8 +25,8 @@ const TIMELINE_ENTRIES = [
     objectPosition: 'center center',
     imageCaption: 'OCaml Logo // Source: ocamlverse.net',
     bullets: [
-      'Applied SFT and DPO on Qwen3-4B using filtered synthetic data to improve OCaml coding.',
-      'Experimented with applying GRPO to Mamba models',
+      { text: 'Applied SFT and DPO on Qwen3-4B using filtered synthetic data to improve OCaml coding.', href: 'https://github.com/jasujanish/701_final' },
+      { text: 'Experimented with applying GRPO to Mamba models', href: 'https://github.com/jasujanish/long_context_mamba' },
       'Took a few graduate ML courses at CMU',
     ],
   },
@@ -76,6 +77,31 @@ const cardReveal = {
 const WINDOW_EDGE_GAP = 8;
 
 const clamp = (value, minimum, maximum) => Math.min(Math.max(value, minimum), maximum);
+
+const getSnapshotBulletText = (bullet) => (
+  typeof bullet === 'string' ? bullet : bullet?.text
+);
+
+const getSnapshotBulletKey = (bullet) => (
+  typeof bullet === 'string' ? bullet : `${bullet?.text}-${bullet?.href || 'text'}`
+);
+
+const renderSnapshotBullet = (bullet) => {
+  if (typeof bullet === 'string' || !bullet?.href) {
+    return getSnapshotBulletText(bullet);
+  }
+
+  return (
+    <a
+      href={bullet.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline decoration-[#2F2F30]/35 underline-offset-[0.18em] transition-colors duration-200 hover:text-[#1F1F1F]"
+    >
+      {bullet.text}
+    </a>
+  );
+};
 
 const getViewportSize = () => {
   if (typeof window === 'undefined') {
@@ -232,16 +258,45 @@ export default function NishchayPage() {
   }, []);
 
   const toggleMinitabCollapse = React.useCallback((id) => {
-    setOpenMinitabs((current) => current.map((minitab) => (
-      minitab.id === id
-        ? {
-            ...minitab,
-            isCollapsed: !minitab.isCollapsed,
-            isExpanded: false,
-            zIndex: nextWindowZ.current++,
-          }
-        : minitab
-    )));
+    const node = minitabNodes.current.get(id);
+    const rect = node?.getBoundingClientRect();
+    const fallbackSize = getDefaultWindowSize();
+
+    setOpenMinitabs((current) => current.map((minitab) => {
+      if (minitab.id !== id) {
+        return minitab;
+      }
+
+      if (minitab.isCollapsed) {
+        const restoreFrame = minitab.collapsedFromFrame || {
+          width: minitab.width || fallbackSize.width,
+          height: minitab.height || fallbackSize.height,
+        };
+
+        return {
+          ...minitab,
+          ...restoreFrame,
+          isCollapsed: false,
+          isExpanded: false,
+          collapsedFromFrame: null,
+          zIndex: nextWindowZ.current++,
+        };
+      }
+
+      const currentFrame = {
+        width: rect?.width || minitab.width || fallbackSize.width,
+        height: rect?.height || minitab.height || fallbackSize.height,
+      };
+
+      return {
+        ...minitab,
+        ...currentFrame,
+        isCollapsed: true,
+        isExpanded: false,
+        collapsedFromFrame: currentFrame,
+        zIndex: nextWindowZ.current++,
+      };
+    }));
   }, []);
 
   const toggleMinitabExpansion = React.useCallback((id) => {
@@ -356,7 +411,7 @@ export default function NishchayPage() {
   }, []);
 
   return (
-    <div className="nishchay-page min-h-screen overflow-x-hidden bg-[#FCFCFC]">
+    <div className="nishchay-page min-h-screen overflow-x-hidden bg-white">
       <div className="mx-auto flex min-h-screen max-w-[1520px] flex-col lg:flex-row">
         <section className="flex items-start px-5 pb-10 pt-20 sm:px-8 md:px-14 lg:sticky lg:top-0 lg:h-screen lg:w-[43%] lg:px-20 lg:pt-36">
           <motion.div
@@ -367,7 +422,7 @@ export default function NishchayPage() {
           >
             <div className="group relative inline-flex flex-col items-start">
               <div className="pointer-events-none absolute bottom-full left-0 mb-5 translate-y-2 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="rounded-full border border-[#D4D5D6] bg-white/96 px-4 py-2 text-[0.72rem] font-medium tracking-[-0.01em] text-[#2F2F30]/78 shadow-[0_10px_30px_rgba(31,31,31,0.06)] backdrop-blur-sm md:text-[0.76rem]">
+                <div className="rounded-full border border-[#D4D5D6] bg-white px-4 py-2 text-[0.72rem] font-medium tracking-[-0.01em] text-[#2F2F30]/78 shadow-[0_10px_30px_rgba(31,31,31,0.06)] backdrop-blur-sm md:text-[0.76rem]">
                   Artifical Intellgience @ Carnegie Mellon University // RL to the moon
                 </div>
               </div>
@@ -423,17 +478,15 @@ export default function NishchayPage() {
                   onClick={() => openMinitab(entry)}
                   whileHover={prefersReducedMotion ? undefined : { y: -4 }}
                   transition={{ type: 'spring', stiffness: 220, damping: 24 }}
-                  className="block cursor-zoom-in overflow-hidden rounded-[1.35rem] border border-[#D4D5D6] bg-white text-left"
+                  className="self-start cursor-zoom-in bg-transparent text-left"
                 >
-                  <div className="aspect-[5/4]">
-                    <img
-                      src={entry.image}
-                      alt={entry.season}
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                      className="h-full w-full object-cover"
-                      style={{ objectPosition: entry.objectPosition }}
-                    />
-                  </div>
+                  <img
+                    src={entry.image}
+                    alt={entry.season}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    className="block h-auto max-w-full rounded-[1.35rem]"
+                    style={{ objectPosition: entry.objectPosition }}
+                  />
                 </motion.button>
               </motion.article>
             ))}
@@ -458,13 +511,13 @@ export default function NishchayPage() {
                     left: minitab.isExpanded ? 0 : minitab.x,
                     top: minitab.isExpanded ? 0 : minitab.y,
                     width: minitab.isExpanded ? '100vw' : minitab.width,
-                    height: minitab.isExpanded ? '100dvh' : (minitab.isCollapsed ? undefined : minitab.height),
+                    height: minitab.isExpanded ? '100dvh' : (minitab.isCollapsed ? 'auto' : minitab.height),
                     zIndex: minitab.zIndex,
                   }}
                   className={`nishchay-minitab ${minitab.isExpanded ? 'nishchay-minitab--expanded' : ''} ${minitab.isCollapsed ? 'nishchay-minitab--collapsed' : ''}`}
                 >
                   <div
-                    className="nishchay-minitab-titlebar flex items-center justify-between border-b border-[#E7E8E9] bg-white/88 px-4 py-3 backdrop-blur-xl md:px-5"
+                    className="nishchay-minitab-titlebar flex items-center justify-between bg-white px-4 py-3 backdrop-blur-xl md:px-5"
                     onPointerDown={(event) => startMinitabDrag(event, minitab.id)}
                     onPointerMove={dragMinitab}
                     onPointerUp={stopMinitabDrag}
@@ -517,27 +570,25 @@ export default function NishchayPage() {
                   </div>
 
                   {!minitab.isCollapsed && (
-                    <div className="nishchay-minitab-body flex min-h-0 flex-1 flex-col bg-[#FCFCFC] p-3 sm:p-4 md:p-6">
-                      <div className="relative flex min-h-0 flex-1 overflow-hidden rounded-[1.2rem] border border-[#E6E7E8] bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(247,248,249,0.92))] sm:rounded-[1.45rem]">
-                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(255,255,255,0.95),transparent_26%),radial-gradient(circle_at_86%_14%,rgba(238,240,243,0.9),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.28),rgba(255,255,255,0))]" />
-
-                        <div className="relative flex min-h-0 flex-1 flex-col gap-6 overflow-y-auto px-4 py-4 sm:px-5 sm:py-5 md:px-7 md:py-7 lg:grid lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:items-center lg:gap-10">
+                    <div className="nishchay-minitab-body flex min-h-0 flex-1 flex-col bg-white p-3 sm:p-4 md:p-6">
+                      <div className="relative flex min-h-0 flex-1 overflow-hidden bg-white">
+                        <div className="relative flex min-h-0 flex-1 flex-col gap-6 overflow-y-auto px-2 py-3 sm:px-3 sm:py-4 md:px-5 md:py-5 lg:grid lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:items-center lg:gap-10">
                           <div className="relative z-10 order-2 max-w-[25rem] lg:order-1">
                             <p className="nishchay-minitab-eyebrow text-[#2F2F30]/54">
                               {minitab.entry.season} Snapshot
                             </p>
                             <ul className="nishchay-minitab-list mt-5 space-y-3 text-[#2F2F30]/82 sm:mt-6 sm:space-y-3.5">
                               {minitab.entry.bullets.map((bullet) => (
-                                <li key={bullet} className="flex items-start gap-3">
+                                <li key={getSnapshotBulletKey(bullet)} className="flex items-start gap-3">
                                   <span className="mt-[0.72rem] h-1.5 w-1.5 flex-none rounded-full bg-[#1F1F1F]/62" />
-                                  <span>{bullet}</span>
+                                  <span>{renderSnapshotBullet(bullet)}</span>
                                 </li>
                               ))}
                             </ul>
                           </div>
 
                           <div className="relative z-10 order-1 flex min-h-0 flex-col lg:order-2 lg:pl-4">
-                            <div className="overflow-hidden rounded-[1rem] border border-[#E6E7E8] bg-[#F5F6F7] shadow-[0_18px_46px_rgba(31,31,31,0.06)] sm:rounded-[1.3rem]">
+                            <div className="overflow-hidden rounded-[1rem] bg-white shadow-[0_18px_46px_rgba(31,31,31,0.06)] sm:rounded-[1.3rem]">
                               <div className="aspect-[1.14/1] sm:aspect-[1.08/1] md:aspect-[1.18/1]">
                                 <img
                                   src={minitab.entry.image}
