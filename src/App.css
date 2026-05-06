@@ -29,10 +29,10 @@
 
 .nishchay-name {
   margin: 0;
-  font-size: clamp(2.35rem, calc(1.78rem + 2.35vw), 4.35rem);
+  font-size: clamp(1.9rem, calc(1.58rem + 1.35vw), 3rem);
   font-weight: 600;
   letter-spacing: 0;
-  line-height: 1.02;
+  line-height: 1.08;
 }
 
 .nishchay-name span {
@@ -43,8 +43,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.2rem;
-  margin-top: 2.1rem;
+  gap: 0.46rem;
+  margin-top: 2.35rem;
 }
 
 .nishchay-link-item,
@@ -55,9 +55,9 @@
   color: var(--muted);
   cursor: pointer;
   font: inherit;
-  font-size: clamp(0.86rem, 0.95vw, 0.96rem);
+  font-size: clamp(0.96rem, calc(0.91rem + 0.18vw), 1.08rem);
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.36;
   text-align: left;
   text-decoration: none;
   text-underline-offset: 0.18em;
@@ -164,6 +164,11 @@
 @media (max-width: 767px) {
   .nishchay-home {
     padding: 4rem 1.25rem;
+  }
+
+  .nishchay-link-list {
+    gap: 0.4rem;
+    margin-top: 2.15rem;
   }
 
   .nishchay-detail {

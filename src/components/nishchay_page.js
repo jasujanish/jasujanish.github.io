@@ -24,36 +24,53 @@ const TIMELINE_ENTRIES = [
     imageCaption: 'flowers I saw after winter finally ended',
     content: [
       [
-        "This semester, my primary academic focus was studying reinforcement learning. In addition, I worked as a research assistant at ",
+        "During Spring 2026, my primary academic focus was studying reinforcement learning. I also worked as a research assistant at ",
         { text: "CMU's Language Technologies Institute", href: "https://www.lti.cs.cmu.edu/research/index.html" },
-        ". Alongside two friends, I also developed a personal project that improved LLM inference throughput by ",
-        { text: "learning adaptive controllers for tree-based speculative decoding", href: "https://github.com/jasujanish/speculative_decoding_speedup" },
+        " where I studied Mixture of Experts (MoE) models. Further, I worked on improving LLM inference throughput by ",
+        { text: "learning adaptive controllers for tree-based speculative decoding.", href: "https://github.com/jasujanish/speculative_decoding_speedup" },
       ]
     ],
   },
   {
-    season: 'Fall, Winter 2025',
+    season: '2025',
     image: fall2025Image,
     objectPosition: 'center center',
     imageCaption: 'snowfall at cmu',
     content: [
       [
-      'I collaborated with a few friends on a project focused on ',
-      { text: 'post-training Qwen3-4B for OCaml coding using filtered synthetic data.', href: 'https://github.com/jasujanish/701_final' },
+      'During Fall 2025, I collaborated with a few friends to ',
+      { text: 'post-train Qwen3-4B for OCaml coding using filtered synthetic data.', href: 'https://github.com/jasujanish/701_final' },
       ' I also explored applying GRPO to Mamba-based models (with mixed success).'      ],
-    ],
-  },
-  {
-    season: 'Summer 2025',
-    image: summer2025Image,
-    objectPosition: '56% center',
-    imageCaption: 'a bunny I ran into on a walk',
-    content: [
       [
-        'I worked as a research assistant at Carnegie Mellon University over the summer, where I developed multi-threaded software leveraging high-performance computing resources at the Pittsburgh Supercomputing Center for large-scale data engineering and analysis.'
+        'During Summer 2025, I worked as a research assistant at Carnegie Mellon University over the summer. I developed multi-threaded software leveraging high-performance computing resources at the Pittsburgh Supercomputing Center for large-scale data engineering and analysis.'
       ],
+
     ],
   },
+
+  // {
+  //   season: 'Fall, Winter 2025',
+  //   image: fall2025Image,
+  //   objectPosition: 'center center',
+  //   imageCaption: 'snowfall at cmu',
+  //   content: [
+  //     [
+  //     'I collaborated with a few friends on a project focused on ',
+  //     { text: 'post-training Qwen3-4B for OCaml coding using filtered synthetic data.', href: 'https://github.com/jasujanish/701_final' },
+  //     ' I also explored applying GRPO to Mamba-based models (with mixed success).'      ],
+  //   ],
+  // },
+  // {
+  //   season: 'Summer 2025',
+  //   image: summer2025Image,
+  //   objectPosition: '56% center',
+  //   imageCaption: 'a bunny I ran into on a walk',
+  //   content: [
+  //     [
+  //       'I worked as a research assistant at Carnegie Mellon University over the summer, where I developed multi-threaded software leveraging high-performance computing resources at the Pittsburgh Supercomputing Center for large-scale data engineering and analysis.'
+  //     ],
+  //   ],
+  // },
   // {
   //   season: 'Spring 2025',
   //   image: spring2025Image,
