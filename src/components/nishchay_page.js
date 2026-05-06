@@ -24,14 +24,11 @@ const TIMELINE_ENTRIES = [
     imageCaption: 'flowers I saw after winter finally ended',
     content: [
       [
-        "I'm currently working as a research assistant at ",
-        { text: "CMU's Language Technologies Institute", href: 'https://www.lti.cs.cmu.edu/research/index.html' },
-        ". I also developed a ", 
-        { text: "project", href: 'https://github.com/jasujanish/' },
-        " inspired by ",
-        { text: "a Microsoft paper", href: 'https://arxiv.org/abs/2603.01639'},
-        " that improves LLM throughput learning adaptive control policies for speculative decoding."
-      ],
+        "This semester, my primary academic focus was studying reinforcement learning. In addition, I worked as a research assistant at ",
+        { text: "CMU's Language Technologies Institute", href: "https://www.lti.cs.cmu.edu/research/index.html" },
+        ". Alongside two friends, I also developed a personal project that improved LLM inference throughput by ",
+        { text: "learning adaptive controllers for tree-based speculative decoding", href: "https://github.com/jasujanish/speculative_decoding_speedup" },
+      ]
     ],
   },
   {
@@ -41,10 +38,9 @@ const TIMELINE_ENTRIES = [
     imageCaption: 'snowfall at cmu',
     content: [
       [
-        'I worked with a few friends to develop a ',  
-        { text: 'project', href: 'https://github.com/jasujanish/701_final' },
-        ' that used filtered synthetic coding data to post-train Qwen3-4B for OCaml coding tasks. I also experimented with applying GRPO to Mamba models (with mixed success).'
-      ],
+      'I collaborated with a few friends on a project focused on ',
+      { text: 'post-training Qwen3-4B for OCaml coding using filtered synthetic data.', href: 'https://github.com/jasujanish/701_final' },
+      ' I also explored applying GRPO to Mamba-based models (with mixed success).'      ],
     ],
   },
   {
@@ -54,7 +50,7 @@ const TIMELINE_ENTRIES = [
     imageCaption: 'a bunny I ran into on a walk',
     content: [
       [
-        'I worked as a research assistant at CMU over the summer. My role focused on writing multi-threaded code that used high-performance computing resources at the Pittsburgh Supercomputing Center for large scale data engineering and analysis.',
+        'I worked as a research assistant at Carnegie Mellon University over the summer, where I developed multi-threaded software leveraging high-performance computing resources at the Pittsburgh Supercomputing Center for large-scale data engineering and analysis.'
       ],
     ],
   },
