@@ -1,6 +1,5 @@
 import React from 'react';
 import selfieImage from '../images/nish.jpeg';
-import summer2025Image from '../images/summer2025_2.png';
 import fall2025Image from '../images/fall2025.jpg';
 import spring2026Image from '../images/spring2026.png'
 const FADE_DURATION_MS = 260;
@@ -18,17 +17,28 @@ const TIMELINE_ENTRIES = [
     ],
   },
   {
-    season: 'Spring 2026',
+    season: 'LinkedIn',
+    href: 'https://linkedin.com/in/nishchay-j/',
+  },
+  {
+    season: 'GitHub',
+    href: 'https://github.com/jasujanish',
+  },
+  {
+    season: '2026',
     image: spring2026Image,
     objectPosition: 'center center',
     imageCaption: 'flowers I saw after winter finally ended',
     content: [
       [
-        "During Spring 2026, my primary academic focus was studying reinforcement learning. I also worked as a research assistant at ",
+        "During Summer 2026, I studied reinforcement learning and worked on recommendations at Amazon."
+      ],
+      [
+        "During Spring 2026, I joined ",
         { text: "CMU's Language Technologies Institute", href: "https://www.lti.cs.cmu.edu/research/index.html" },
-        " where I studied Mixture of Experts (MoE) models. Further, I worked on improving LLM inference throughput by ",
+        "  as a research assistant, exploring Mixture of Experts (MoE) models. I also worked on improving LLM inference throughput by ",
         { text: "learning adaptive controllers for tree-based speculative decoding.", href: "https://github.com/jasujanish/speculative_decoding_speedup" },
-      ]
+      ],
     ],
   },
   {
@@ -46,6 +56,7 @@ const TIMELINE_ENTRIES = [
       ],
 
     ],
+
   },
 
   // {
@@ -97,8 +108,6 @@ const renderContentSegment = (segment, index) => {
 };
 
 export default function NishchayPage() {
-  const currentLinkedIn = 'https://linkedin.com/in/nishchay-j/';
-  const currentGitHub = 'https://github.com/jasujanish';
   const clearDetailTimer = React.useRef(null);
   const [selectedEntry, setSelectedEntry] = React.useState(null);
   const [showDetail, setShowDetail] = React.useState(false);
@@ -126,27 +135,32 @@ export default function NishchayPage() {
     <main className={`nishchay-page ${showDetail ? 'nishchay-page--detail' : ''}`}>
       <section className="nishchay-home" aria-hidden={showDetail}>
         <h1 className="nishchay-name">
-          <span>Nishchay</span>
-          <span>Jasuja</span>
+          Nishchay Jasuja
         </h1>
 
         <nav className="nishchay-link-list" aria-label="Timeline and social links">
           {TIMELINE_ENTRIES.map((entry) => (
-            <button
-              key={entry.season}
-              type="button"
-              onClick={() => openEntry(entry)}
-              className="nishchay-link-item"
-            >
-              {entry.season}
-            </button>
+            entry.href ? (
+              <a
+                key={entry.season}
+                className="nishchay-link-item nishchay-link-item--external"
+                href={entry.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {entry.season}
+              </a>
+            ) : (
+              <button
+                key={entry.season}
+                type="button"
+                onClick={() => openEntry(entry)}
+                className="nishchay-link-item nishchay-link-item--detail"
+              >
+                {entry.season}
+              </button>
+            )
           ))}
-          <a className="nishchay-link-item" href={currentLinkedIn} target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a className="nishchay-link-item" href={currentGitHub} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
         </nav>
       </section>
 
