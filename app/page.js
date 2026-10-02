@@ -9,6 +9,7 @@ export default function Page() {
       <nav>
         <a href="https://linkedin.com/in/nishchay-j/" target="_blank" rel="noopener noreferrer">Linkedin</a>
         <a href="https://github.com/jasujanish" target="_blank" rel="noopener noreferrer">Github</a>
+        <a href="/connect4">Connect 4</a>
       </nav>
     </main>
   );
