@@ -3,12 +3,11 @@ export default function Page() {
     <main>
       <h1>Nishchay Jasuja</h1>
       <p>
-        I&apos;m a current student at Carnegie Mellon University and a prior intern at Amazon.<br />
-        I&apos;m interested in autonomous agents, computer systems, and reinforcement learning.
+        I&apos;m a current student at Carnegie Mellon University and a prior intern at Amazon. I&apos;m interested in autonomous agents, computer systems, and reinforcement learning.
       </p>
       <nav>
-        <a href="https://linkedin.com/in/nishchay-j/" target="_blank" rel="noopener noreferrer">Linkedin</a>
-        <a href="https://github.com/jasujanish" target="_blank" rel="noopener noreferrer">Github</a>
+        <a href="https://linkedin.com/in/nishchay-j/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/jasujanish" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/connect4">Connect 4</a>
       </nav>
     </main>

@@ -126,6 +126,10 @@ export default function Connect4() {
           </section>
         </div>
       </div>
+      <nav>
+        <a href="/">Return home</a>
+      </nav>
+
     </main>
   );
 }
